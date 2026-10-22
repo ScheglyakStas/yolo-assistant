@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+.venv*/
+venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+DEVELOPMENT.md
+
+# Runtime artifacts
+logs/
+projects/
+*.pt
+*.onnx
+*.engine
+
+# Written by Ultralytics when it runs from the repository root: its settings
+# file (a machine-specific path and a UUID) and the sample datasets it fetches.
+Ultralytics/
+.ultralytics/
+datasets/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.claude/settings.local.json
+Thumbs.db
+Desktop.ini
+.DS_Store

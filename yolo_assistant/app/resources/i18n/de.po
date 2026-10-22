@@ -1,0 +1,3578 @@
+# Deutsch translation of YOLO Assistant.
+# Maintained with packaging/i18n_messages.py.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: de\n"
+
+#: yolo_assistant/app/core/autolabel.py:69
+msgid "quick, and fits a small card. Start here."
+msgstr "schnell und passt auf eine kleine Grafikkarte. Beginnen Sie hier."
+
+#: yolo_assistant/app/core/autolabel.py:75
+msgid "three times slower and wants more GPU memory, but finds harder objects."
+msgstr "dreimal langsamer und braucht mehr GPU-Speicher, findet aber schwierigere Objekte."
+
+#: yolo_assistant/app/core/autolabel.py:162 yolo_assistant/app/core/training.py:537
+msgid "No prepared dataset. Finish Step 2 first."
+msgstr "Kein vorbereiteter Datensatz. Schließen Sie zuerst Schritt 2 ab."
+
+#: yolo_assistant/app/core/autolabel.py:166 yolo_assistant/app/core/dataset.py:362 worker/commands/autolabel.py:166
+msgid "\"{name}\""
+msgstr "„{name}“"
+
+#: yolo_assistant/app/core/autolabel.py:169
+msgid "{names} still need a description of what to find. Type it in the Prompt column."
+msgid_plural "{names} still need a description of what to find. Type it in the Prompt column."
+msgstr[0] "Die Klasse {names} braucht noch eine Beschreibung dessen, wonach gesucht werden soll. Geben Sie sie in der Spalte „Wonach suchen“ ein."
+msgstr[1] "Die Klassen {names} brauchen noch eine Beschreibung dessen, wonach gesucht werden soll. Geben Sie sie in der Spalte „Wonach suchen“ ein."
+
+#: yolo_assistant/app/core/autolabel.py:180
+msgid "Every photo already has a label. Tick \"Label everything again\" to redo them, or carry on to Step 4."
+msgstr "Jedes Foto hat bereits ein Label. Setzen Sie ein Häkchen bei „Alles neu beschriften“, um alle neu zu beschriften, oder fahren Sie mit Schritt 4 fort."
+
+#: yolo_assistant/app/core/autolabel.py:193 yolo_assistant/app/core/review.py:339 yolo_assistant/app/core/training.py:633 yolo_assistant/app/ui/steps/autolabel_step.py:95
+msgid "No prepared dataset yet."
+msgstr "Noch kein vorbereiteter Datensatz."
+
+#: yolo_assistant/app/core/autolabel.py:195
+msgid "All {n:,} photos are labelled. You can go straight to Step 4."
+msgid_plural "All {n:,} photos are labelled. You can go straight to Step 4."
+msgstr[0] "{n:,} Foto ist beschriftet. Sie können direkt zu Schritt 4 weitergehen."
+msgstr[1] "Alle {n:,} Fotos sind beschriftet. Sie können direkt zu Schritt 4 weitergehen."
+
+#: yolo_assistant/app/core/autolabel.py:200
+msgid "{todo:,} of {total:,} photos still need a label across {n} class."
+msgid_plural "{todo:,} of {total:,} photos still need a label across {n} classes."
+msgstr[0] "Noch ohne Label: {todo:,} von {total:,} Fotos in {n} Klasse."
+msgstr[1] "Noch ohne Label: {todo:,} von {total:,} Fotos in {n} Klassen."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:57
+msgid "Fetching the environment tool"
+msgstr "Umgebungswerkzeug wird abgerufen"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:58
+msgid "Installing Python {python}"
+msgstr "Python {python} wird installiert"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:59 yolo_assistant/app/core/bootstrap/controller.py:243
+msgid "Creating the environment"
+msgstr "Umgebung wird erstellt"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:60
+msgid "Installing PyTorch and Ultralytics"
+msgstr "PyTorch und Ultralytics werden installiert"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:61
+msgid "Checking the environment can use the GPU"
+msgstr "Es wird geprüft, ob die Umgebung die GPU nutzen kann"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:156
+msgid "Setting up {backend} in {path}"
+msgstr "{backend} wird in {path} eingerichtet"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:195
+msgid "Using uv at {path}"
+msgstr "uv wird verwendet: {path}"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:199
+msgid "Downloading uv..."
+msgstr "uv wird heruntergeladen..."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:213
+msgid "Python could not be downloaded. Check the network connection or proxy settings."
+msgstr "Python konnte nicht heruntergeladen werden. Prüfen Sie die Netzwerkverbindung oder die Proxy-Einstellungen."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:226
+msgid "Reusing the existing environment at {path}"
+msgstr "Die vorhandene Umgebung in {path} wird weiterverwendet"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:236
+msgid "Removing an unusable environment at {path}"
+msgstr "Eine unbrauchbare Umgebung in {path} wird entfernt"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:242
+msgid "The environment could not be created at {path}."
+msgstr "Die Umgebung konnte in {path} nicht erstellt werden."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:258
+msgid "Replacing the CPU-only PyTorch in this environment with the GPU build."
+msgstr "Der reine CPU-Build von PyTorch in dieser Umgebung wird durch den GPU-Build ersetzt."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:270
+msgid "Installing from {path}. This downloads roughly {estimate} the first time and can take 5-15 minutes."
+msgstr "Installation aus {path}. Beim ersten Mal werden etwa {estimate} heruntergeladen; das kann 5 bis 15 Minuten dauern."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:347
+msgid "uv could not be downloaded: {error}"
+msgstr "uv konnte nicht heruntergeladen werden: {error}"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:348
+msgid "The application needs to download a small tool (about 20 MB) before it can create the environment. Check the network connection or proxy settings."
+msgstr "Die Anwendung muss ein kleines Werkzeug (etwa 20 MB) herunterladen, bevor sie die Umgebung erstellen kann. Prüfen Sie die Netzwerkverbindung oder die Proxy-Einstellungen."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:356
+msgid "Installed uv at {path}"
+msgstr "uv wurde in {path} installiert"
+
+#: yolo_assistant/app/core/bootstrap/controller.py:379
+msgid "Cancelling the environment setup..."
+msgstr "Einrichtung der Umgebung wird abgebrochen..."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:399
+msgid "The environment was installed but could not be started."
+msgstr "Die Umgebung wurde installiert, konnte aber nicht gestartet werden."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:400
+msgid "PyTorch failed to import. The log below has the details; removing the environment and setting it up again usually resolves it."
+msgstr "PyTorch konnte nicht importiert werden. Die Details stehen im Protokoll unten; meist hilft es, die Umgebung zu entfernen und neu einzurichten."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:408
+msgid "The environment setup stopped unexpectedly."
+msgstr "Die Einrichtung der Umgebung wurde unerwartet beendet."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:429
+msgid "The environment installed, but {packages} could not be imported afterwards."
+msgstr "Die Umgebung wurde installiert, aber danach ließ sich Folgendes nicht importieren: {packages}."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:438
+msgid "The environment installed, but PyTorch reports no usable GPU."
+msgstr "Die Umgebung wurde installiert, aber PyTorch meldet keine nutzbare GPU."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:441
+msgid "Environment ready."
+msgstr "Umgebung bereit."
+
+#: yolo_assistant/app/core/bootstrap/controller.py:447
+msgid "Setup cancelled. Nothing downloaded so far is lost -- starting again resumes from the package cache."
+msgstr "Einrichtung abgebrochen. Bereits Heruntergeladenes geht nicht verloren – beim nächsten Start wird mit dem Paket-Cache weitergemacht."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:88
+msgid "CPU only"
+msgstr "Nur CPU"
+
+#: yolo_assistant/app/core/bootstrap/planner.py:165
+msgid "{backend} was selected manually, but this machine's driver or GPU may not support it. If training fails with a kernel error, choose {alternative} instead."
+msgstr "{backend} wurde manuell ausgewählt, aber der Treiber oder die GPU dieses Computers unterstützt es möglicherweise nicht. Wenn das Training mit einem Kernel-Fehler abbricht, wählen Sie stattdessen {alternative}."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:175
+msgid "{backend} was selected manually."
+msgstr "{backend} wurde manuell ausgewählt."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:183
+msgid "No NVIDIA driver was found."
+msgstr "Es wurde kein NVIDIA-Treiber gefunden."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:185
+msgid "Without an NVIDIA GPU, autolabeling and training will be too slow to be practical. Install an NVIDIA driver and run this step again."
+msgstr "Ohne NVIDIA-GPU sind automatisches Beschriften und Training zu langsam, um praktisch nutzbar zu sein. Installieren Sie einen NVIDIA-Treiber und führen Sie diesen Schritt erneut aus."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:196
+msgid "No CUDA build of PyTorch supports this GPU ({gpu}, compute {capability})."
+msgstr "Keine CUDA-Version von PyTorch unterstützt diese GPU ({gpu}, Compute Capability {capability})."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:202
+msgid "No CUDA build of PyTorch supports this GPU."
+msgstr "Keine CUDA-Version von PyTorch unterstützt diese GPU."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:207
+msgid "The GPU is too old for current PyTorch releases, or the driver is older than any supported CUDA runtime. Updating the NVIDIA driver may help."
+msgstr "Die GPU ist zu alt für aktuelle PyTorch-Versionen, oder der Treiber ist älter als jede unterstützte CUDA-Laufzeit. Eine Aktualisierung des NVIDIA-Treibers kann helfen."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:221
+msgid "No {backend} package is published for Python {python}."
+msgstr "Für Python {python} wurde kein {backend}-Paket veröffentlicht."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:233
+msgid "No CUDA package could be found for this machine."
+msgstr "Für diesen Computer wurde kein CUDA-Paket gefunden."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:242
+msgid "This GPU (compute {capability}) is older than the hardware current releases are tested on. Training will work but may be slow, and mixed precision is unlikely to help."
+msgstr "Diese GPU (Compute Capability {capability}) ist älter als die Hardware, auf der aktuelle Versionen getestet werden. Das Training funktioniert, kann aber langsam sein, und Mixed Precision bringt hier wahrscheinlich wenig."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:250
+msgid "Driver {driver} supports CUDA {cuda} and this GPU is compute {capability}, so {backend} is the newest usable build."
+msgstr "Treiber {driver} unterstützt CUDA {cuda} und diese GPU hat Compute Capability {capability}, daher ist {backend} der neueste nutzbare Build."
+
+#: yolo_assistant/app/core/bootstrap/planner.py:254 yolo_assistant/app/core/bootstrap/planner.py:255 yolo_assistant/app/core/env_probe.py:75 yolo_assistant/app/core/env_probe.py:237
+msgid "unknown"
+msgstr "unbekannt"
+
+#: yolo_assistant/app/core/bootstrap/updater.py:106
+msgid "The environment tool is missing."
+msgstr "Das Umgebungswerkzeug fehlt."
+
+#: yolo_assistant/app/core/bootstrap/updater.py:107
+msgid "Run environment setup first; updates apply to an environment this app built."
+msgstr "Richten Sie zuerst die Umgebung ein; Aktualisierungen gelten nur für eine Umgebung, die diese Anwendung erstellt hat."
+
+#: yolo_assistant/app/core/bootstrap/updater.py:127
+msgid "The update could not be installed. The environment was left as it was."
+msgstr "Die Aktualisierung konnte nicht installiert werden. Die Umgebung bleibt unverändert."
+
+#: yolo_assistant/app/core/bootstrap/updater.py:167
+msgid "Update cancelled."
+msgstr "Aktualisierung abgebrochen."
+
+#: yolo_assistant/app/core/bootstrap/updater.py:174
+msgid "The update stopped unexpectedly."
+msgstr "Die Aktualisierung wurde unerwartet beendet."
+
+#: yolo_assistant/app/core/bootstrap/updater.py:195
+msgid "Updated. {message}"
+msgstr "Aktualisiert. {message}"
+
+#: yolo_assistant/app/core/bootstrap/uv_manager.py:98
+msgid "No uv build is pinned for {system} {machine}. Install uv manually and make sure it is on PATH."
+msgstr "Für {system} {machine} ist kein uv-Build festgelegt. Installieren Sie uv manuell und stellen Sie sicher, dass es im PATH liegt."
+
+#: yolo_assistant/app/core/bootstrap/uv_manager.py:178
+msgid "The downloaded uv archive does not match its published checksum (expected {expected}..., got {actual}...). Nothing was installed."
+msgstr "Das heruntergeladene uv-Archiv stimmt nicht mit seiner veröffentlichten Prüfsumme überein (erwartet {expected}..., erhalten {actual}...). Es wurde nichts installiert."
+
+#: yolo_assistant/app/core/bootstrap/uv_manager.py:210
+msgid "The uv archive did not contain {name}."
+msgstr "Das uv-Archiv enthielt {name} nicht."
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:74 yolo_assistant/app/ui/common/progress_header.py:38
+msgid "Installing"
+msgstr "Installation"
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:77
+msgid "Downloading {package}"
+msgstr "{package} wird heruntergeladen"
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:79
+msgid "Preparing packages"
+msgstr "Pakete werden vorbereitet"
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:80
+msgid "Resolving packages"
+msgstr "Paketversionen werden ermittelt"
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:88
+msgid "{done:.1f} / {total:.1f} GB"
+msgstr "{done:.1f} / {total:.1f} GB"
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:93
+msgid "{done:.0f} / {total:.0f} MB"
+msgstr "{done:.0f} / {total:.0f} MB"
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:164
+msgid "The package versions could not be reconciled. This usually means the selected CUDA backend has no build for one of the requirements -- try the next backend down."
+msgstr "Die Paketversionen ließen sich nicht miteinander vereinbaren. Meist bedeutet das, dass es für das gewählte CUDA-Backend keinen Build einer der Abhängigkeiten gibt – versuchen Sie das nächstältere Backend."
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:170
+msgid "The download could not reach the package index. Check the network connection, or a proxy or firewall that blocks pypi.org and download.pytorch.org."
+msgstr "Der Paketindex ist nicht erreichbar. Prüfen Sie die Netzwerkverbindung und ob ein Proxy oder eine Firewall pypi.org und download.pytorch.org blockiert."
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:176
+msgid "There is not enough free disk space. The environment needs roughly 10-14 GB."
+msgstr "Nicht genug freier Speicherplatz. Die Umgebung braucht etwa 10 bis 14 GB."
+
+#: yolo_assistant/app/core/bootstrap/uv_output.py:180
+msgid "A file could not be written. Antivirus software sometimes locks files mid-install; excluding the application's data folder usually fixes it."
+msgstr "Eine Datei konnte nicht geschrieben werden. Antivirensoftware sperrt manchmal Dateien während der Installation; meist hilft es, den Datenordner der Anwendung von der Prüfung auszunehmen."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:64
+msgid "anything at all"
+msgstr "die gesamte Anwendung"
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:65
+msgid "training and export"
+msgstr "Training und Export"
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:66 yolo_assistant/app/core/bootstrap/venv_manager.py:67
+msgid "autolabeling"
+msgstr "automatisches Beschriften"
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:68
+msgid "reading photos, video and cameras"
+msgstr "Lesen von Fotos, Videos und Kameras"
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:77
+msgid "testing an exported model"
+msgstr "Testen eines exportierten Modells"
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:78
+msgid "training a model for INT8"
+msgstr "Trainieren eines Modells für INT8"
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:214
+msgid "No environment for {backend} yet. Setting one up downloads roughly {estimate}."
+msgstr "Noch keine Umgebung für {backend}. Bei der Einrichtung werden etwa {estimate} heruntergeladen."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:228
+msgid "An environment was started but never finished. Setting up again resumes it; packages already downloaded are reused."
+msgstr "Die Einrichtung einer Umgebung wurde begonnen, aber nie abgeschlossen. Eine erneute Einrichtung setzt sie fort; bereits heruntergeladene Pakete werden wiederverwendet."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:239
+msgid "This environment was built by an older version of the app and needs rebuilding."
+msgstr "Diese Umgebung wurde von einer älteren Version der Anwendung erstellt und muss neu aufgebaut werden."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:249
+msgid "This environment was checked by an earlier version of the app, which did not confirm that everything the later steps need is installed. Repairing it checks, and installs anything missing -- it does not download it all again."
+msgstr "Diese Umgebung wurde von einer früheren Version der Anwendung geprüft, die nicht sichergestellt hat, dass alles installiert ist, was die späteren Schritte brauchen. Beim Reparieren wird das geprüft und Fehlendes nachinstalliert – es wird nicht alles erneut heruntergeladen."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:268
+msgid "PyTorch {torch} is the CPU-only build, not the {backend} build this environment needs. Repairing replaces it with the GPU build."
+msgstr "PyTorch {torch} ist der reine CPU-Build, nicht der {backend}-Build, den diese Umgebung braucht. Beim Reparieren wird er durch den GPU-Build ersetzt."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:281
+msgid "The environment is installed, but PyTorch cannot use the GPU. Training will fall back to the CPU and be very slow."
+msgstr "Die Umgebung ist installiert, aber PyTorch kann die GPU nicht nutzen. Das Training weicht auf die CPU aus und wird sehr langsam."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:292
+msgid "PyTorch {torch} ({build}) and Ultralytics {ultralytics} on {device}."
+msgstr "PyTorch {torch} ({build}) und Ultralytics {ultralytics} auf {device}."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:318
+msgid "some steps"
+msgstr "einige Schritte"
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:319
+msgid "This environment is missing {packages}, so {purposes} cannot run. Repairing installs what is missing; nothing already downloaded is fetched again."
+msgstr "In dieser Umgebung fehlt {packages}, daher funktioniert Folgendes nicht: {purposes}. Beim Reparieren wird Fehlendes installiert; bereits Heruntergeladenes wird nicht erneut abgerufen."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:324
+msgid "{first} and {second}"
+msgstr "{first} und {second}"
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:349
+msgid "PyTorch {torch} contains no kernels for this GPU (compute {capability}). Training would fail with \"no kernel image is available\". Choose a different PyTorch build below and set the environment up again."
+msgstr "PyTorch {torch} enthält keine Kernels für diese GPU (Compute Capability {capability}). Das Training würde mit „no kernel image is available“ abbrechen. Wählen Sie unten einen anderen PyTorch-Build und richten Sie die Umgebung erneut ein."
+
+#: yolo_assistant/app/core/bootstrap/venv_manager.py:356
+msgid "PyTorch {torch} contains no kernels for {gpu} (compute {capability}). Training would fail with \"no kernel image is available\". Choose a different PyTorch build below and set the environment up again."
+msgstr "PyTorch {torch} enthält keine Kernels für {gpu} (Compute Capability {capability}). Das Training würde mit „no kernel image is available“ abbrechen. Wählen Sie unten einen anderen PyTorch-Build und richten Sie die Umgebung erneut ein."
+
+#: yolo_assistant/app/core/dataset.py:124
+msgid "Nothing to prepare."
+msgstr "Nichts vorzubereiten."
+
+#: yolo_assistant/app/core/dataset.py:126 yolo_assistant/app/core/project.py:289
+msgid "{n} class"
+msgid_plural "{n} classes"
+msgstr[0] "{n} Klasse"
+msgstr[1] "{n} Klassen"
+
+#: yolo_assistant/app/core/dataset.py:128 yolo_assistant/app/core/project.py:291 yolo_assistant/app/core/review.py:295
+msgid "{n:,} photos"
+msgid_plural "{n:,} photos"
+msgstr[0] "{n:,} Foto"
+msgstr[1] "{n:,} Fotos"
+
+#: yolo_assistant/app/core/dataset.py:168
+msgid "{path} does not exist."
+msgstr "{path} existiert nicht."
+
+#: yolo_assistant/app/core/dataset.py:172
+msgid "{path} is a file, not a folder."
+msgstr "{path} ist eine Datei, kein Ordner."
+
+#: yolo_assistant/app/core/dataset.py:180 worker/commands/autolabel.py:352 worker/commands/prepare_dataset.py:386
+msgid "{path} cannot be read: {error}"
+msgstr "{path} kann nicht gelesen werden: {error}"
+
+#: yolo_assistant/app/core/dataset.py:197
+msgid "This folder contains no sub-folders. It needs one folder per class, each holding that class's photos -- for example a folder named \"cat\" with photos of cats in it."
+msgstr "Dieser Ordner enthält keine Unterordner. Er braucht einen Ordner pro Klasse mit den Fotos dieser Klasse – zum Beispiel einen Ordner namens „Katze“ mit Fotos von Katzen."
+
+#: yolo_assistant/app/core/dataset.py:213
+msgid "None of the sub-folders contain photos. Supported types are {types}."
+msgstr "Keiner der Unterordner enthält Fotos. Unterstützte Dateitypen: {types}."
+
+#: yolo_assistant/app/core/dataset.py:223
+msgid "{names} contain no photos and will be skipped. A class with no examples cannot be trained and would only add an unused name."
+msgid_plural "{names} contain no photos and will be skipped. A class with no examples cannot be trained and would only add an unused name."
+msgstr[0] "Die Klasse {names} enthält keine Fotos und wird übersprungen. Eine Klasse ohne Beispiele kann nicht trainiert werden und würde nur einen ungenutzten Namen hinzufügen."
+msgstr[1] "Die Klassen {names} enthalten keine Fotos und werden übersprungen. Eine Klasse ohne Beispiele kann nicht trainiert werden und würde nur einen ungenutzten Namen hinzufügen."
+
+#: yolo_assistant/app/core/dataset.py:239
+msgid "{names} have fewer than {limit} photos. That is enough to run the workflow end to end, but not enough for the trained model to be much good -- a few hundred per class is a realistic target."
+msgid_plural "{names} have fewer than {limit} photos. That is enough to run the workflow end to end, but not enough for the trained model to be much good -- a few hundred per class is a realistic target."
+msgstr[0] "Die Klasse {names} hat weniger als {limit} Fotos. Das reicht, um den gesamten Ablauf einmal durchzuspielen, aber nicht für ein wirklich gutes Modell – ein realistisches Ziel sind einige hundert Fotos pro Klasse."
+msgstr[1] "Die Klassen {names} haben weniger als {limit} Fotos. Das reicht, um den gesamten Ablauf einmal durchzuspielen, aber nicht für ein wirklich gutes Modell – ein realistisches Ziel sind einige hundert Fotos pro Klasse."
+
+#: yolo_assistant/app/core/dataset.py:258
+msgid "Some folder names cannot be used as-is and will be stored under a safe spelling: {renames}. The original name is kept as the class name."
+msgstr "Einige Ordnernamen können nicht unverändert verwendet werden und werden unter einer sicheren Schreibweise gespeichert: {renames}. Der ursprüngliche Name bleibt als Klassenname erhalten."
+
+#: yolo_assistant/app/core/dataset.py:262
+msgid "\"{name}\" as \"{slug}\""
+msgstr "„{name}“ als „{slug}“"
+
+#: yolo_assistant/app/core/dataset.py:273
+msgid "{n} file(s) that are not photos were found and will be ignored."
+msgid_plural "{n} file(s) that are not photos were found and will be ignored."
+msgstr[0] "{n} Datei, die kein Foto ist, wurde gefunden und wird ignoriert."
+msgstr[1] "{n} Dateien, die keine Fotos sind, wurden gefunden und werden ignoriert."
+
+#: yolo_assistant/app/core/dataset.py:285
+msgid "{n} sub-folder(s) inside the class folders will be ignored. Photos have to sit directly in their class folder."
+msgid_plural "{n} sub-folder(s) inside the class folders will be ignored. Photos have to sit directly in their class folder."
+msgstr[0] "{n} Unterordner innerhalb der Klassenordner wird ignoriert. Fotos müssen direkt in ihrem Klassenordner liegen."
+msgstr[1] "{n} Unterordner innerhalb der Klassenordner werden ignoriert. Fotos müssen direkt in ihrem Klassenordner liegen."
+
+#: yolo_assistant/app/core/dataset.py:349
+msgid "{names} would all be stored as \"{slug}\" and would overwrite each other. Rename them so they differ by more than capitalisation or punctuation."
+msgstr "Die Klassen {names} würden alle als „{slug}“ gespeichert und sich gegenseitig überschreiben. Benennen Sie sie so um, dass sie sich nicht nur in Groß-/Kleinschreibung oder Satzzeichen unterscheiden."
+
+#: yolo_assistant/app/core/dataset.py:366
+msgid "{names} and {last}"
+msgstr "{names} und {last}"
+
+#: yolo_assistant/app/core/dataset.py:367
+msgid "{names} and {n} others"
+msgid_plural "{names} and {n} others"
+msgstr[0] "{names} und {n} weitere"
+msgstr[1] "{names} und {n} weitere"
+
+#: yolo_assistant/app/core/env_probe.py:37 yolo_assistant/app/core/env_probe.py:179
+msgid "Unknown CPU"
+msgstr "Unbekannter Prozessor"
+
+#: yolo_assistant/app/core/env_probe.py:44
+msgid "{model} - {cores} cores / {threads} threads"
+msgstr "{model} - {cores} Kerne / {threads} Threads"
+
+#: yolo_assistant/app/core/env_probe.py:51
+msgid "{model} - {threads} threads"
+msgstr "{model} - {threads} Threads"
+
+#: yolo_assistant/app/core/env_probe.py:62
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: yolo_assistant/app/core/env_probe.py:63
+msgid "{total:.1f} GB total, {free:.1f} GB free"
+msgstr "{total:.1f} GB gesamt, {free:.1f} GB frei"
+
+#: yolo_assistant/app/core/env_probe.py:87
+msgid "{name} - {vram:.1f} GB VRAM, compute {capability}"
+msgstr "{name} - {vram:.1f} GB VRAM, Compute Capability {capability}"
+
+#: yolo_assistant/app/core/env_probe.py:215 yolo_assistant/app/core/telemetry.py:93
+msgid "nvidia-ml-py is not installed."
+msgstr "nvidia-ml-py ist nicht installiert."
+
+#: yolo_assistant/app/core/env_probe.py:247
+msgid "NVML query failed: {error}"
+msgstr "NVML-Abfrage fehlgeschlagen: {error}"
+
+#: yolo_assistant/app/core/env_probe.py:260
+msgid "The driver is installed but reports no NVIDIA GPU."
+msgstr "Der Treiber ist installiert, meldet aber keine NVIDIA-GPU."
+
+#: yolo_assistant/app/core/env_probe.py:269
+msgid "No usable NVIDIA driver was found ({detail})."
+msgstr "Es wurde kein nutzbarer NVIDIA-Treiber gefunden ({detail})."
+
+#: yolo_assistant/app/core/env_probe.py:299
+msgid "Windows long path support is turned off. Installing PyTorch creates files with very long names and the install may fail partway through. Enable it with the Group Policy setting \"Enable Win32 long paths\", or set LongPathsEnabled to 1 under HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\FileSystem."
+msgstr "Die Unterstützung langer Pfade ist in Windows ausgeschaltet. Bei der Installation von PyTorch entstehen Dateien mit sehr langen Namen, und die Installation kann mittendrin fehlschlagen. Aktivieren Sie sie mit der Gruppenrichtlinie „Lange Win32-Pfade aktivieren“ („Enable Win32 long paths“) oder setzen Sie LongPathsEnabled unter HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\FileSystem auf 1."
+
+#: yolo_assistant/app/core/env_probe.py:325
+msgid "nvidia-smi could not be run: {error}"
+msgstr "nvidia-smi konnte nicht ausgeführt werden: {error}"
+
+#: yolo_assistant/app/core/export.py:113
+msgid "Full precision. The largest file and the slowest, and the only one that cannot cost any accuracy at all."
+msgstr "Volle Präzision. Die größte und langsamste Datei, aber die einzige Variante, die keinerlei Genauigkeit kostet."
+
+#: yolo_assistant/app/core/export.py:121
+msgid "Half precision. About half the size and usually faster on a GPU, for an accuracy difference most datasets cannot measure."
+msgstr "Halbe Präzision. Etwa halb so groß und auf einer GPU meist schneller, bei einem Genauigkeitsunterschied, den die meisten Datensätze nicht messbar machen."
+
+#: yolo_assistant/app/core/export.py:129
+msgid "8-bit integers. The smallest and fastest, and the only precision an INT8 QAT model can be exported at."
+msgstr "8-Bit-Ganzzahlen. Am kleinsten und schnellsten, und die einzige Präzision, in der ein INT8-QAT-Modell exportiert werden kann."
+
+#: yolo_assistant/app/core/export.py:200
+msgid "Runs almost anywhere -- onnxruntime on CPU or GPU, and most other deployment stacks read it. Start here."
+msgstr "Läuft fast überall – onnxruntime auf CPU oder GPU, und die meisten anderen Einsatzumgebungen können es lesen. Beginnen Sie hier."
+
+#: yolo_assistant/app/core/export.py:213
+msgid "The fastest thing NVIDIA hardware can run, and the least portable: the file is built for one GPU model and driver and will not load on another."
+msgstr "Das Schnellste, was NVIDIA-Hardware ausführen kann, und das am wenigsten portable: Die Datei wird für ein bestimmtes GPU-Modell und einen bestimmten Treiber erstellt und lässt sich auf anderen nicht laden."
+
+#: yolo_assistant/app/core/export.py:226
+msgid "Intel processors and their built-in graphics."
+msgstr "Intel-Prozessoren und ihre integrierte Grafik."
+
+#: yolo_assistant/app/core/export.py:232
+msgid "PyTorch without Python. A good fallback when nothing else loads."
+msgstr "PyTorch ohne Python. Eine gute Notlösung, wenn sich nichts anderes laden lässt."
+
+#: yolo_assistant/app/core/export.py:240
+msgid "Phones and small boards."
+msgstr "Smartphones und kleine Einplatinencomputer."
+
+#: yolo_assistant/app/core/export.py:248
+msgid "ARM phones, where it is usually quicker than TensorFlow Lite."
+msgstr "ARM-Smartphones, auf denen es meist schneller ist als TensorFlow Lite."
+
+#: yolo_assistant/app/core/export.py:257
+msgid "Apple devices, using the Neural Engine."
+msgstr "Apple-Geräte, mit der Neural Engine."
+
+#: yolo_assistant/app/core/export.py:265
+msgid "TensorFlow Serving, and the input to most TensorFlow tooling."
+msgstr "TensorFlow Serving und das Eingabeformat der meisten TensorFlow-Werkzeuge."
+
+#: yolo_assistant/app/core/export.py:271
+msgid "The older frozen-graph format, for stacks that still want one."
+msgstr "Das ältere Frozen-Graph-Format, für Umgebungen, die es noch verlangen."
+
+#: yolo_assistant/app/core/export.py:367
+msgid "\"{item}\" is not a setting. Each one is a name, an equals sign and a value, like \"dynamic=true\"."
+msgstr "„{item}“ ist keine Einstellung. Jede Einstellung besteht aus einem Namen, einem Gleichheitszeichen und einem Wert, etwa „dynamic=true“."
+
+#: yolo_assistant/app/core/export.py:379 yolo_assistant/app/core/training.py:264
+msgid "\"{item}\" has no setting name in front of the equals sign."
+msgstr "Bei „{item}“ fehlt der Einstellungsname vor dem Gleichheitszeichen."
+
+#: yolo_assistant/app/core/export.py:383 yolo_assistant/app/core/training.py:268
+msgid "\"{key}\" is not a valid setting name."
+msgstr "„{key}“ ist kein gültiger Einstellungsname."
+
+#: yolo_assistant/app/core/export.py:387
+msgid "\"{key}\" is set by the app and cannot be changed here -- it decides what is exported, in what format and at what precision."
+msgstr "„{key}“ wird von der Anwendung festgelegt und kann hier nicht geändert werden – es bestimmt, was exportiert wird, in welchem Format und mit welcher Präzision."
+
+#: yolo_assistant/app/core/export.py:396
+msgid "\"{key}\" is already set by the DeepStream toggle. Turn the toggle off if you want to set it yourself."
+msgstr "„{key}“ wird bereits durch die DeepStream-Option festgelegt. Schalten Sie die Option aus, wenn Sie den Wert selbst festlegen möchten."
+
+#: yolo_assistant/app/core/export.py:404 yolo_assistant/app/core/training.py:280
+msgid "\"{key}\" is given twice. Keep only one of them."
+msgstr "„{key}“ ist zweimal angegeben. Behalten Sie nur eine Angabe."
+
+#: yolo_assistant/app/core/export.py:478
+msgid "{run} - best epoch, mAP50-95 {fitness:.4f}"
+msgstr "{run} - beste Epoche, mAP50-95 {fitness:.4f}"
+
+#: yolo_assistant/app/core/export.py:484
+msgid "{run} - best epoch"
+msgstr "{run} - beste Epoche"
+
+#: yolo_assistant/app/core/export.py:486
+msgid "{run} - last epoch of {epochs}"
+msgstr "{run} - letzte Epoche von {epochs}"
+
+#: yolo_assistant/app/core/export.py:488
+msgid "{run} - last epoch"
+msgstr "{run} - letzte Epoche"
+
+#: yolo_assistant/app/core/export.py:666 yolo_assistant/app/core/export.py:664 worker/commands/export.py:500 worker/commands/export.py:498
+msgid "{size:.1f} {unit}"
+msgstr "{size:.1f} {unit}"
+
+#: yolo_assistant/app/core/export.py:759
+msgid "There is no trained model in this project yet. Train one in Step 5, or copy a run into the project's runs folder."
+msgstr "In diesem Projekt gibt es noch kein trainiertes Modell. Trainieren Sie eines in Schritt 5 oder kopieren Sie einen Durchlauf in den Ordner runs des Projekts."
+
+#: yolo_assistant/app/core/export.py:770
+msgid "Choose a format to export to."
+msgstr "Wählen Sie ein Exportformat."
+
+#: yolo_assistant/app/core/export.py:772
+msgid "Choose a precision to export at."
+msgstr "Wählen Sie eine Präzision für den Export."
+
+#: yolo_assistant/app/core/export.py:806
+msgid "{format} cannot be exported at {precision}. It supports {supported}."
+msgstr "{format} kann nicht mit {precision} exportiert werden. Unterstützt wird: {supported}."
+
+#: yolo_assistant/app/core/export.py:822
+msgid "\"{run}\" was trained for INT8, so its quantisers are already part of the model. Choose INT8; exporting it at {precision} throws the training away and usually fails outright."
+msgstr "„{run}“ wurde für INT8 trainiert, daher sind die Quantisierer bereits Teil des Modells. Wählen Sie INT8; ein Export mit {precision} macht dieses Training zunichte und schlägt meist sofort fehl."
+
+#: yolo_assistant/app/core/export.py:833
+msgid "{format} cannot carry an INT8 QAT model's quantisers. Export it as {formats}."
+msgstr "{format} kann die Quantisierer eines INT8-QAT-Modells nicht übernehmen. Exportieren Sie es als {formats}."
+
+#: yolo_assistant/app/core/export.py:851
+msgid "\"{name}\" already exists and will be replaced. Nothing else in the exports folder is touched."
+msgstr "„{name}“ existiert bereits und wird ersetzt. Sonst wird im Ordner exports nichts verändert."
+
+#: yolo_assistant/app/core/export.py:860
+msgid "A TensorRT engine is built for this exact GPU and driver. Copying it to another machine will not work -- export there instead."
+msgstr "Eine TensorRT-Engine wird für genau diese GPU und diesen Treiber erstellt. Auf einen anderen Computer kopiert, funktioniert sie nicht – exportieren Sie stattdessen dort."
+
+#: yolo_assistant/app/core/export.py:868
+msgid "The DeepStream settings only mean something to ONNX and TensorRT; {format} will ignore them."
+msgstr "Die DeepStream-Einstellungen sind nur für ONNX und TensorRT von Bedeutung; {format} ignoriert sie."
+
+#: yolo_assistant/app/core/export.py:877
+msgid "\"{key}\" is not a setting this version of the app knows about. If your Ultralytics does not know it either, the export will refuse it before it starts."
+msgstr "„{key}“ ist keine Einstellung, die diese Version der Anwendung kennt. Wenn auch Ihre Ultralytics-Version sie nicht kennt, lehnt der Export sie schon vor dem Start ab."
+
+#: yolo_assistant/app/core/export.py:894
+msgid "Nothing to export yet."
+msgstr "Noch nichts zu exportieren."
+
+#: yolo_assistant/app/core/export.py:896
+msgid "{checkpoint} -- choose a format."
+msgstr "{checkpoint} – wählen Sie ein Format."
+
+#: yolo_assistant/app/core/export.py:899
+msgid "{run} ({which}) to {format}, {precision}, {width}x{height} -> {output}"
+msgstr "{run} ({which}) nach {format}, {precision}, {width}x{height} -> {output}"
+
+#: yolo_assistant/app/core/export.py:960
+msgid "Height has to be between {low} and {high} pixels."
+msgstr "Die Höhe muss zwischen {low} und {high} Pixeln liegen."
+
+#: yolo_assistant/app/core/export.py:961
+msgid "Height has to be a multiple of {stride}. {value} is not -- the nearest that is, is {nearest}."
+msgstr "Die Höhe muss ein Vielfaches von {stride} sein. {value} ist es nicht – der nächstgelegene passende Wert ist {nearest}."
+
+#: yolo_assistant/app/core/export.py:965
+msgid "\"{run}\" was trained at {trained} pixels, so the height can be at most {trained}; {value} would only make it slower."
+msgstr "„{run}“ wurde mit {trained} Pixeln trainiert, daher darf die Höhe höchstens {trained} betragen; {value} würde es nur langsamer machen."
+
+#: yolo_assistant/app/core/export.py:971
+msgid "Width has to be between {low} and {high} pixels."
+msgstr "Die Breite muss zwischen {low} und {high} Pixeln liegen."
+
+#: yolo_assistant/app/core/export.py:972
+msgid "Width has to be a multiple of {stride}. {value} is not -- the nearest that is, is {nearest}."
+msgstr "Die Breite muss ein Vielfaches von {stride} sein. {value} ist es nicht – der nächstgelegene passende Wert ist {nearest}."
+
+#: yolo_assistant/app/core/export.py:976
+msgid "\"{run}\" was trained at {trained} pixels, so the width can be at most {trained}; {value} would only make it slower."
+msgstr "„{run}“ wurde mit {trained} Pixeln trainiert, daher darf die Breite höchstens {trained} betragen; {value} würde es nur langsamer machen."
+
+#: yolo_assistant/app/core/export.py:987
+msgid "{names} or {last}"
+msgstr "{names} oder {last}"
+
+#: yolo_assistant/app/core/inference.py:105
+msgid "The NVIDIA card in this machine. Usually five to twenty times faster, and what a TensorRT engine requires."
+msgstr "Die NVIDIA-Grafikkarte in diesem Computer. Meist fünf- bis zwanzigmal schneller und Voraussetzung für eine TensorRT-Engine."
+
+#: yolo_assistant/app/core/inference.py:113
+msgid "The processor. Slower, and the honest figure for a deployment machine with no graphics card."
+msgstr "Der Prozessor. Langsamer, aber der realistische Wert für einen Zielrechner ohne Grafikkarte."
+
+#: yolo_assistant/app/core/inference.py:165
+msgid "Runs on both, and is the format to test first when anything else misbehaves."
+msgstr "Läuft auf beiden und ist das Format, das Sie zuerst testen sollten, wenn etwas anderes nicht richtig funktioniert."
+
+#: yolo_assistant/app/core/inference.py:170
+msgid "Compiled for the exact GPU and driver that built it. There is no CPU version of a TensorRT engine."
+msgstr "Für genau die GPU und den Treiber kompiliert, mit denen die Engine erstellt wurde. Eine TensorRT-Engine gibt es nicht als CPU-Version."
+
+#: yolo_assistant/app/core/inference.py:177
+msgid "PyTorch itself runs it, so it works wherever this app does."
+msgstr "PyTorch selbst führt es aus, daher funktioniert es überall dort, wo auch diese Anwendung läuft."
+
+#: yolo_assistant/app/core/inference.py:183
+msgid "Intel's runtime. Its own 'GPU' means Intel integrated graphics, not the NVIDIA card this app's GPU button refers to, so it is tested on the CPU here."
+msgstr "Intels Laufzeitumgebung. Deren „GPU“ bezeichnet Intels integrierte Grafik, nicht die NVIDIA-Grafikkarte, auf die sich die GPU-Schaltfläche dieser Anwendung bezieht; deshalb wird es hier auf der CPU getestet."
+
+#: yolo_assistant/app/core/inference.py:192
+msgid "Built for phones and small boards. On a desktop it needs TensorFlow to run."
+msgstr "Für Smartphones und kleine Einplatinencomputer gedacht. Auf einem Desktop-PC wird zum Ausführen TensorFlow benötigt."
+
+#: yolo_assistant/app/core/inference.py:198 yolo_assistant/app/core/inference.py:204
+msgid "Needs TensorFlow, which this app does not install."
+msgstr "Benötigt TensorFlow, das diese Anwendung nicht installiert."
+
+#: yolo_assistant/app/core/inference.py:210
+msgid "Built for ARM phones. Running it here needs the ncnn package."
+msgstr "Für ARM-Smartphones gedacht. Um es hier auszuführen, wird das Paket ncnn benötigt."
+
+#: yolo_assistant/app/core/inference.py:216
+msgid "Apple's format. It can only be run on an Apple device."
+msgstr "Apples Format. Es lässt sich nur auf einem Apple-Gerät ausführen."
+
+#: yolo_assistant/app/core/inference.py:248
+msgid "Photo"
+msgstr "Foto"
+
+#: yolo_assistant/app/core/inference.py:249
+msgid "One still image, run once. The quickest way to find out whether the exported file works at all."
+msgstr "Ein einzelnes Standbild, einmal ausgewertet. Der schnellste Weg herauszufinden, ob die exportierte Datei überhaupt funktioniert."
+
+#: yolo_assistant/app/core/inference.py:256
+msgid "Video"
+msgstr "Video"
+
+#: yolo_assistant/app/core/inference.py:257
+msgid "A video file, frame by frame. The boxes are drawn onto a temporary copy of it, which plays at the video's own speed once every frame has been run."
+msgstr "Eine Videodatei, Frame für Frame. Die Boxen werden in eine temporäre Kopie eingezeichnet, die in der Originalgeschwindigkeit des Videos abgespielt wird, sobald alle Frames verarbeitet sind."
+
+#: yolo_assistant/app/core/inference.py:264
+msgid "Camera"
+msgstr "Kamera"
+
+#: yolo_assistant/app/core/inference.py:265
+msgid "A camera attached to this machine, live, until you stop it."
+msgstr "Eine an diesen Computer angeschlossene Kamera, live, bis Sie sie stoppen."
+
+#: yolo_assistant/app/core/inference.py:292
+msgid "Videos ({patterns});;All files (*)"
+msgstr "Videos ({patterns});;Alle Dateien (*)"
+
+#: yolo_assistant/app/core/inference.py:294
+msgid "Photos ({patterns});;All files (*)"
+msgstr "Fotos ({patterns});;Alle Dateien (*)"
+
+#: yolo_assistant/app/core/inference.py:320 worker/commands/cameras.py:147
+msgid "Camera {index}"
+msgstr "Kamera {index}"
+
+#: yolo_assistant/app/core/inference.py:358
+msgid "As the camera runs"
+msgstr "Wie die Kamera läuft"
+
+#: yolo_assistant/app/core/inference.py:493
+msgid "There is nothing to test yet. Export a model in Step 6, or copy an exported file into the project's exports folder."
+msgstr "Es gibt noch nichts zu testen. Exportieren Sie in Schritt 6 ein Modell oder kopieren Sie eine exportierte Datei in den Ordner exports des Projekts."
+
+#: yolo_assistant/app/core/inference.py:505
+msgid "Choose what to test the model on."
+msgstr "Wählen Sie, womit das Modell getestet werden soll."
+
+#: yolo_assistant/app/core/inference.py:510
+msgid "No camera was found. Connect one and press Refresh; a camera another application already has open cannot be used here."
+msgstr "Es wurde keine Kamera gefunden. Schließen Sie eine an und klicken Sie auf „Aktualisieren“; eine Kamera, die bereits von einer anderen Anwendung geöffnet ist, kann hier nicht verwendet werden."
+
+#: yolo_assistant/app/core/inference.py:518
+msgid "The confidence threshold has to be between {low:g} and {high:g}."
+msgstr "Die Konfidenzschwelle muss zwischen {low:g} und {high:g} liegen."
+
+#: yolo_assistant/app/core/inference.py:541
+msgid "{format} cannot run on the {device}. It runs on: {devices}."
+msgstr "{format} kann nicht auf {device} laufen. Es läuft auf: {devices}."
+
+#: yolo_assistant/app/core/inference.py:555
+msgid "Choose a video to run the model on."
+msgstr "Wählen Sie ein Video, auf dem das Modell laufen soll."
+
+#: yolo_assistant/app/core/inference.py:556
+msgid "Choose a photo to run the model on."
+msgstr "Wählen Sie ein Foto, auf dem das Modell laufen soll."
+
+#: yolo_assistant/app/core/inference.py:559
+msgid "{path} is not there any more. Choose another video."
+msgstr "{path} ist nicht mehr vorhanden. Wählen Sie ein anderes Video."
+
+#: yolo_assistant/app/core/inference.py:560
+msgid "{path} is not there any more. Choose another photo."
+msgstr "{path} ist nicht mehr vorhanden. Wählen Sie ein anderes Foto."
+
+#: yolo_assistant/app/core/inference.py:563
+msgid "{name} is a folder. Choose a single video file."
+msgstr "{name} ist ein Ordner. Wählen Sie eine einzelne Videodatei."
+
+#: yolo_assistant/app/core/inference.py:564
+msgid "{name} is a folder. Choose a single photo file."
+msgstr "{name} ist ein Ordner. Wählen Sie eine einzelne Fotodatei."
+
+#: yolo_assistant/app/core/inference.py:569
+msgid "\"{name}\" is not a video this app recognises. Expected one of: {expected}."
+msgstr "„{name}“ ist kein Video, das diese Anwendung erkennt. Erwartet wird eines der folgenden Formate: {expected}."
+
+#: yolo_assistant/app/core/inference.py:577
+msgid "\"{name}\" is not a photo this app recognises. Expected one of: {expected}."
+msgstr "„{name}“ ist kein Foto, das diese Anwendung erkennt. Erwartet wird eines der folgenden Formate: {expected}."
+
+#: yolo_assistant/app/core/inference.py:595 worker/commands/infer.py:1314
+msgid "\"{package}\""
+msgstr "„{package}“"
+
+#: yolo_assistant/app/core/inference.py:600
+msgid "Running {format} needs {packages}, which this app does not install. If the test fails to start, that is this machine rather than your model."
+msgstr "Zum Ausführen von {format} wird Software benötigt, die diese Anwendung nicht installiert: {packages}. Falls der Test nicht startet, liegt das an diesem Computer und nicht an Ihrem Modell."
+
+#: yolo_assistant/app/core/inference.py:610
+msgid "A TensorRT engine only runs on the GPU and driver that built it. If this one was exported elsewhere, it will not load."
+msgstr "Eine TensorRT-Engine läuft nur auf der GPU und mit dem Treiber, mit denen sie erstellt wurde. Wurde diese anderswo exportiert, lässt sie sich nicht laden."
+
+#: yolo_assistant/app/core/inference.py:622
+msgid "ONNX on the GPU needs onnxruntime's CUDA provider. If it is missing, onnxruntime quietly uses the processor instead -- the test says which it ended up on."
+msgstr "ONNX auf der GPU benötigt den CUDA-Provider von onnxruntime. Fehlt er, verwendet onnxruntime stillschweigend stattdessen den Prozessor – der Test zeigt an, worauf es letztlich lief."
+
+#: yolo_assistant/app/core/inference.py:631
+msgid "The camera runs until you press Stop. Nothing is recorded or saved."
+msgstr "Die Kamera läuft, bis Sie auf „Stoppen“ klicken. Es wird nichts aufgezeichnet oder gespeichert."
+
+#: yolo_assistant/app/core/inference.py:642
+msgid "Nothing to test yet."
+msgstr "Noch nichts zu testen."
+
+#: yolo_assistant/app/core/inference.py:651
+msgid "{model} on the {device} against a camera"
+msgstr "{model} auf {device}, Quelle: Kamera"
+
+#: yolo_assistant/app/core/inference.py:657 yolo_assistant/app/core/inference.py:663
+msgid "{model} on the {device} against {source}"
+msgstr "{model} auf {device}, Quelle: {source}"
+
+#: yolo_assistant/app/core/inference.py:669
+msgid "{model} on the {device} -- choose a video"
+msgstr "{model} auf {device} – wählen Sie ein Video"
+
+#: yolo_assistant/app/core/inference.py:671
+msgid "{model} on the {device} -- choose a photo"
+msgstr "{model} auf {device} – wählen Sie ein Foto"
+
+#: yolo_assistant/app/core/inference.py:672
+msgid "{model} on the {device}"
+msgstr "{model} auf {device}"
+
+#: yolo_assistant/app/core/inference.py:835
+msgid "All files (*)"
+msgstr "Alle Dateien (*)"
+
+#: yolo_assistant/app/core/inference.py:837
+msgid "Video (*{suffix});;All files (*)"
+msgstr "Video (*{suffix});;Alle Dateien (*)"
+
+#: yolo_assistant/app/core/inference.py:838
+msgid "Image (*{suffix});;All files (*)"
+msgstr "Bild (*{suffix});;Alle Dateien (*)"
+
+#: yolo_assistant/app/core/inference.py:927
+msgid "{items} and {last}"
+msgstr "{items} und {last}"
+
+#: yolo_assistant/app/core/job.py:185
+msgid "Could not bind a loopback port ({error}); falling back to stdout framing."
+msgstr "Loopback-Port konnte nicht geöffnet werden ({error}); stattdessen wird über stdout kommuniziert."
+
+#: yolo_assistant/app/core/job.py:246
+msgid "Could not start worker: {error}"
+msgstr "Worker-Prozess konnte nicht gestartet werden: {error}"
+
+#: yolo_assistant/app/core/job.py:276
+msgid "Cancelling..."
+msgstr "Wird abgebrochen..."
+
+#: yolo_assistant/app/core/job.py:328
+msgid "Rejected a worker connection with a bad token."
+msgstr "Verbindung eines Worker-Prozesses mit ungültigem Token abgelehnt."
+
+#: yolo_assistant/app/core/job.py:450
+msgid "{program} exited with code {code}."
+msgstr "{program} wurde mit Code {code} beendet."
+
+#: yolo_assistant/app/core/job.py:452
+msgid "Process"
+msgstr "Prozess"
+
+#: yolo_assistant/app/core/job.py:480
+msgid "The worker exited without reporting. This usually means a crash in a native library or the process was killed by the system (out of memory)."
+msgstr "Der Worker-Prozess wurde ohne Rückmeldung beendet. Meist bedeutet das einen Absturz in einer nativen Bibliothek, oder das System hat den Prozess beendet (Speicher voll)."
+
+#: yolo_assistant/app/core/job.py:486
+msgid "Worker exited with code {code}."
+msgstr "Worker-Prozess wurde mit Code {code} beendet."
+
+#: yolo_assistant/app/core/job.py:509
+msgid "Worker did not stop; signalling the process group."
+msgstr "Worker-Prozess hat nicht angehalten; Signal wird an die Prozessgruppe gesendet."
+
+#: yolo_assistant/app/core/job.py:529
+msgid "Worker still alive; killing the process tree."
+msgstr "Worker-Prozess läuft noch; der gesamte Prozessbaum wird beendet."
+
+#: yolo_assistant/app/core/job.py:545
+msgid "Worker did not connect within {seconds:.0f}s; continuing on stdout framing."
+msgstr "Worker-Prozess hat sich nicht innerhalb von {seconds:.0f} s verbunden; die Kommunikation läuft weiter über stdout."
+
+#: yolo_assistant/app/core/project.py:242
+msgid "No project selected yet."
+msgstr "Noch kein Projekt ausgewählt."
+
+#: yolo_assistant/app/core/project.py:249
+msgid "This folder holds a dataset that was never finished -- preparation was interrupted or cancelled. Preparing it again starts from a clean folder."
+msgstr "Dieser Ordner enthält einen Datensatz, der nie fertig wurde – die Vorbereitung wurde unterbrochen oder abgebrochen. Eine erneute Vorbereitung beginnt mit einem leeren Ordner."
+
+#: yolo_assistant/app/core/project.py:257
+msgid "No dataset has been prepared in this folder yet."
+msgstr "In diesem Ordner wurde noch kein Datensatz vorbereitet."
+
+#: yolo_assistant/app/core/project.py:264
+msgid "This dataset was prepared by a different version of the app and has to be prepared again before it can be used."
+msgstr "Dieser Datensatz wurde mit einer anderen Version der Anwendung vorbereitet und muss erneut vorbereitet werden, bevor er verwendet werden kann."
+
+#: yolo_assistant/app/core/project.py:278
+msgid "The dataset record is here but its photos are gone. Prepare the dataset again, or point the app at the folder they were moved to."
+msgstr "Die Angaben zum Datensatz sind vorhanden, aber die Fotos fehlen. Bereiten Sie den Datensatz erneut vor, oder geben Sie der Anwendung den Ordner an, in den sie verschoben wurden."
+
+#: yolo_assistant/app/core/project.py:294
+msgid "{counts} -- all labelled."
+msgstr "{counts} – alle beschriftet."
+
+#: yolo_assistant/app/core/project.py:296
+msgid "{counts} -- {labelled:,} labelled, {remaining:,} still to do."
+msgstr "{counts} – {labelled:,} beschriftet, {remaining:,} noch offen."
+
+#: yolo_assistant/app/core/project.py:335 worker/commands/prepare_dataset.py:544
+msgid "{n} photo(s) could not be read and were left out."
+msgid_plural "{n} photo(s) could not be read and were left out."
+msgstr[0] "{n} Foto konnte nicht gelesen werden und wurde ausgelassen."
+msgstr[1] "{n} Fotos konnten nicht gelesen werden und wurden ausgelassen."
+
+#: yolo_assistant/app/core/project.py:343 worker/commands/prepare_dataset.py:552
+msgid "{n} photo(s) were exact duplicates and were kept only once."
+msgid_plural "{n} photo(s) were exact duplicates and were kept only once."
+msgstr[0] "{n} Foto war ein exaktes Duplikat und wurde nur einmal übernommen."
+msgstr[1] "{n} Fotos waren exakte Duplikate und wurden nur einmal übernommen."
+
+#: yolo_assistant/app/core/project.py:351 worker/commands/prepare_dataset.py:560
+msgid "{n} photo(s) were incomplete and were repaired on the way in."
+msgid_plural "{n} photo(s) were incomplete and were repaired on the way in."
+msgstr[0] "{n} Foto war unvollständig und wurde beim Kopieren repariert."
+msgstr[1] "{n} Fotos waren unvollständig und wurden beim Kopieren repariert."
+
+#: yolo_assistant/app/core/project.py:359 worker/commands/prepare_dataset.py:568
+msgid "{n} photo(s) are smaller than {pixels} pixels; objects in them may be too small to learn."
+msgid_plural "{n} photo(s) are smaller than {pixels} pixels; objects in them may be too small to learn."
+msgstr[0] "{n} Foto ist kleiner als {pixels} Pixel; die Objekte darauf sind womöglich zu klein, als dass das Modell sie lernen könnte."
+msgstr[1] "{n} Fotos sind kleiner als {pixels} Pixel; die Objekte darauf sind womöglich zu klein, als dass das Modell sie lernen könnte."
+
+#: yolo_assistant/app/core/review.py:294
+msgid "{name} - no photos"
+msgstr "{name} - keine Fotos"
+
+#: yolo_assistant/app/core/review.py:297
+msgid ", {n:,} not labelled"
+msgid_plural ", {n:,} not labelled"
+msgstr[0] ", {n:,} nicht beschriftet"
+msgstr[1] ", {n:,} nicht beschriftet"
+
+#: yolo_assistant/app/core/review.py:299
+msgid ", nothing found in {n:,}"
+msgid_plural ", nothing found in {n:,}"
+msgstr[0] ", in {n:,} nichts gefunden"
+msgstr[1] ", in {n:,} nichts gefunden"
+
+#: yolo_assistant/app/core/review.py:341
+msgid "This dataset has no photos in it."
+msgstr "Dieser Datensatz enthält keine Fotos."
+
+#: yolo_assistant/app/core/review.py:343
+msgid "None of the {n:,} photos have been labelled yet."
+msgid_plural "None of the {n:,} photos have been labelled yet."
+msgstr[0] "{n:,} Foto ist noch nicht beschriftet."
+msgstr[1] "Keines der {n:,} Fotos wurde bisher beschriftet."
+
+#: yolo_assistant/app/core/review.py:349
+msgid "{found:,} of {n:,} photos have boxes"
+msgid_plural "{found:,} of {n:,} photos have boxes"
+msgstr[0] "Fotos mit Boxen: {found:,} von {n:,}"
+msgstr[1] "Fotos mit Boxen: {found:,} von {n:,}"
+
+#: yolo_assistant/app/core/review.py:356
+msgid "; nothing was found in {empty:,}"
+msgstr "; in {empty:,} wurde nichts gefunden"
+
+#: yolo_assistant/app/core/review.py:358
+msgid "; {n:,} were never labelled"
+msgid_plural "; {n:,} were never labelled"
+msgstr[0] "; {n:,} wurde nie beschriftet"
+msgstr[1] "; {n:,} wurden nie beschriftet"
+
+#: yolo_assistant/app/core/review.py:371
+msgid "Nothing was found in {empty:,} of \"{name}\"'s {n:,} photos ({share:.0%}). Its description probably does not match what is in them -- change it in Step 3 and label that class again."
+msgid_plural "Nothing was found in {empty:,} of \"{name}\"'s {n:,} photos ({share:.0%}). Its description probably does not match what is in them -- change it in Step 3 and label that class again."
+msgstr[0] "Auf {empty:,} von {n:,} Foto der Klasse „{name}“ wurde nichts gefunden ({share:.0%}). Ihre Beschreibung passt wahrscheinlich nicht zu dem, was darauf zu sehen ist – ändern Sie sie in Schritt 3 und beschriften Sie diese Klasse erneut."
+msgstr[1] "Auf {empty:,} von {n:,} Fotos der Klasse „{name}“ wurde nichts gefunden ({share:.0%}). Ihre Beschreibung passt wahrscheinlich nicht zu dem, was darauf zu sehen ist – ändern Sie sie in Schritt 3 und beschriften Sie diese Klasse erneut."
+
+#: yolo_assistant/app/core/runtime.py:75
+msgid "The Python environment this app uses has not been set up yet. Finish Step 1 first."
+msgstr "Die Python-Umgebung, die diese Anwendung verwendet, ist noch nicht eingerichtet. Schließen Sie zuerst Schritt 1 ab."
+
+#: yolo_assistant/app/core/runtime.py:110
+msgid "No managed Python environment."
+msgstr "Keine verwaltete Python-Umgebung."
+
+#: yolo_assistant/app/core/runtime.py:112
+msgid "Using {python} (from {variable})."
+msgstr "{python} wird verwendet (aus {variable})."
+
+#: yolo_assistant/app/core/runtime.py:113
+msgid "Using the managed environment at {python}."
+msgstr "Die verwaltete Umgebung wird verwendet: {python}."
+
+#: yolo_assistant/app/core/telemetry.py:98
+msgid "No NVIDIA driver detected ({error})."
+msgstr "Kein NVIDIA-Treiber erkannt ({error})."
+
+#: yolo_assistant/app/core/telemetry.py:104
+msgid "No NVIDIA GPU found."
+msgstr "Keine NVIDIA-GPU gefunden."
+
+#: yolo_assistant/app/core/telemetry.py:114
+msgid "Telemetry read failed ({error})."
+msgstr "Telemetrie konnte nicht gelesen werden ({error})."
+
+#: yolo_assistant/app/core/training.py:112
+msgid ""
+"{note}\n"
+"{params_m:g}M parameters, {coco_map:g} mAP50-95 on COCO before any of your own training."
+msgstr ""
+"{note}\n"
+"{params_m:g} Mio. Parameter, {coco_map:g} mAP50-95 auf COCO – noch vor jedem eigenen Training."
+
+#: yolo_assistant/app/core/training.py:139
+msgid "fastest, smallest, no NMS. Start here."
+msgstr "am schnellsten, am kleinsten, ohne NMS. Beginnen Sie hier."
+
+#: yolo_assistant/app/core/training.py:140
+msgid "no NMS; a good default once n works."
+msgstr "ohne NMS; eine gute Standardwahl, sobald n funktioniert."
+
+#: yolo_assistant/app/core/training.py:141
+msgid "no NMS; noticeably slower to train."
+msgstr "ohne NMS; trainiert merklich langsamer."
+
+#: yolo_assistant/app/core/training.py:142
+msgid "no NMS; wants a card with room to spare."
+msgstr "ohne NMS; braucht eine Grafikkarte mit reichlich Speicher."
+
+#: yolo_assistant/app/core/training.py:143
+msgid "no NMS; the most accurate, and the slowest."
+msgstr "ohne NMS; am genauesten und am langsamsten."
+
+#: yolo_assistant/app/core/training.py:144
+msgid "previous generation; fastest, smallest."
+msgstr "vorherige Generation; am schnellsten, am kleinsten."
+
+#: yolo_assistant/app/core/training.py:145
+msgid "previous generation; a good all-rounder."
+msgstr "vorherige Generation; ein guter Allrounder."
+
+#: yolo_assistant/app/core/training.py:146
+msgid "previous generation; slower to train."
+msgstr "vorherige Generation; trainiert langsamer."
+
+#: yolo_assistant/app/core/training.py:147
+msgid "previous generation; wants a bigger card."
+msgstr "vorherige Generation; braucht eine größere Grafikkarte."
+
+#: yolo_assistant/app/core/training.py:148
+msgid "previous generation; the slowest of them."
+msgstr "vorherige Generation; der langsamste von ihnen."
+
+#: yolo_assistant/app/core/training.py:149 yolo_assistant/app/core/training.py:150 yolo_assistant/app/core/training.py:151
+msgid "older; pick it if your deployment needs v8."
+msgstr "älter; wählen Sie ihn, wenn Ihr Einsatzziel v8 erfordert."
+
+#: yolo_assistant/app/core/training.py:252
+msgid "\"{item}\" is not a setting. Each one is a name, an equals sign and a value, like \"batch=8\"."
+msgstr "„{item}“ ist keine Einstellung. Jede Einstellung besteht aus einem Namen, einem Gleichheitszeichen und einem Wert, z. B. „batch=8“."
+
+#: yolo_assistant/app/core/training.py:272
+msgid "\"{key}\" is set by the app and cannot be changed here -- it decides what is trained, on what, and where the results go."
+msgstr "„{key}“ wird von der Anwendung festgelegt und kann hier nicht geändert werden – davon hängt ab, was trainiert wird, mit welchen Daten und wohin die Ergebnisse geschrieben werden."
+
+#: yolo_assistant/app/core/training.py:349
+msgid "{name} - started, but no weights were saved"
+msgstr "{name} - gestartet, aber keine Gewichte gespeichert"
+
+#: yolo_assistant/app/core/training.py:351
+msgid "{name} - finished"
+msgstr "{name} - abgeschlossen"
+
+#: yolo_assistant/app/core/training.py:353
+msgid "{name} - stopped part-way"
+msgstr "{name} - vorzeitig gestoppt"
+
+#: yolo_assistant/app/core/training.py:355
+msgid ", {n} epoch"
+msgid_plural ", {n} epochs"
+msgstr[0] ", {n} Epoche"
+msgstr[1] ", {n} Epochen"
+
+#: yolo_assistant/app/core/training.py:357
+msgid ", best mAP50-95 {fitness:.4f}"
+msgstr ", bester mAP50-95 {fitness:.4f}"
+
+#: yolo_assistant/app/core/training.py:462
+msgid "Give this run a name; its results are written to a folder of that name."
+msgstr "Geben Sie diesem Durchlauf einen Namen; seine Ergebnisse werden in einen gleichnamigen Ordner geschrieben."
+
+#: yolo_assistant/app/core/training.py:464
+msgid "A run name cannot contain any of  < > : \" / \\ | ? *  -- it has to work as a folder name."
+msgstr "Ein Durchlaufname darf keines dieser Zeichen enthalten:  < > : \" / \\ | ? *  – er muss als Ordnername taugen."
+
+#: yolo_assistant/app/core/training.py:469
+msgid "A run name cannot start or end with a space or a full stop."
+msgstr "Ein Durchlaufname darf nicht mit einem Leerzeichen oder einem Punkt beginnen oder enden."
+
+#: yolo_assistant/app/core/training.py:471
+msgid "\"{name}\" is a name Windows reserves for a device. Pick another."
+msgstr "„{name}“ ist ein Name, den Windows für ein Gerät reserviert. Wählen Sie einen anderen."
+
+#: yolo_assistant/app/core/training.py:473
+msgid "That name is too long; keep it under 100 characters."
+msgstr "Dieser Name ist zu lang; er muss kürzer als 100 Zeichen sein."
+
+#: yolo_assistant/app/core/training.py:541
+msgid "{n:,} photo(s) still have no labels. Finish autolabeling in Step 3 first -- a photo with no label file is not in the training set."
+msgid_plural "{n:,} photo(s) still have no labels. Finish autolabeling in Step 3 first -- a photo with no label file is not in the training set."
+msgstr[0] "{n:,} Foto hat noch keine Labels. Schließen Sie zuerst das automatische Beschriften in Schritt 3 ab – ein Foto ohne Label-Datei kommt nicht in die Trainingsdaten."
+msgstr[1] "{n:,} Fotos haben noch keine Labels. Schließen Sie zuerst das automatische Beschriften in Schritt 3 ab – ein Foto ohne Label-Datei kommt nicht in die Trainingsdaten."
+
+#: yolo_assistant/app/core/training.py:550
+msgid "Choose a model to start training from."
+msgstr "Wählen Sie ein Modell, von dem aus trainiert werden soll."
+
+#: yolo_assistant/app/core/training.py:558
+msgid "The number of epochs has to be between {low} and {high:,}."
+msgstr "Die Anzahl der Epochen muss zwischen {low} und {high:,} liegen."
+
+#: yolo_assistant/app/core/training.py:568
+msgid "The image size has to be between {low} and {high} pixels."
+msgstr "Die Bildgröße muss zwischen {low} und {high} Pixeln liegen."
+
+#: yolo_assistant/app/core/training.py:576
+msgid "The image size has to be a multiple of {stride}. {value} is not -- the nearest that is, is {nearest}."
+msgstr "Die Bildgröße muss ein Vielfaches von {stride} sein; {value} ist es nicht – der nächstgelegene Wert ist {nearest}."
+
+#: yolo_assistant/app/core/training.py:594
+msgid "\"{name}\" already holds a trained model. Starting this run replaces it -- rename this one to keep both."
+msgstr "„{name}“ enthält bereits ein trainiertes Modell. Wenn Sie diesen Durchlauf starten, wird es ersetzt – benennen Sie diesen Durchlauf um, um beide zu behalten."
+
+#: yolo_assistant/app/core/training.py:602
+msgid "\"{name}\" already exists as a folder, left over from a run that saved nothing. Its contents will be replaced."
+msgstr "„{name}“ existiert bereits als Ordner, übrig von einem Durchlauf, der nichts gespeichert hat. Sein Inhalt wird ersetzt."
+
+#: yolo_assistant/app/core/training.py:610
+msgid "A model trained this way has to be exported as INT8 in Step 6; FP16 and FP32 will be refused. Training is also a little slower, because mixed precision is switched off for the run."
+msgstr "Ein so trainiertes Modell muss in Schritt 6 als INT8 exportiert werden; FP16 und FP32 werden abgelehnt. Außerdem ist das Training etwas langsamer, weil die gemischte Präzision für diesen Durchlauf abgeschaltet wird."
+
+#: yolo_assistant/app/core/training.py:618
+msgid "\"{key}\" is not a setting this version of the app knows about. If your Ultralytics does not know it either, the run will refuse it before training starts."
+msgstr "„{key}“ ist keine Einstellung, die diese Version der Anwendung kennt. Falls auch Ihre Ultralytics-Version sie nicht kennt, wird der Durchlauf sie vor Trainingsbeginn ablehnen."
+
+#: yolo_assistant/app/core/training.py:635
+msgid "in {n} class"
+msgid_plural "in {n} classes"
+msgstr[0] "in {n} Klasse"
+msgstr[1] "in {n} Klassen"
+
+#: yolo_assistant/app/core/training.py:637
+msgid "{n:,} photos {in_classes} -- but not all of them are labelled yet."
+msgid_plural "{n:,} photos {in_classes} -- but not all of them are labelled yet."
+msgstr[0] "{n:,} Foto {in_classes} – aber es ist noch nicht beschriftet."
+msgstr[1] "{n:,} Fotos {in_classes} – aber noch nicht alle sind beschriftet."
+
+#: yolo_assistant/app/core/training.py:645
+msgid "{model} on {n:,} photos {in_classes}, {epochs} at {imgsz} pixels."
+msgid_plural "{model} on {n:,} photos {in_classes}, {epochs} at {imgsz} pixels."
+msgstr[0] "{model} mit {n:,} Foto {in_classes}, {epochs} bei {imgsz} Pixeln."
+msgstr[1] "{model} mit {n:,} Fotos {in_classes}, {epochs} bei {imgsz} Pixeln."
+
+#: yolo_assistant/app/core/training.py:651
+msgid "{n} epoch"
+msgid_plural "{n} epochs"
+msgstr[0] "{n} Epoche"
+msgstr[1] "{n} Epochen"
+
+#: yolo_assistant/app/core/updates.py:64
+msgid "Could not check for updates: {error}"
+msgstr "Suche nach Aktualisierungen fehlgeschlagen: {error}"
+
+#: yolo_assistant/app/core/updates.py:66
+msgid "Set up the environment before checking for updates."
+msgstr "Richten Sie die Umgebung ein, bevor Sie nach Aktualisierungen suchen."
+
+#: yolo_assistant/app/core/updates.py:68
+msgid "Ultralytics {installed} is the newest release."
+msgstr "Ultralytics {installed} ist die neueste Version."
+
+#: yolo_assistant/app/core/updates.py:70
+msgid "Ultralytics {latest} is available (currently {installed})."
+msgstr "Ultralytics {latest} ist verfügbar (derzeit {installed})."
+
+#: yolo_assistant/app/core/updates.py:75
+msgid "Ultralytics {latest} is available (currently {installed}), but it is outside the range this app was tested with ({tested}). Updating may break training or export."
+msgstr "Ultralytics {latest} ist verfügbar (derzeit {installed}), liegt aber außerhalb des Bereichs, mit dem diese Anwendung getestet wurde ({tested}). Eine Aktualisierung kann zu Fehlern bei Training oder Export führen."
+
+#: yolo_assistant/app/main.py:81
+msgid "Start the app again"
+msgstr "App neu starten"
+
+#: yolo_assistant/app/main.py:82
+msgid ""
+"Windows started this window with a restriction that stops it from running its own Python, so setup, autolabeling and training would all fail. This happens when the app is opened from the last page of an older installer.\n"
+"\n"
+"Close this window and open YOLO Assistant from the Start menu."
+msgstr ""
+"Windows hat dieses Fenster mit einer Einschränkung gestartet, die es daran hindert, sein eigenes Python auszuführen; Einrichtung, automatische Beschriftung und Training würden daher alle fehlschlagen. Das passiert, wenn die App von der letzten Seite eines älteren Installationsprogramms aus geöffnet wird.\n"
+"\n"
+"Schließen Sie dieses Fenster und öffnen Sie YOLO Assistant über das Startmenü."
+
+#: yolo_assistant/app/ui/common/doc_link.py:24
+msgid "Opens {url} in your web browser: every setting Ultralytics accepts on this step, including the ones you can type into Additional settings."
+msgstr "Öffnet {url} in Ihrem Webbrowser: alle Einstellungen, die Ultralytics in diesem Schritt akzeptiert, einschließlich derer, die Sie unter „Weitere Einstellungen“ eingeben können."
+
+#: yolo_assistant/app/ui/common/image_canvas.py:160
+msgid "No photo to show."
+msgstr "Kein Foto zum Anzeigen."
+
+#: yolo_assistant/app/ui/common/meters.py:55
+msgid "not supported"
+msgstr "nicht unterstützt"
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:54
+msgid "The headline accuracy figure, averaged over ten strictnesses of overlap. This is the number to watch: if it has stopped rising, more epochs will not help. It is also what Ultralytics ranks epochs by, so the epoch with the highest is the one saved as best.pt."
+msgstr "Die zentrale Genauigkeitskennzahl, gemittelt über zehn unterschiedlich strenge Überlappungsschwellen. Auf diese Zahl sollten Sie achten: Steigt sie nicht mehr, helfen weitere Epochen nicht. Nach ihr bewertet Ultralytics auch die Epochen, daher wird die Epoche mit dem höchsten Wert als best.pt gespeichert."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:64
+msgid "Accuracy counting a box as correct when it overlaps the true one by half. Always higher than mAP50-95, and more forgiving about exactly where the box sits."
+msgstr "Genauigkeit, bei der eine Box als richtig gilt, wenn sie die tatsächliche Box zur Hälfte überlappt. Immer höher als mAP50-95 und nachsichtiger, was die genaue Lage der Box angeht."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:73
+msgid "Of the objects the model reported, the share that were really there. Low precision means it is inventing detections."
+msgstr "Der Anteil der vom Modell gemeldeten Objekte, die tatsächlich vorhanden waren. Eine niedrige Präzision bedeutet, dass das Modell Erkennungen erfindet."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:81
+msgid "Of the objects that were there, the share the model found. Low recall means it is missing them."
+msgstr "Der Anteil der tatsächlich vorhandenen Objekte, die das Modell gefunden hat. Ein niedriger Recall bedeutet, dass es Objekte übersieht."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:88 yolo_assistant/app/ui/steps/demo_step.py:51
+msgid "Box loss"
+msgstr "Box-Verlust"
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:89
+msgid "How far the predicted boxes are from the true ones, on the training photos. It should fall and then flatten."
+msgstr "Wie weit die vorhergesagten Boxen auf den Trainingsfotos von den tatsächlichen abweichen. Der Wert sollte sinken und dann abflachen."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:96
+msgid "Class loss"
+msgstr "Klassen-Verlust"
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:97
+msgid "How wrong the model is about which class each object belongs to, on the training photos."
+msgstr "Wie sehr sich das Modell auf den Trainingsfotos darin irrt, zu welcher Klasse jedes Objekt gehört."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:115
+msgid "Results"
+msgstr "Ergebnisse"
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:121
+msgid "Metric"
+msgstr "Kennzahl"
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:121
+msgid "Last epoch"
+msgstr "Letzte Epoche"
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:121
+msgid "Best epoch"
+msgstr "Beste Epoche"
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:148 yolo_assistant/app/ui/common/metrics_panel.py:196
+msgid "No epoch has finished yet."
+msgstr "Noch keine Epoche abgeschlossen."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:200
+msgid "Epoch {epoch} of {total} finished."
+msgstr "Epoche {epoch} von {total} abgeschlossen."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:207
+msgid "Epoch {epoch} finished."
+msgstr "Epoche {epoch} abgeschlossen."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:210
+msgid "The best so far was epoch {best}, {n} epoch ago."
+msgid_plural "The best so far was epoch {best}, {n} epochs ago."
+msgstr[0] "Die bisher beste Epoche war {best}, vor {n} Epoche."
+msgstr[1] "Die bisher beste Epoche war {best}, vor {n} Epochen."
+
+#: yolo_assistant/app/ui/common/metrics_panel.py:218
+msgid "It is the best so far."
+msgstr "Sie ist die bisher beste."
+
+#: yolo_assistant/app/ui/common/preview_canvas.py:36 yolo_assistant/app/ui/steps/inference_step.py:378 yolo_assistant/app/ui/steps/inference_step.py:659
+msgid "Nothing has been run yet."
+msgstr "Es wurde noch nichts ausgeführt."
+
+#: yolo_assistant/app/ui/common/progress_header.py:28
+msgid "Preparing"
+msgstr "Vorbereitung"
+
+#: yolo_assistant/app/ui/common/progress_header.py:29
+msgid "Downloading"
+msgstr "Herunterladen"
+
+#: yolo_assistant/app/ui/common/progress_header.py:30
+msgid "Warming up"
+msgstr "Aufwärmen"
+
+#: yolo_assistant/app/ui/common/progress_header.py:31 yolo_assistant/app/ui/steps/train_step.py:62 yolo_assistant/app/ui/steps/train_step.py:91
+msgid "Training"
+msgstr "Training"
+
+#: yolo_assistant/app/ui/common/progress_header.py:32
+msgid "Validating"
+msgstr "Validierung"
+
+#: yolo_assistant/app/ui/common/progress_header.py:33
+msgid "Final validation"
+msgstr "Abschließende Validierung"
+
+#: yolo_assistant/app/ui/common/progress_header.py:34
+msgid "Exporting"
+msgstr "Export"
+
+#: yolo_assistant/app/ui/common/progress_header.py:35
+msgid "Running inference"
+msgstr "Modell wird ausgeführt"
+
+#: yolo_assistant/app/ui/common/progress_header.py:36
+msgid "Preparing images"
+msgstr "Bilder werden vorbereitet"
+
+#: yolo_assistant/app/ui/common/progress_header.py:37
+msgid "Labelling"
+msgstr "Beschriften"
+
+#: yolo_assistant/app/ui/common/progress_header.py:53
+msgid "Idle"
+msgstr "Bereit"
+
+#: yolo_assistant/app/ui/common/progress_header.py:87
+msgid "Starting..."
+msgstr "Wird gestartet..."
+
+#: yolo_assistant/app/ui/common/progress_header.py:104
+msgid "Working"
+msgstr "In Arbeit"
+
+#: yolo_assistant/app/ui/common/progress_header.py:133
+msgid "Elapsed {duration}"
+msgstr "Vergangen: {duration}"
+
+#: yolo_assistant/app/ui/common/progress_header.py:138
+msgid "remaining {duration}"
+msgstr "verbleibend: {duration}"
+
+#: yolo_assistant/app/ui/common/progress_header.py:148
+msgid "{hours}h {minutes:02d}m"
+msgstr "{hours} Std. {minutes:02d} Min."
+
+#: yolo_assistant/app/ui/common/progress_header.py:150 worker/commands/export.py:507
+msgid "{minutes}m {seconds:02d}s"
+msgstr "{minutes} Min. {seconds:02d} s"
+
+#: yolo_assistant/app/ui/common/progress_header.py:151 worker/commands/export.py:508
+msgid "{seconds}s"
+msgstr "{seconds} s"
+
+#: yolo_assistant/app/ui/common/progress_header.py:161
+msgid "{n} photos"
+msgid_plural "{n} photos"
+msgstr[0] "{n} Foto"
+msgstr[1] "{n} Fotos"
+
+#: yolo_assistant/app/ui/common/progress_header.py:163
+msgid "{n} steps"
+msgid_plural "{n} steps"
+msgstr[0] "{n} Schritt"
+msgstr[1] "{n} Schritte"
+
+#: yolo_assistant/app/ui/common/progress_header.py:165
+msgid "{n} checks"
+msgid_plural "{n} checks"
+msgstr[0] "{n} Prüfung"
+msgstr[1] "{n} Prüfungen"
+
+#: yolo_assistant/app/ui/common/progress_header.py:167
+msgid "{n} batches"
+msgid_plural "{n} batches"
+msgstr[0] "{n} Batch"
+msgstr[1] "{n} Batches"
+
+#: yolo_assistant/app/ui/common/progress_header.py:169
+msgid "{n} devices"
+msgid_plural "{n} devices"
+msgstr[0] "{n} Gerät"
+msgstr[1] "{n} Geräte"
+
+#: yolo_assistant/app/ui/common/progress_header.py:171
+msgid "{n} epochs"
+msgid_plural "{n} epochs"
+msgstr[0] "{n} Epoche"
+msgstr[1] "{n} Epochen"
+
+#: yolo_assistant/app/ui/common/progress_header.py:173
+msgid "{n} frames"
+msgid_plural "{n} frames"
+msgstr[0] "{n} Frame"
+msgstr[1] "{n} Frames"
+
+#: yolo_assistant/app/ui/common/progress_header.py:175
+msgid "{n} files"
+msgid_plural "{n} files"
+msgstr[0] "{n} Datei"
+msgstr[1] "{n} Dateien"
+
+#: yolo_assistant/app/ui/common/progress_header.py:177
+msgid "{n} packages"
+msgid_plural "{n} packages"
+msgstr[0] "{n} Paket"
+msgstr[1] "{n} Pakete"
+
+#: yolo_assistant/app/ui/common/progress_header.py:179
+msgid "{n} items"
+msgid_plural "{n} items"
+msgstr[0] "{n} Element"
+msgstr[1] "{n} Elemente"
+
+#: yolo_assistant/app/ui/common/speed_panel.py:36
+msgid "This frame"
+msgstr "Dieser Frame"
+
+#: yolo_assistant/app/ui/common/speed_panel.py:38
+msgid "How long the model itself took on the frame on screen. This is the number the specification asks for, and the one that moves about most."
+msgstr "Wie lange das Modell selbst für den angezeigten Frame gebraucht hat. Das ist der Wert, den die Spezifikation verlangt, und derjenige, der am stärksten schwankt."
+
+#: yolo_assistant/app/ui/common/speed_panel.py:45
+msgid "Average"
+msgstr "Durchschnitt"
+
+#: yolo_assistant/app/ui/common/speed_panel.py:47
+msgid "The mean over every frame measured so far, and the figure worth quoting. Getting the model ready is not counted in it."
+msgstr "Der Mittelwert über alle bisher gemessenen Frames – der Wert, den man angeben sollte. Die Vorbereitung des Modells ist darin nicht enthalten."
+
+#: yolo_assistant/app/ui/common/speed_panel.py:54
+msgid "Slowest 5%"
+msgstr "Langsamste 5 %"
+
+#: yolo_assistant/app/ui/common/speed_panel.py:56
+msgid "Nineteen frames out of twenty were faster than this. It is what decides whether a live feed keeps up, which the average alone cannot tell you."
+msgstr "Neunzehn von zwanzig Frames waren schneller als dieser Wert. Er entscheidet darüber, ob ein Live-Bild mithält – was der Durchschnitt allein nicht verrät."
+
+#: yolo_assistant/app/ui/common/speed_panel.py:63
+msgid "Frames a second"
+msgstr "Frames pro Sekunde"
+
+#: yolo_assistant/app/ui/common/speed_panel.py:65
+msgid "The end-to-end rate, including reading and decoding each frame. Always lower than the inference time alone suggests, and what you actually see."
+msgstr "Die Gesamtrate einschließlich Lesen und Dekodieren jedes Frames. Immer niedriger, als die reine Rechenzeit des Modells vermuten lässt – und das, was Sie tatsächlich sehen."
+
+#: yolo_assistant/app/ui/common/speed_panel.py:77
+msgid "Speed"
+msgstr "Geschwindigkeit"
+
+#: yolo_assistant/app/ui/common/status_row.py:69
+msgid "Checking..."
+msgstr "Wird geprüft..."
+
+#: yolo_assistant/app/ui/common/telemetry_panel.py:34
+msgid "Starting telemetry..."
+msgstr "Telemetrie wird gestartet..."
+
+#: yolo_assistant/app/ui/common/telemetry_panel.py:37
+msgid "Utilisation"
+msgstr "Auslastung"
+
+#: yolo_assistant/app/ui/common/telemetry_panel.py:38
+msgid "VRAM"
+msgstr "VRAM"
+
+#: yolo_assistant/app/ui/common/telemetry_panel.py:39
+msgid "Power"
+msgstr "Leistungsaufnahme"
+
+#: yolo_assistant/app/ui/common/telemetry_panel.py:40
+msgid "Temperature"
+msgstr "Temperatur"
+
+#: yolo_assistant/app/ui/common/telemetry_panel.py:71
+msgid "{name} - driver {driver}, CUDA {cuda}, compute {capability}"
+msgstr "{name} - Treiber {driver}, CUDA {cuda}, Compute {capability}"
+
+#: yolo_assistant/app/ui/common/telemetry_panel.py:89
+msgid "{used:.2f} / {total:.2f} GB"
+msgstr "{used:.2f} / {total:.2f} GB"
+
+#: yolo_assistant/app/ui/common/video_player.py:63 yolo_assistant/app/ui/common/video_player.py:133
+msgid "Pause"
+msgstr "Pause"
+
+#: yolo_assistant/app/ui/common/video_player.py:133
+msgid "Play"
+msgstr "Abspielen"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:63
+msgid "Autolabeling"
+msgstr "Automatisches Beschriften"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:64
+msgid "Describe what to look for in each class, in plain English, and OWLv2 finds it and draws the boxes. It runs on your own GPU; nothing leaves this computer."
+msgstr "Beschreiben Sie für jede Klasse in einfachem Englisch, wonach gesucht werden soll; OWLv2 findet es und zeichnet die Boxen. Es läuft auf Ihrer eigenen GPU; nichts verlässt diesen Computer."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:94 yolo_assistant/app/ui/steps/verify_step.py:132
+msgid "Classes"
+msgstr "Klassen"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:107
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:113 yolo_assistant/app/ui/steps/export_step.py:95 yolo_assistant/app/ui/steps/inference_step.py:141 yolo_assistant/app/ui/steps/train_step.py:100
+msgid "Model"
+msgstr "Modell"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:120 yolo_assistant/app/ui/steps/inference_step.py:175
+msgid "Confidence needed"
+msgstr "Erforderliche Konfidenz"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:126
+msgid "Most boxes per photo"
+msgstr "Höchstzahl an Boxen pro Foto"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:129
+msgid "Label everything again, replacing existing labels"
+msgstr "Alles neu beschriften und vorhandene Labels ersetzen"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:130
+msgid "Redo"
+msgstr "Neu beschriften"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:132 yolo_assistant/app/ui/steps/verify_step.py:190
+msgid "Labels"
+msgstr "Labels"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:134 yolo_assistant/app/ui/steps/autolabel_step.py:390
+msgid "Start autolabeling"
+msgstr "Automatisches Beschriften starten"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:136 yolo_assistant/app/ui/steps/dataset_step.py:157 yolo_assistant/app/ui/steps/demo_step.py:109 yolo_assistant/app/ui/steps/system_step.py:167
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:172 yolo_assistant/app/ui/steps/dataset_step.py:193
+msgid "Class"
+msgstr "Klasse"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:172 yolo_assistant/app/ui/steps/dataset_step.py:108 yolo_assistant/app/ui/steps/dataset_step.py:193
+msgid "Photos"
+msgstr "Fotos"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:172
+msgid "Labelled"
+msgstr "Beschriftet"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:172
+msgid "What to look for"
+msgstr "Wonach suchen"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:213
+msgid "No output for {quiet:.0f}s -- the model may be stuck."
+msgstr "Seit {quiet:.0f} s keine Ausgabe – das Modell hängt möglicherweise."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:305
+msgid "all"
+msgstr "alle"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:352
+msgid "All {n:,} photos have labels. Step 4 lets you check them, or you can go straight to Step 5."
+msgid_plural "All {n:,} photos have labels. Step 4 lets you check them, or you can go straight to Step 5."
+msgstr[0] "{n:,} Foto ist beschriftet. In Schritt 4 können Sie es prüfen, oder Sie gehen direkt zu Schritt 5."
+msgstr[1] "Alle {n:,} Fotos sind beschriftet. In Schritt 4 können Sie sie prüfen, oder Sie gehen direkt zu Schritt 5."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:363
+msgid "{labelled:,} of {n:,} photos are labelled."
+msgid_plural "{labelled:,} of {n:,} photos are labelled."
+msgstr[0] "Beschriftete Fotos: {labelled:,} von {n:,}."
+msgstr[1] "Beschriftete Fotos: {labelled:,} von {n:,}."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:370
+msgid "{n:,} still to do."
+msgid_plural "{n:,} still to do."
+msgstr[0] "{n:,} ist noch offen."
+msgstr[1] "{n:,} sind noch offen."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:379
+msgid "None of the {n:,} photos are labelled yet."
+msgid_plural "None of the {n:,} photos are labelled yet."
+msgstr[0] "{n:,} Foto ist noch nicht beschriftet."
+msgstr[1] "Keines der {n:,} Fotos ist bisher beschriftet."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:392
+msgid "Label {n:,} photos"
+msgid_plural "Label {n:,} photos"
+msgstr[0] "{n:,} Foto beschriften"
+msgstr[1] "{n:,} Fotos beschriften"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:428
+msgid "Loading the model..."
+msgstr "Modell wird geladen..."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:447 yolo_assistant/app/ui/steps/dataset_step.py:415 yolo_assistant/app/ui/steps/export_step.py:446 yolo_assistant/app/ui/steps/inference_step.py:584
+msgid "Not started"
+msgstr "Nicht gestartet"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:448 yolo_assistant/app/ui/steps/dataset_step.py:416 yolo_assistant/app/ui/steps/export_step.py:447 yolo_assistant/app/ui/steps/inference_step.py:585
+msgid "Environment not ready"
+msgstr "Umgebung nicht bereit"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:461
+msgid "Label everything again"
+msgstr "Alles neu beschriften"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:462
+msgid ""
+"{n:,} label file(s) already exist and will be replaced, including any corrections you made in Step 4.\n"
+"\n"
+"Your photos are not touched.\n"
+"\n"
+"Continue?"
+msgid_plural ""
+"{n:,} label file(s) already exist and will be replaced, including any corrections you made in Step 4.\n"
+"\n"
+"Your photos are not touched.\n"
+"\n"
+"Continue?"
+msgstr[0] ""
+"{n:,} Label-Datei existiert bereits und wird ersetzt, einschließlich aller Korrekturen, die Sie in Schritt 4 vorgenommen haben.\n"
+"\n"
+"Ihre Fotos bleiben unverändert.\n"
+"\n"
+"Fortfahren?"
+msgstr[1] ""
+"{n:,} Label-Dateien existieren bereits und werden ersetzt, einschließlich aller Korrekturen, die Sie in Schritt 4 vorgenommen haben.\n"
+"\n"
+"Ihre Fotos bleiben unverändert.\n"
+"\n"
+"Fortfahren?"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:481
+msgid "Labelling..."
+msgstr "Wird beschriftet..."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:483 yolo_assistant/app/ui/steps/autolabel_step.py:484 yolo_assistant/app/ui/steps/dataset_step.py:468 yolo_assistant/app/ui/steps/dataset_step.py:469
+msgid "Stopping..."
+msgstr "Wird gestoppt..."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:492
+msgid "Autolabeling failed"
+msgstr "Automatisches Beschriften fehlgeschlagen"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:500
+msgid "Labelled {n:,} photos"
+msgid_plural "Labelled {n:,} photos"
+msgstr[0] "{n:,} Foto beschriftet"
+msgstr[1] "{n:,} Fotos beschriftet"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:502
+msgid "{n:,} boxes"
+msgid_plural "{n:,} boxes"
+msgstr[0] "{n:,} Box"
+msgstr[1] "{n:,} Boxen"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:505 yolo_assistant/app/ui/steps/export_step.py:522 yolo_assistant/app/ui/steps/inference_step.py:651 yolo_assistant/app/ui/steps/system_step.py:545
+msgid "Stopped"
+msgstr "Gestoppt"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:507
+msgid "Stopped. The photos already labelled are kept; starting again carries on with the rest."
+msgstr "Gestoppt. Die bereits beschrifteten Fotos bleiben erhalten; beim nächsten Start geht es mit den übrigen weiter."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:514 yolo_assistant/app/ui/steps/dataset_step.py:495 yolo_assistant/app/ui/steps/demo_step.py:238 yolo_assistant/app/ui/steps/export_step.py:527
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:533
+msgid "Step 1 has to finish setting up the Python environment before autolabeling can run."
+msgstr "Bevor das automatische Beschriften laufen kann, muss die Python-Umgebung in Schritt 1 fertig eingerichtet sein."
+
+#: yolo_assistant/app/ui/steps/autolabel_step.py:537
+msgid "Prepare your photos in Step 2 first; autolabeling works on the copy it makes."
+msgstr "Bereiten Sie zuerst Ihre Fotos in Schritt 2 vor; das automatische Beschriften arbeitet mit der dort erstellten Kopie."
+
+#: yolo_assistant/app/ui/steps/base.py:27
+msgid "Step"
+msgstr "Schritt"
+
+#: yolo_assistant/app/ui/steps/base.py:42
+msgid "An earlier step has to be finished first."
+msgstr "Zuerst muss ein früherer Schritt abgeschlossen werden."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:79
+msgid "Dataset preparation"
+msgstr "Datensatz vorbereiten"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:80
+msgid "Point the app at a folder with one sub-folder per class. It copies the photos into a project folder, renames them, and lays them out the way YOLO expects. Your originals are not modified."
+msgstr "Wählen Sie einen Ordner mit einem Unterordner pro Klasse. Die Anwendung kopiert die Fotos in einen Projektordner, benennt sie um und ordnet sie so an, wie YOLO es erwartet. Ihre Originale werden nicht verändert."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:113 yolo_assistant/app/ui/steps/dataset_step.py:306
+msgid "Choose the folder holding your class folders"
+msgstr "Wählen Sie den Ordner, der Ihre Klassenordner enthält"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:114 yolo_assistant/app/ui/steps/dataset_step.py:139
+msgid "Browse..."
+msgstr "Durchsuchen..."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:117
+msgid "Photo folder"
+msgstr "Fotoordner"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:121
+msgid "No folder chosen yet."
+msgstr "Noch kein Ordner ausgewählt."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:135
+msgid "Project"
+msgstr "Projekt"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:138
+msgid "Where the prepared dataset will be written"
+msgstr "Wohin der vorbereitete Datensatz geschrieben wird"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:142
+msgid "Project folder"
+msgstr "Projektordner"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:150
+msgid "Held back for checking"
+msgstr "Zur Überprüfung zurückbehalten"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:152
+msgid "Prepared dataset"
+msgstr "Vorbereiteter Datensatz"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:155 yolo_assistant/app/ui/steps/dataset_step.py:283
+msgid "Prepare dataset"
+msgstr "Datensatz vorbereiten"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:159
+msgid "Open project folder"
+msgstr "Projektordner öffnen"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:193
+msgid "Stored as"
+msgstr "Gespeichert als"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:254
+msgid "Choose where the prepared dataset should go."
+msgstr "Wählen Sie, wohin der vorbereitete Datensatz soll."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:268
+msgid "{status} In {folder}."
+msgstr "{status} In {folder}."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:317
+msgid "Choose where to put the project"
+msgstr "Wählen Sie, wo das Projekt angelegt werden soll"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:347
+msgid "Looking through {folder}..."
+msgstr "{folder} wird durchsucht..."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:379
+msgid "{count:,}"
+msgstr "{count:,}"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:399
+msgid "Copying and checking photos..."
+msgstr "Fotos werden kopiert und geprüft..."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:429
+msgid "{folder} already holds a prepared dataset with {n:,} photos. Preparing again replaces it completely."
+msgid_plural "{folder} already holds a prepared dataset with {n:,} photos. Preparing again replaces it completely."
+msgstr[0] "{folder} enthält bereits einen vorbereiteten Datensatz mit {n:,} Foto. Bei erneuter Vorbereitung wird er vollständig ersetzt."
+msgstr[1] "{folder} enthält bereits einen vorbereiteten Datensatz mit {n:,} Fotos. Bei erneuter Vorbereitung wird er vollständig ersetzt."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:440
+msgid "{n:,} label file(s) from Steps 3 and 4 will be deleted with it."
+msgid_plural "{n:,} label file(s) from Steps 3 and 4 will be deleted with it."
+msgstr[0] "{n:,} Label-Datei aus den Schritten 3 und 4 wird dabei ebenfalls gelöscht."
+msgstr[1] "{n:,} Label-Dateien aus den Schritten 3 und 4 werden dabei ebenfalls gelöscht."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:446
+msgid "Your original photos are not touched."
+msgstr "Ihre Originalfotos bleiben unverändert."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:446
+msgid "Continue?"
+msgstr "Fortfahren?"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:449 yolo_assistant/app/ui/steps/dataset_step.py:283
+msgid "Prepare again"
+msgstr "Erneut vorbereiten"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:476
+msgid "Preparation failed"
+msgstr "Vorbereitung fehlgeschlagen"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:480
+msgid "Dataset ready"
+msgstr "Datensatz bereit"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:486 yolo_assistant/app/ui/steps/demo_step.py:236
+msgid "Cancelled"
+msgstr "Abgebrochen"
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:488
+msgid "Preparation was cancelled. The partly-copied dataset is incomplete; preparing again starts from a clean folder."
+msgstr "Die Vorbereitung wurde abgebrochen. Der teilweise kopierte Datensatz ist unvollständig; eine erneute Vorbereitung beginnt mit einem leeren Ordner."
+
+#: yolo_assistant/app/ui/steps/dataset_step.py:507
+msgid "Step 1 has to finish setting up the Python environment before photos can be prepared."
+msgstr "Bevor Fotos vorbereitet werden können, muss die Python-Umgebung in Schritt 1 fertig eingerichtet sein."
+
+#: yolo_assistant/app/ui/steps/demo_step.py:47
+msgid "mAP50"
+msgstr "mAP50"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:48
+msgid "mAP50-95"
+msgstr "mAP50-95"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:49 yolo_assistant/app/ui/steps/export_step.py:111
+msgid "Precision"
+msgstr "Präzision"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:50
+msgid "Recall"
+msgstr "Recall"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:52
+msgid "Cls loss"
+msgstr "Klassen-Verlust"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:57
+msgid "Simulated run"
+msgstr "Simulierter Durchlauf"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:58
+msgid "Exercises the application's own machinery against a simulated training run. No model is trained and no GPU is required."
+msgstr "Testet die Abläufe der Anwendung selbst anhand eines simulierten Trainingsdurchlaufs. Es wird kein Modell trainiert und keine GPU benötigt."
+
+#: yolo_assistant/app/ui/steps/demo_step.py:79
+msgid "Simulation settings"
+msgstr "Simulationseinstellungen"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:85 yolo_assistant/app/ui/steps/train_step.py:109
+msgid "Epochs"
+msgstr "Epochen"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:90
+msgid "Batches per epoch"
+msgstr "Batches pro Epoche"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:97
+msgid "Seconds per epoch"
+msgstr "Sekunden pro Epoche"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:99
+msgid "Ignore the request to stop"
+msgstr "Aufforderung zum Stoppen ignorieren"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:100
+msgid "Unresponsive worker"
+msgstr "Nicht reagierender Worker-Prozess"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:105
+msgid "Extra helper processes"
+msgstr "Zusätzliche Hilfsprozesse"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:107 yolo_assistant/app/ui/steps/demo_step.py:253 yolo_assistant/app/ui/steps/inference_step.py:186 yolo_assistant/app/ui/steps/inference_step.py:473
+msgid "Start"
+msgstr "Starten"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:144
+msgid "Epoch"
+msgstr "Epoche"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:166
+msgid "No output for {quiet:.0f}s -- the worker may be stuck."
+msgstr "Seit {quiet:.0f} s keine Ausgabe – der Worker-Prozess hängt möglicherweise."
+
+#: yolo_assistant/app/ui/steps/demo_step.py:234
+msgid "Finished - {n} epochs"
+msgid_plural "Finished - {n} epochs"
+msgstr[0] "Abgeschlossen - {n} Epoche"
+msgstr[1] "Abgeschlossen - {n} Epochen"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:241
+msgid "Simulated run failed"
+msgstr "Simulierter Durchlauf fehlgeschlagen"
+
+#: yolo_assistant/app/ui/steps/demo_step.py:242
+msgid "The simulated worker stopped unexpectedly. The log below has the details."
+msgstr "Der simulierte Worker-Prozess wurde unerwartet beendet. Details finden Sie im Protokoll unten."
+
+#: yolo_assistant/app/ui/steps/demo_step.py:253 yolo_assistant/app/ui/steps/inference_step.py:473
+msgid "Running..."
+msgstr "Läuft..."
+
+#: yolo_assistant/app/ui/steps/export_step.py:59 yolo_assistant/app/ui/steps/export_step.py:91 yolo_assistant/app/ui/steps/export_step.py:134 yolo_assistant/app/ui/steps/export_step.py:408
+msgid "Export"
+msgstr "Export"
+
+#: yolo_assistant/app/ui/steps/export_step.py:60
+msgid "Convert a trained model into a deployment format. Minutes at most, and the result is a file you can run outside this app."
+msgstr "Wandeln Sie ein trainiertes Modell in ein Format für den Einsatz um. Das dauert höchstens einige Minuten, und das Ergebnis ist eine Datei, die Sie außerhalb dieser Anwendung ausführen können."
+
+#: yolo_assistant/app/ui/steps/export_step.py:87
+msgid "Ultralytics export guide"
+msgstr "Ultralytics-Leitfaden zum Export"
+
+#: yolo_assistant/app/ui/steps/export_step.py:103
+msgid "Format"
+msgstr "Format"
+
+#: yolo_assistant/app/ui/steps/export_step.py:113 yolo_assistant/app/ui/steps/train_step.py:118
+msgid "Image size"
+msgstr "Bildgröße"
+
+#: yolo_assistant/app/ui/steps/export_step.py:115
+msgid "Add the settings a DeepStream pipeline expects"
+msgstr "Die Einstellungen hinzufügen, die eine DeepStream-Pipeline erwartet"
+
+#: yolo_assistant/app/ui/steps/export_step.py:119
+msgid "for example:  dynamic=true, batch=1"
+msgstr "zum Beispiel:  dynamic=true, batch=1"
+
+#: yolo_assistant/app/ui/steps/export_step.py:120 yolo_assistant/app/ui/steps/train_step.py:125
+msgid "Additional settings"
+msgstr "Weitere Einstellungen"
+
+#: yolo_assistant/app/ui/steps/export_step.py:131
+msgid "Exported files"
+msgstr "Exportierte Dateien"
+
+#: yolo_assistant/app/ui/steps/export_step.py:136 yolo_assistant/app/ui/steps/inference_step.py:188 yolo_assistant/app/ui/steps/train_step.py:141
+msgid "Stop"
+msgstr "Stoppen"
+
+#: yolo_assistant/app/ui/steps/export_step.py:196
+msgid "Height"
+msgstr "Höhe"
+
+#: yolo_assistant/app/ui/steps/export_step.py:196
+msgid "Width"
+msgstr "Breite"
+
+#: yolo_assistant/app/ui/steps/export_step.py:230
+msgid "No output for {quiet:.0f}s. An engine build is quiet for minutes at a time, so this is not necessarily trouble."
+msgstr "Seit {quiet:.0f} s keine Ausgabe. Das Erstellen einer Engine bleibt oft minutenlang still, das ist also nicht unbedingt ein Problem."
+
+#: yolo_assistant/app/ui/steps/export_step.py:373 yolo_assistant/app/ui/steps/train_step.py:305
+msgid "Open folder"
+msgstr "Ordner öffnen"
+
+#: yolo_assistant/app/ui/steps/export_step.py:382
+msgid "Nothing has been exported from this project yet."
+msgstr "Aus diesem Projekt wurde noch nichts exportiert."
+
+#: yolo_assistant/app/ui/steps/export_step.py:389
+msgid "{newest} and {n} other. Step 7 can test any of them, so exporting again is optional."
+msgid_plural "{newest} and {n} others. Step 7 can test any of them, so exporting again is optional."
+msgstr[0] "{newest} und {n} weiterer Export. Schritt 7 kann jeden davon testen, ein erneuter Export ist daher optional."
+msgstr[1] "{newest} und {n} weitere Exporte. Schritt 7 kann jeden davon testen, ein erneuter Export ist daher optional."
+
+#: yolo_assistant/app/ui/steps/export_step.py:398
+msgid "{newest}. Step 7 can test any of them, so exporting again is optional."
+msgstr "{newest}. Schritt 7 kann ihn testen, ein erneuter Export ist daher optional."
+
+#: yolo_assistant/app/ui/steps/export_step.py:408
+msgid "Export to {name}"
+msgstr "Nach {name} exportieren"
+
+#: yolo_assistant/app/ui/steps/export_step.py:467
+msgid "Replace this export?"
+msgstr "Diesen Export ersetzen?"
+
+#: yolo_assistant/app/ui/steps/export_step.py:468
+msgid ""
+"\"{name}\" already exists and will be replaced.\n"
+"\n"
+"Nothing else in the exports folder is touched.\n"
+"\n"
+"Replace it?"
+msgstr ""
+"„{name}“ existiert bereits und wird ersetzt.\n"
+"\n"
+"Sonst wird im Ordner exports nichts verändert.\n"
+"\n"
+"Ersetzen?"
+
+#: yolo_assistant/app/ui/steps/export_step.py:489
+msgid "Exporting..."
+msgstr "Wird exportiert..."
+
+#: yolo_assistant/app/ui/steps/export_step.py:496
+msgid "Wrote {path}"
+msgstr "{path} geschrieben"
+
+#: yolo_assistant/app/ui/steps/export_step.py:508
+msgid "Export this model as INT8"
+msgstr "Dieses Modell als INT8 exportieren"
+
+#: yolo_assistant/app/ui/steps/export_step.py:510
+msgid "Export failed"
+msgstr "Export fehlgeschlagen"
+
+#: yolo_assistant/app/ui/steps/export_step.py:519
+msgid "Exported {name}"
+msgstr "{name} exportiert"
+
+#: yolo_assistant/app/ui/steps/export_step.py:519
+msgid "Exported the model"
+msgstr "Modell exportiert"
+
+#: yolo_assistant/app/ui/steps/export_step.py:524
+msgid "Stopped. Nothing was written to the exports folder."
+msgstr "Gestoppt. In den Ordner exports wurde nichts geschrieben."
+
+#: yolo_assistant/app/ui/steps/export_step.py:551
+msgid "Step 1 has to finish setting up the Python environment before anything can be exported."
+msgstr "Bevor etwas exportiert werden kann, muss die Python-Umgebung in Schritt 1 fertig eingerichtet sein."
+
+#: yolo_assistant/app/ui/steps/export_step.py:557
+msgid "Prepare your photos in Step 2 first; there is nothing to export yet."
+msgstr "Bereiten Sie zuerst Ihre Fotos in Schritt 2 vor; noch gibt es nichts zu exportieren."
+
+#: yolo_assistant/app/ui/steps/export_step.py:558
+msgid "There is no trained model to export. Finish training in Step 5, or copy a run into the project's runs folder."
+msgstr "Es gibt kein trainiertes Modell zum Exportieren. Schließen Sie das Training in Schritt 5 ab, oder kopieren Sie einen Durchlauf in den Ordner runs des Projekts."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:87
+msgid "Testing"
+msgstr "Testen"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:88
+msgid "Run the exported model on a photo, a video or a camera, and see what it finds and how long it takes per frame."
+msgstr "Führen Sie das exportierte Modell auf einem Foto, einem Video oder einer Kamera aus und sehen Sie, was es findet und wie lange es pro Frame braucht."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:136
+msgid "What to test"
+msgstr "Was getestet wird"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:149
+msgid "Run on"
+msgstr "Ausführen auf"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:157
+msgid "Test with"
+msgstr "Testen mit"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:159
+msgid "Run against"
+msgstr "Quelle"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:165
+msgid "Camera mode"
+msgstr "Kameramodus"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:190
+msgid "Save As..."
+msgstr "Speichern unter..."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:269 yolo_assistant/app/ui/steps/inference_step.py:496
+msgid "Choose a photo..."
+msgstr "Foto wählen..."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:271
+msgid "Choose..."
+msgstr "Wählen..."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:282
+msgid "Refresh"
+msgstr "Aktualisieren"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:342
+msgid "No output for {quiet:.0f}s. A camera that has been unplugged can leave the read waiting; press Stop."
+msgstr "Seit {quiet:.0f} s keine Ausgabe. Eine abgezogene Kamera kann den Lesevorgang hängen lassen; klicken Sie auf „Stoppen“."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:496
+msgid "Choose a video..."
+msgstr "Video wählen..."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:522
+msgid "Choose a video"
+msgstr "Video wählen"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:522
+msgid "Choose a photo"
+msgstr "Foto wählen"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:530
+msgid "Press Start to run the model on the new file."
+msgstr "Klicken Sie auf „Starten“, um das Modell auf die neue Datei anzuwenden."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:552
+msgid "Looking for cameras..."
+msgstr "Kameras werden gesucht..."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:573
+msgid "Getting the model ready..."
+msgstr "Modell wird vorbereitet..."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:604
+msgid "Running the model on every frame. The video, with its boxes, plays here at its own speed once that is done."
+msgstr "Das Modell wird auf jeden Frame angewendet. Danach wird das Video mit seinen Boxen hier in seiner eigenen Geschwindigkeit abgespielt."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:624
+msgid "These are processor timings: onnxruntime has no CUDA provider here."
+msgstr "Dies sind Zeiten auf dem Prozessor: onnxruntime hat hier keinen CUDA-Provider."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:639
+msgid "That camera cannot be opened"
+msgstr "Diese Kamera kann nicht geöffnet werden"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:640
+msgid "That file cannot be read"
+msgstr "Diese Datei kann nicht gelesen werden"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:641
+msgid "No GPU available"
+msgstr "Keine GPU verfügbar"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:642
+msgid "The test could not run"
+msgstr "Der Test konnte nicht ausgeführt werden"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:666
+msgid "No frames were read, so there is nothing to play."
+msgstr "Es wurden keine Frames gelesen, daher gibt es nichts abzuspielen."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:669
+msgid "This copy is temporary: it is deleted when you choose another file or close the app. Press Save As... to keep it."
+msgstr "Diese Kopie ist temporär: Sie wird gelöscht, wenn Sie eine andere Datei wählen oder die Anwendung schließen. Klicken Sie auf „Speichern unter...“, um sie zu behalten."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:676
+msgid "The video with its boxes was written to {path}. This build of Qt cannot play it here; press Save As... to keep it and open it in any video player."
+msgstr "Das Video mit seinen Boxen wurde unter {path} gespeichert. Diese Qt-Version kann es hier nicht abspielen; klicken Sie auf „Speichern unter...“, um es zu behalten und in einem beliebigen Videoplayer zu öffnen."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:723
+msgid "Save the result as"
+msgstr "Ergebnis speichern unter"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:730
+msgid "Choose another folder"
+msgstr "Anderen Ordner wählen"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:731
+msgid "{folder} is the app's temporary folder, and everything in it is deleted automatically. Save the file somewhere else to keep it."
+msgstr "{folder} ist der temporäre Ordner der Anwendung, und alles darin wird automatisch gelöscht. Speichern Sie die Datei an einem anderen Ort, um sie zu behalten."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:741
+msgid "The file could not be saved"
+msgstr "Die Datei konnte nicht gespeichert werden"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:744
+msgid "Saved to {path}."
+msgstr "Gespeichert unter {path}."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:745
+msgid "Saved to {path}"
+msgstr "Gespeichert unter {path}"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:759
+msgid "{n} camera found."
+msgid_plural "{n} cameras found."
+msgstr[0] "{n} Kamera gefunden."
+msgstr[1] "{n} Kameras gefunden."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:761
+msgid "No camera answered."
+msgstr "Keine Kamera hat geantwortet."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:789
+msgid "Step 1 has to finish setting up the Python environment before a model can be run."
+msgstr "Die Einrichtung der Python-Umgebung in Schritt 1 muss abgeschlossen sein, bevor ein Modell ausgeführt werden kann."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:795
+msgid "Prepare your photos in Step 2 first; there is nothing to test yet."
+msgstr "Bereiten Sie zuerst Ihre Fotos in Schritt 2 vor; es gibt noch nichts zu testen."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:796
+msgid "There is no exported model to test. Export one in Step 6, or copy an exported file into the project's exports folder."
+msgstr "Es gibt kein exportiertes Modell zum Testen. Exportieren Sie eines in Schritt 6 oder kopieren Sie eine exportierte Datei in den Ordner „exports“ des Projekts."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:812
+msgid "Stopped: nothing is tested while this page is not on screen."
+msgstr "Gestoppt: Solange diese Seite nicht angezeigt wird, wird nichts getestet."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:852
+msgid "Nothing found in this frame."
+msgstr "In diesem Frame wurde nichts gefunden."
+
+#: yolo_assistant/app/ui/steps/inference_step.py:859
+msgid "{names}, and {more} more"
+msgstr "{names} und {more} weitere"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:860
+msgid "{n} object"
+msgid_plural "{n} objects"
+msgstr[0] "{n} Objekt"
+msgstr[1] "{n} Objekte"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:868
+msgid "Done - {mean:.1f} ms"
+msgstr "Fertig - {mean:.1f} ms"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:868
+msgid "Done"
+msgstr "Fertig"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:871
+msgid "Stopped after {n:,} frames, {mean:.1f} ms each"
+msgid_plural "Stopped after {n:,} frames, {mean:.1f} ms each"
+msgstr[0] "Nach {n:,} Frame gestoppt, {mean:.1f} ms pro Frame"
+msgstr[1] "Nach {n:,} Frames gestoppt, {mean:.1f} ms pro Frame"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:877
+msgid "Finished - {n:,} frames, {mean:.1f} ms each"
+msgid_plural "Finished - {n:,} frames, {mean:.1f} ms each"
+msgstr[0] "Fertig - {n:,} Frame, {mean:.1f} ms pro Frame"
+msgstr[1] "Fertig - {n:,} Frames, {mean:.1f} ms pro Frame"
+
+#: yolo_assistant/app/ui/steps/inference_step.py:889
+msgid "Getting the model ready took {seconds:.1f} s. That is paid once, not per frame, and is not counted above."
+msgstr "Die Vorbereitung des Modells hat {seconds:.1f} s gedauert. Das fällt nur einmal an, nicht pro Frame, und ist oben nicht mitgezählt."
+
+#: yolo_assistant/app/ui/steps/system_step.py:58
+msgid "Processor"
+msgstr "Prozessor"
+
+#: yolo_assistant/app/ui/steps/system_step.py:59
+msgid "Memory"
+msgstr "Arbeitsspeicher"
+
+#: yolo_assistant/app/ui/steps/system_step.py:60
+msgid "Graphics"
+msgstr "Grafikkarte"
+
+#: yolo_assistant/app/ui/steps/system_step.py:61
+msgid "Driver"
+msgstr "Treiber"
+
+#: yolo_assistant/app/ui/steps/system_step.py:62
+msgid "Operating system"
+msgstr "Betriebssystem"
+
+#: yolo_assistant/app/ui/steps/system_step.py:91
+msgid "System requirements"
+msgstr "Systemanforderungen"
+
+#: yolo_assistant/app/ui/steps/system_step.py:92
+msgid "Checks that this computer can train a model, and sets up the private Python environment the app uses. Nothing is installed system-wide."
+msgstr "Prüft, ob dieser Computer ein Modell trainieren kann, und richtet die eigene Python-Umgebung der Anwendung ein. Es wird nichts systemweit installiert."
+
+#: yolo_assistant/app/ui/steps/system_step.py:125
+msgid "Requirements"
+msgstr "Anforderungen"
+
+#: yolo_assistant/app/ui/steps/system_step.py:126
+msgid "NVIDIA driver"
+msgstr "NVIDIA-Treiber"
+
+#: yolo_assistant/app/ui/steps/system_step.py:127
+msgid "GPU support in PyTorch"
+msgstr "GPU-Unterstützung in PyTorch"
+
+#: yolo_assistant/app/ui/steps/system_step.py:128
+msgid "Python environment"
+msgstr "Python-Umgebung"
+
+#: yolo_assistant/app/ui/steps/system_step.py:136
+msgid "This computer"
+msgstr "Dieser Computer"
+
+#: yolo_assistant/app/ui/steps/system_step.py:157
+msgid "Environment"
+msgstr "Umgebung"
+
+#: yolo_assistant/app/ui/steps/system_step.py:160
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: yolo_assistant/app/ui/steps/system_step.py:163
+msgid "PyTorch build"
+msgstr "PyTorch-Build"
+
+#: yolo_assistant/app/ui/steps/system_step.py:165 yolo_assistant/app/ui/steps/system_step.py:367
+msgid "Set up environment"
+msgstr "Umgebung einrichten"
+
+#: yolo_assistant/app/ui/steps/system_step.py:169 yolo_assistant/app/ui/steps/system_step.py:446
+msgid "Check for updates"
+msgstr "Nach Aktualisierungen suchen"
+
+#: yolo_assistant/app/ui/steps/system_step.py:171 yolo_assistant/app/ui/steps/system_step.py:400
+msgid "Remove and rebuild"
+msgstr "Entfernen und neu aufbauen"
+
+#: yolo_assistant/app/ui/steps/system_step.py:250
+msgid "No NVIDIA GPU detected"
+msgstr "Keine NVIDIA-GPU erkannt"
+
+#: yolo_assistant/app/ui/steps/system_step.py:253
+msgid "{version} (supports CUDA up to {cuda})"
+msgstr "{version} (unterstützt CUDA bis {cuda})"
+
+#: yolo_assistant/app/ui/steps/system_step.py:260
+msgid "Not installed"
+msgstr "Nicht installiert"
+
+#: yolo_assistant/app/ui/steps/system_step.py:266
+msgid "{ultralytics} (PyTorch {torch}, {build})"
+msgstr "{ultralytics} (PyTorch {torch}, {build})"
+
+#: yolo_assistant/app/ui/steps/system_step.py:270
+msgid "CPU build"
+msgstr "CPU-Build"
+
+#: yolo_assistant/app/ui/steps/system_step.py:274
+msgid "Not installed yet"
+msgstr "Noch nicht installiert"
+
+#: yolo_assistant/app/ui/steps/system_step.py:281
+msgid "Driver {version} is installed and supports CUDA {cuda}."
+msgstr "Treiber {version} ist installiert und unterstützt CUDA {cuda}."
+
+#: yolo_assistant/app/ui/steps/system_step.py:291
+msgid "{reason} Training needs an NVIDIA GPU with a current driver. Install one from <a href=\"{url}\">nvidia.com</a>, restart, then come back to this screen."
+msgstr "{reason} Für das Training wird eine NVIDIA-GPU mit aktuellem Treiber benötigt. Installieren Sie ihn von <a href=\"{url}\">nvidia.com</a>, starten Sie den Computer neu und kehren Sie dann zu diesem Bildschirm zurück."
+
+#: yolo_assistant/app/ui/steps/system_step.py:299
+msgid "Open driver downloads"
+msgstr "Treiber-Downloads öffnen"
+
+#: yolo_assistant/app/ui/steps/system_step.py:310
+msgid "PyTorch {torch} ({build}) can use {device}."
+msgstr "PyTorch {torch} ({build}) kann {device} nutzen."
+
+#: yolo_assistant/app/ui/steps/system_step.py:317
+msgid "PyTorch {torch} ({build}) can use the GPU."
+msgstr "PyTorch {torch} ({build}) kann die GPU nutzen."
+
+#: yolo_assistant/app/ui/steps/system_step.py:326
+msgid "PyTorch is installed but cannot use the GPU. Training would fall back to the CPU and take days rather than minutes. Rebuilding with a different PyTorch build usually fixes this."
+msgstr "PyTorch ist installiert, kann aber die GPU nicht nutzen. Das Training würde auf die CPU ausweichen und Tage statt Minuten dauern. Ein Neuaufbau mit einem anderen PyTorch-Build behebt das meistens."
+
+#: yolo_assistant/app/ui/steps/system_step.py:337
+msgid "Will be confirmed once the environment is set up. Planned: the {backend} build of PyTorch."
+msgstr "Wird bestätigt, sobald die Umgebung eingerichtet ist. Geplant: der PyTorch-Build {backend}."
+
+#: yolo_assistant/app/ui/steps/system_step.py:358
+msgid "Set up now"
+msgstr "Jetzt einrichten"
+
+#: yolo_assistant/app/ui/steps/system_step.py:358
+msgid "Repair"
+msgstr "Reparieren"
+
+#: yolo_assistant/app/ui/steps/system_step.py:367
+msgid "Rebuild environment"
+msgstr "Umgebung neu aufbauen"
+
+#: yolo_assistant/app/ui/steps/system_step.py:401
+msgid ""
+"This deletes the environment at\n"
+"{path}\n"
+"and builds it again (about {estimate}, though anything already downloaded is reused).\n"
+"\n"
+"Your datasets and trained models are not touched.\n"
+"\n"
+"Continue?"
+msgstr ""
+"Damit wird die Umgebung in\n"
+"{path}\n"
+"gelöscht und neu aufgebaut (etwa {estimate}, wobei bereits Heruntergeladenes wiederverwendet wird).\n"
+"\n"
+"Ihre Datensätze und trainierten Modelle bleiben unverändert.\n"
+"\n"
+"Fortfahren?"
+
+#: yolo_assistant/app/ui/steps/system_step.py:414
+msgid "Removed {path}"
+msgstr "{path} entfernt"
+
+#: yolo_assistant/app/ui/steps/system_step.py:429
+msgid "Checking pypi.org for a newer Ultralytics..."
+msgstr "Auf pypi.org wird nach einer neueren Ultralytics-Version gesucht..."
+
+#: yolo_assistant/app/ui/steps/system_step.py:451
+msgid "Update available"
+msgstr "Aktualisierung verfügbar"
+
+#: yolo_assistant/app/ui/steps/system_step.py:452
+msgid ""
+"{summary}\n"
+"\n"
+"Show exactly what would change before installing anything?"
+msgstr ""
+"{summary}\n"
+"\n"
+"Vor der Installation genau anzeigen, was sich ändern würde?"
+
+#: yolo_assistant/app/ui/steps/system_step.py:460
+msgid "Update declined; nothing was changed."
+msgstr "Aktualisierung abgelehnt; es wurde nichts geändert."
+
+#: yolo_assistant/app/ui/steps/system_step.py:469
+msgid "Update plan"
+msgstr "Aktualisierungsplan"
+
+#: yolo_assistant/app/ui/steps/system_step.py:471
+msgid "This is what the update would change. Check that PyTorch is not being replaced: a different PyTorch build can remove GPU support."
+msgstr "Das würde die Aktualisierung ändern. Prüfen Sie, dass PyTorch nicht ersetzt wird: Ein anderer PyTorch-Build kann die GPU-Unterstützung entfernen."
+
+#: yolo_assistant/app/ui/steps/system_step.py:480
+msgid "Nothing would change."
+msgstr "Es würde sich nichts ändern."
+
+#: yolo_assistant/app/ui/steps/system_step.py:481
+msgid "(no output)"
+msgstr "(keine Ausgabe)"
+
+#: yolo_assistant/app/ui/steps/system_step.py:483
+msgid "Install"
+msgstr "Installieren"
+
+#: yolo_assistant/app/ui/steps/system_step.py:485
+msgid "Update cancelled; nothing was changed."
+msgstr "Aktualisierung abgebrochen; es wurde nichts geändert."
+
+#: yolo_assistant/app/ui/steps/system_step.py:498
+msgid "Windows long paths: enabled"
+msgstr "Lange Windows-Pfade: aktiviert"
+
+#: yolo_assistant/app/ui/steps/system_step.py:500
+msgid "Windows long paths: DISABLED"
+msgstr "Lange Windows-Pfade: DEAKTIVIERT"
+
+#: yolo_assistant/app/ui/steps/system_step.py:503
+msgid "Planned backend: {backend} - {reason}"
+msgstr "Geplantes Backend: {backend} - {reason}"
+
+#: yolo_assistant/app/ui/steps/system_step.py:510
+msgid "Environment path: {path}"
+msgstr "Pfad der Umgebung: {path}"
+
+#: yolo_assistant/app/ui/steps/system_step.py:513
+msgid "Environment state: {state} - {message}"
+msgstr "Zustand der Umgebung: {state} - {message}"
+
+#: yolo_assistant/app/ui/steps/system_step.py:542
+msgid "Setup failed"
+msgstr "Einrichtung fehlgeschlagen"
+
+#: yolo_assistant/app/ui/steps/system_step.py:545
+msgid "Environment ready"
+msgstr "Umgebung bereit"
+
+#: yolo_assistant/app/ui/steps/system_step.py:550
+msgid "Updated"
+msgstr "Aktualisiert"
+
+#: yolo_assistant/app/ui/steps/system_step.py:564
+msgid "Finish setting up the environment in Step 1 first."
+msgstr "Schließen Sie zuerst die Einrichtung der Umgebung in Schritt 1 ab."
+
+#: yolo_assistant/app/ui/steps/train_step.py:63
+msgid "Train a YOLO detector on your labelled photos. It runs on your own GPU and can take hours; you can stop at any point and keep the best epoch."
+msgstr "Trainieren Sie einen YOLO-Detektor mit Ihren beschrifteten Fotos. Das Training läuft auf Ihrer eigenen GPU und kann Stunden dauern; Sie können jederzeit stoppen und die beste Epoche behalten."
+
+#: yolo_assistant/app/ui/steps/train_step.py:87
+msgid "Ultralytics training guide"
+msgstr "Ultralytics-Leitfaden zum Training"
+
+#: yolo_assistant/app/ui/steps/train_step.py:103
+msgid "a name for this run, used as its folder"
+msgstr "ein Name für diesen Durchlauf, zugleich der Name seines Ordners"
+
+#: yolo_assistant/app/ui/steps/train_step.py:104
+msgid "Output name"
+msgstr "Name des Durchlaufs"
+
+#: yolo_assistant/app/ui/steps/train_step.py:120
+msgid "Train for INT8 (quantisation-aware training)"
+msgstr "Für INT8 trainieren (quantisierungsbewusstes Training)"
+
+#: yolo_assistant/app/ui/steps/train_step.py:124
+msgid "for example:  batch=8, patience=20"
+msgstr "zum Beispiel:  batch=8, patience=20"
+
+#: yolo_assistant/app/ui/steps/train_step.py:136
+msgid "Trained models"
+msgstr "Trainierte Modelle"
+
+#: yolo_assistant/app/ui/steps/train_step.py:139
+msgid "Start training"
+msgstr "Training starten"
+
+#: yolo_assistant/app/ui/steps/train_step.py:214
+msgid "No output for {quiet:.0f}s -- the run may be stuck."
+msgstr "Seit {quiet:.0f} s keine Ausgabe – der Durchlauf hängt möglicherweise."
+
+#: yolo_assistant/app/ui/steps/train_step.py:322
+msgid "{n} run(s) were started here but none saved a model. Training has to finish at least one epoch to leave something Step 6 can export."
+msgid_plural "{n} run(s) were started here but none saved a model. Training has to finish at least one epoch to leave something Step 6 can export."
+msgstr[0] "{n} Durchlauf wurde hier gestartet, hat aber kein Modell gespeichert. Das Training muss mindestens eine Epoche abschließen, damit Schritt 6 etwas exportieren kann."
+msgstr[1] "{n} Durchläufe wurden hier gestartet, aber keiner hat ein Modell gespeichert. Das Training muss mindestens eine Epoche abschließen, damit Schritt 6 etwas exportieren kann."
+
+#: yolo_assistant/app/ui/steps/train_step.py:334
+msgid "Nothing has been trained in this project yet."
+msgstr "In diesem Projekt wurde noch nichts trainiert."
+
+#: yolo_assistant/app/ui/steps/train_step.py:341
+msgid "{run} and {n} other. Step 6 can export any of them, so training again is optional."
+msgid_plural "{run} and {n} others. Step 6 can export any of them, so training again is optional."
+msgstr[0] "{run} und {n} weiterer. Schritt 6 kann jeden davon exportieren, ein erneutes Training ist also optional."
+msgstr[1] "{run} und {n} weitere. Schritt 6 kann jeden davon exportieren, ein erneutes Training ist also optional."
+
+#: yolo_assistant/app/ui/steps/train_step.py:350
+msgid "{run}. Step 6 can export any of them, so training again is optional."
+msgstr "{run}. Schritt 6 kann ihn exportieren, ein erneutes Training ist also optional."
+
+#: yolo_assistant/app/ui/steps/train_step.py:361
+msgid "Start training - {n} epoch"
+msgid_plural "Start training - {n} epochs"
+msgstr[0] "Training starten - {n} Epoche"
+msgstr[1] "Training starten - {n} Epochen"
+
+#: yolo_assistant/app/ui/steps/train_step.py:417
+msgid "Replace this run?"
+msgstr "Diesen Durchlauf ersetzen?"
+
+#: yolo_assistant/app/ui/steps/train_step.py:418
+msgid ""
+"\"{name}\" already holds a trained model, and starting this run deletes it along with everything else in that folder.\n"
+"\n"
+"Give this run a different name to keep both.\n"
+"\n"
+"Replace it?"
+msgstr ""
+"„{name}“ enthält bereits ein trainiertes Modell. Wenn Sie diesen Durchlauf starten, wird es zusammen mit allem anderen in diesem Ordner gelöscht.\n"
+"\n"
+"Geben Sie diesem Durchlauf einen anderen Namen, um beide zu behalten.\n"
+"\n"
+"Ersetzen?"
+
+#: yolo_assistant/app/ui/steps/train_step.py:440
+msgid "Training..."
+msgstr "Training läuft..."
+
+#: yolo_assistant/app/ui/steps/train_step.py:447
+msgid "Saved {path}"
+msgstr "{path} gespeichert"
+
+#: yolo_assistant/app/ui/steps/train_step.py:455
+msgid "Training failed"
+msgstr "Training fehlgeschlagen"
+
+#: yolo_assistant/app/ui/steps/train_step.py:465
+msgid "Trained {n} epoch - best mAP50-95 {best:.4f}"
+msgid_plural "Trained {n} epochs - best mAP50-95 {best:.4f}"
+msgstr[0] "{n} Epoche trainiert - bester mAP50-95 {best:.4f}"
+msgstr[1] "{n} Epochen trainiert - bester mAP50-95 {best:.4f}"
+
+#: yolo_assistant/app/ui/steps/train_step.py:472
+msgid "Trained {n} epoch"
+msgid_plural "Trained {n} epochs"
+msgstr[0] "{n} Epoche trainiert"
+msgstr[1] "{n} Epochen trainiert"
+
+#: yolo_assistant/app/ui/steps/train_step.py:482
+msgid "Stopped. The last epoch Ultralytics saved is still in the run folder and can be exported in Step 6."
+msgstr "Gestoppt. Die letzte von Ultralytics gespeicherte Epoche liegt weiterhin im Ordner des Durchlaufs und kann in Schritt 6 exportiert werden."
+
+#: yolo_assistant/app/ui/steps/train_step.py:516
+msgid "Step 1 has to finish setting up the Python environment before training can run."
+msgstr "Die Einrichtung der Python-Umgebung in Schritt 1 muss abgeschlossen sein, bevor das Training starten kann."
+
+#: yolo_assistant/app/ui/steps/train_step.py:522
+msgid "Prepare your photos in Step 2 first; there is nothing to train on yet."
+msgstr "Bereiten Sie zuerst Ihre Fotos in Schritt 2 vor; es gibt noch nichts, womit trainiert werden kann."
+
+#: yolo_assistant/app/ui/steps/train_step.py:524
+msgid "{n:,} photo(s) still have no labels. Finish autolabeling in Step 3 first -- a photo with no label file is left out of training entirely."
+msgid_plural "{n:,} photo(s) still have no labels. Finish autolabeling in Step 3 first -- a photo with no label file is left out of training entirely."
+msgstr[0] "{n:,} Foto hat noch keine Labels. Schließen Sie zuerst das automatische Beschriften in Schritt 3 ab – ein Foto ohne Label-Datei wird beim Training komplett ausgelassen."
+msgstr[1] "{n:,} Fotos haben noch keine Labels. Schließen Sie zuerst das automatische Beschriften in Schritt 3 ab – ein Foto ohne Label-Datei wird beim Training komplett ausgelassen."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:92
+msgid "Label check"
+msgstr "Labels prüfen"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:93
+msgid "Look at the boxes OWLv2 drew, and correct the ones it got wrong. This step is optional -- but a few minutes here is the cheapest way to find out that a description did not match before training on it."
+msgstr "Sehen Sie sich die Boxen an, die OWLv2 gezeichnet hat, und korrigieren Sie die falschen. Dieser Schritt ist optional – aber ein paar Minuten hier sind der günstigste Weg, noch vor dem Training festzustellen, dass eine Beschreibung nicht gepasst hat."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:156
+msgid "< Previous"
+msgstr "< Vorheriges"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:157
+msgid "Next >"
+msgstr "Nächstes >"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:161
+msgid "Only photos where nothing was found"
+msgstr "Nur Fotos, auf denen nichts gefunden wurde"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:164
+msgid "Delete box"
+msgstr "Box löschen"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:168
+msgid "Revert photo"
+msgstr "Foto zurücksetzen"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:182
+msgid "Arrow keys or the mouse wheel move between photos. Drag on the photo to add a box the model missed; click a box and press Delete to remove it. Changes are saved as you make them."
+msgstr "Mit den Pfeiltasten oder dem Mausrad wechseln Sie zwischen den Fotos. Ziehen Sie mit der Maus über das Foto, um eine Box hinzuzufügen, die das Modell übersehen hat; klicken Sie auf eine Box und drücken Sie die Entf-Taste, um sie zu entfernen. Änderungen werden sofort gespeichert."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:363
+msgid "{name} could not be opened. The file may have been moved or damaged since the dataset was prepared."
+msgstr "{name} konnte nicht geöffnet werden. Die Datei wurde möglicherweise verschoben oder beschädigt, seit der Datensatz vorbereitet wurde."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:369
+msgid "{n} line(s) of this photo's label file could not be read and are not shown. Changing the boxes here rewrites the file without them."
+msgid_plural "{n} line(s) of this photo's label file could not be read and are not shown. Changing the boxes here rewrites the file without them."
+msgstr[0] "{n} Zeile der Label-Datei dieses Fotos konnte nicht gelesen werden und wird nicht angezeigt. Wenn Sie hier die Boxen ändern, wird die Datei ohne sie neu geschrieben."
+msgstr[1] "{n} Zeilen der Label-Datei dieses Fotos konnten nicht gelesen werden und werden nicht angezeigt. Wenn Sie hier die Boxen ändern, wird die Datei ohne sie neu geschrieben."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:379
+msgid "This photo has no label file yet -- autolabeling never reached it."
+msgstr "Dieses Foto hat noch keine Label-Datei – das automatische Beschriften ist nicht bis zu ihm gekommen."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:381
+msgid "Nothing was found in this photo."
+msgstr "Auf diesem Foto wurde nichts gefunden."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:386 yolo_assistant/app/ui/steps/verify_step.py:283
+msgid "No prepared dataset to check yet."
+msgstr "Noch kein vorbereiteter Datensatz zum Prüfen."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:388
+msgid "Something was found in every photo of this class, so the filter has nothing to show. Untick it to look through them."
+msgstr "Auf jedem Foto dieser Klasse wurde etwas gefunden, daher zeigt der Filter nichts an. Entfernen Sie das Häkchen, um die Fotos durchzusehen."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:392
+msgid "This class has no photos in it."
+msgstr "Diese Klasse enthält keine Fotos."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:460
+msgid "Every photo of this class was looked at and nothing was found in {share:.0%} of them."
+msgstr "Jedes Foto dieser Klasse wurde untersucht, und auf {share:.0%} davon wurde nichts gefunden."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:479
+msgid "photo {position:,} of {shown:,} with nothing found, out of {total:,}"
+msgstr "Foto {position:,} von {shown:,} ohne Fund (insgesamt {total:,})"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:486
+msgid "photo {position:,} of {shown:,}"
+msgstr "Foto {position:,} von {shown:,}"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:492
+msgid "no boxes"
+msgstr "keine Boxen"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:492
+msgid "{n:,} box"
+msgid_plural "{n:,} boxes"
+msgstr[0] "{n:,} Box"
+msgstr[1] "{n:,} Boxen"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:493
+msgid "edited"
+msgstr "bearbeitet"
+
+#: yolo_assistant/app/ui/steps/verify_step.py:510
+msgid "You have corrected {n:,} photo(s) this session."
+msgid_plural "You have corrected {n:,} photo(s) this session."
+msgstr[0] "Sie haben in dieser Sitzung {n:,} Foto korrigiert."
+msgstr[1] "Sie haben in dieser Sitzung {n:,} Fotos korrigiert."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:544
+msgid "Prepare your photos in Step 2 first; there are no labels to check yet."
+msgstr "Bereiten Sie zuerst Ihre Fotos in Schritt 2 vor; es gibt noch keine Labels zu prüfen."
+
+#: yolo_assistant/app/ui/steps/verify_step.py:546
+msgid "{n:,} photo(s) still have no labels. Finish autolabeling in Step 3 first, or there is nothing to check for them."
+msgid_plural "{n:,} photo(s) still have no labels. Finish autolabeling in Step 3 first, or there is nothing to check for them."
+msgstr[0] "{n:,} Foto hat noch keine Labels. Schließen Sie zuerst das automatische Beschriften in Schritt 3 ab, sonst gibt es dafür nichts zu prüfen."
+msgstr[1] "{n:,} Fotos haben noch keine Labels. Schließen Sie zuerst das automatische Beschriften in Schritt 3 ab, sonst gibt es dafür nichts zu prüfen."
+
+#: yolo_assistant/app/ui/wizard.py:34
+msgid "(locked)"
+msgstr "(gesperrt)"
+
+#: yolo_assistant/app/ui/wizard.py:39
+msgid ""
+"<h3>YOLO Assistant</h3>\n"
+"<p>A guided interface for training, exporting and testing YOLO models.</p>\n"
+"<p>This program is free software, licensed under the\n"
+"<a href=\"https://www.gnu.org/licenses/agpl-3.0.html\">GNU Affero General Public\n"
+"License, version 3</a>. It comes with absolutely no warranty. The full licence\n"
+"text ships with the application in the file <code>LICENSE</code>.</p>\n"
+"<p>It builds on <a href=\"https://github.com/ultralytics/ultralytics\">Ultralytics</a>,\n"
+"which is also AGPL-3.0.</p>\n"
+"<p>You may redistribute it under the terms of that licence, and you are entitled\n"
+"to the complete corresponding source code.</p>"
+msgstr ""
+"<h3>YOLO Assistant</h3>\n"
+"<p>Eine geführte Oberfläche zum Trainieren, Exportieren und Testen von YOLO-Modellen.</p>\n"
+"<p>Dieses Programm ist freie Software, lizenziert unter der\n"
+"<a href=\"https://www.gnu.org/licenses/agpl-3.0.html\">GNU Affero General Public\n"
+"License, Version 3</a>. Es wird ohne jegliche Gewährleistung bereitgestellt. Der vollständige\n"
+"Lizenztext liegt der Anwendung in der Datei <code>LICENSE</code> bei.</p>\n"
+"<p>Es baut auf <a href=\"https://github.com/ultralytics/ultralytics\">Ultralytics</a> auf,\n"
+"das ebenfalls unter AGPL-3.0 steht.</p>\n"
+"<p>Sie dürfen es unter den Bedingungen dieser Lizenz weitergeben und haben Anspruch\n"
+"auf den vollständigen zugehörigen Quellcode.</p>"
+
+#: yolo_assistant/app/ui/wizard.py:72
+msgid "Back"
+msgstr "Zurück"
+
+#: yolo_assistant/app/ui/wizard.py:74
+msgid "Next"
+msgstr "Weiter"
+
+#: yolo_assistant/app/ui/wizard.py:115
+msgid "&Language"
+msgstr "&Sprache"
+
+#: yolo_assistant/app/ui/wizard.py:129
+msgid "&Help"
+msgstr "&Hilfe"
+
+#: yolo_assistant/app/ui/wizard.py:130
+msgid "&About"
+msgstr "&Über"
+
+#: yolo_assistant/app/ui/wizard.py:132
+msgid "&Licence"
+msgstr "&Lizenz"
+
+#: yolo_assistant/app/ui/wizard.py:136
+msgid "About YOLO Assistant"
+msgstr "Über YOLO Assistant"
+
+#: yolo_assistant/app/ui/wizard.py:142
+msgid "The LICENSE file could not be found. See https://www.gnu.org/licenses/agpl-3.0.html"
+msgstr "Die Datei LICENSE wurde nicht gefunden. Siehe https://www.gnu.org/licenses/agpl-3.0.html"
+
+#: yolo_assistant/app/ui/wizard.py:146
+msgid "Licence"
+msgstr "Lizenz"
+
+#: yolo_assistant/app/ui/wizard.py:148
+msgid "YOLO Assistant is licensed under the GNU Affero General Public License v3."
+msgstr "YOLO Assistant ist unter der GNU Affero General Public License v3 lizenziert."
+
+#: yolo_assistant/app/ui/wizard.py:172
+msgid "Language"
+msgstr "Sprache"
+
+#: yolo_assistant/app/ui/wizard.py:174
+msgid "The new language takes effect the next time the app starts. Something is still running, so restart the app once it has finished."
+msgstr "Die neue Sprache wird beim nächsten Start der Anwendung wirksam. Es läuft noch etwas; starten Sie die Anwendung neu, sobald es abgeschlossen ist."
+
+#: yolo_assistant/app/ui/wizard.py:179
+msgid "The new language takes effect the next time the app starts. Restart it now?"
+msgstr "Die neue Sprache wird beim nächsten Start der Anwendung wirksam. Jetzt neu starten?"
+
+#: yolo_assistant/app/ui/wizard.py:183
+msgid "Restart now"
+msgstr "Jetzt neu starten"
+
+#: yolo_assistant/app/ui/wizard.py:183
+msgid "Later"
+msgstr "Später"
+
+#: worker/__main__.py:75
+msgid "Reduce the batch size or image size, or close other GPU applications."
+msgstr "Verringern Sie die Batch-Größe oder die Bildgröße, oder schließen Sie andere Anwendungen, die die GPU nutzen."
+
+#: worker/__main__.py:80
+msgid "The installed PyTorch build does not support this GPU. Re-run environment setup and pick a newer CUDA backend."
+msgstr "Der installierte PyTorch-Build unterstützt diese GPU nicht. Führen Sie die Einrichtung der Umgebung erneut aus und wählen Sie ein neueres CUDA-Backend."
+
+#: worker/__main__.py:91
+msgid "a package this step needs"
+msgstr "ein Paket, das dieser Schritt braucht"
+
+#: worker/__main__.py:94
+msgid "The managed environment is missing {what}. Open Step 1 and press Repair: it installs what is missing without downloading everything again."
+msgstr "In der verwalteten Umgebung fehlt {what}. Öffnen Sie Schritt 1 und klicken Sie auf „Reparieren“: Damit wird das Fehlende installiert, ohne alles erneut herunterzuladen."
+
+#: worker/__main__.py:128
+msgid "Cancelled by user."
+msgstr "Vom Benutzer abgebrochen."
+
+#: worker/channel.py:91
+msgid "IPC socket unavailable ({error}); using stdout framing"
+msgstr "IPC-Socket nicht verfügbar ({error}); Kommunikation über stdout"
+
+#: worker/channel.py:248
+msgid "The live picture needs the loopback control socket, which could not be opened, so only the numbers are shown. Everything else in this step works."
+msgstr "Das Livebild benötigt den lokalen Steuer-Socket (Loopback), der nicht geöffnet werden konnte, daher werden nur die Zahlen angezeigt. Alles andere in diesem Schritt funktioniert."
+
+#: worker/commands/autolabel.py:139
+msgid "{dataset} does not hold a prepared dataset. Run Step 2 again."
+msgstr "{dataset} enthält keinen vorbereiteten Datensatz. Führen Sie Schritt 2 erneut aus."
+
+#: worker/commands/autolabel.py:143
+msgid "The confidence threshold must be between 0 and 1, not {threshold}."
+msgstr "Die Konfidenzschwelle muss zwischen 0 und 1 liegen, nicht bei {threshold}."
+
+#: worker/commands/autolabel.py:157
+msgid "Every photo already has a label; there is nothing to do."
+msgstr "Jedes Foto hat bereits ein Label; es gibt nichts zu tun."
+
+#: worker/commands/autolabel.py:163
+msgid "No description was given for {names}. Each class needs a sentence saying what to look for."
+msgstr "Für {names} wurde keine Beschreibung angegeben. Jede Klasse braucht einen Satz, der sagt, wonach gesucht werden soll."
+
+#: worker/commands/autolabel.py:190
+msgid "Loading {model}. The first run downloads it, which can take a few minutes."
+msgstr "{model} wird geladen. Beim ersten Mal wird es heruntergeladen, was einige Minuten dauern kann."
+
+#: worker/commands/autolabel.py:211
+msgid "Labelling {todo:,} photos in {classes} classes."
+msgstr "{todo:,} Fotos in {classes} Klassen werden beschriftet."
+
+#: worker/commands/autolabel.py:288
+msgid "{name}: {labelled:,} photos labelled, {boxes:,} boxes, {empty:,} with nothing found."
+msgstr "{name}: {labelled:,} Fotos beschriftet, {boxes:,} Boxen, bei {empty:,} wurde nichts gefunden."
+
+#: worker/commands/autolabel.py:322
+msgid "Labelled {labelled:,} photos with {boxes:,} boxes in {seconds:.1f}s."
+msgstr "{labelled:,} Fotos mit {boxes:,} Boxen in {seconds:.1f} s beschriftet."
+
+#: worker/commands/autolabel.py:357
+msgid "{path} is empty. Run Step 2 again."
+msgstr "{path} ist leer. Führen Sie Schritt 2 erneut aus."
+
+#: worker/commands/autolabel.py:377
+msgid "The dataset has no class named \"{name}\". It was prepared with a different set of classes -- go back to Step 2 and prepare it again."
+msgstr "Der Datensatz hat keine Klasse namens „{name}“. Er wurde mit anderen Klassen vorbereitet – gehen Sie zurück zu Schritt 2 und bereiten Sie ihn erneut vor."
+
+#: worker/commands/autolabel.py:559
+msgid "Ran out of GPU memory on {count} photos at once; continuing {half} at a time."
+msgstr "Nicht genug GPU-Speicher für {count} Fotos auf einmal; es geht mit {half} auf einmal weiter."
+
+#: worker/commands/autolabel.py:621
+msgid "The managed environment cannot load OWLv2: {error}"
+msgstr "Die verwaltete Umgebung kann OWLv2 nicht laden: {error}"
+
+#: worker/commands/autolabel.py:635
+msgid "{model} could not be downloaded: {error}"
+msgstr "{model} konnte nicht heruntergeladen werden: {error}"
+
+#: worker/commands/autolabel.py:689
+msgid "No working image processor could be loaded for {model}."
+msgstr "Für {model} konnte kein funktionierender Bildprozessor geladen werden."
+
+#: worker/commands/autolabel.py:704
+msgid "defaults"
+msgstr "Standardwerte"
+
+#: worker/commands/autolabel.py:706
+msgid "Preparing photos with {name} ({options}): {cost:.0f} ms per {n} photos, against {slowest:.0f} ms the slowest way of asking."
+msgid_plural "Preparing photos with {name} ({options}): {cost:.0f} ms per {n} photos, against {slowest:.0f} ms the slowest way of asking."
+msgstr[0] "Fotos werden mit {name} ({options}) vorbereitet: {cost:.0f} ms für {n} Foto, gegenüber {slowest:.0f} ms bei der langsamsten Aufrufvariante."
+msgstr[1] "Fotos werden mit {name} ({options}) vorbereitet: {cost:.0f} ms für {n} Fotos, gegenüber {slowest:.0f} ms bei der langsamsten Aufrufvariante."
+
+#: worker/commands/autolabel.py:716
+msgid "Preparing photos with {name} ({options}): {cost:.0f} ms per {n} photos. This transformers offers no faster path for OWLv2."
+msgid_plural "Preparing photos with {name} ({options}): {cost:.0f} ms per {n} photos. This transformers offers no faster path for OWLv2."
+msgstr[0] "Fotos werden mit {name} ({options}) vorbereitet: {cost:.0f} ms für {n} Foto. Diese transformers-Version bietet keinen schnelleren Weg für OWLv2."
+msgstr[1] "Fotos werden mit {name} ({options}) vorbereitet: {cost:.0f} ms für {n} Fotos. Diese transformers-Version bietet keinen schnelleren Weg für OWLv2."
+
+#: worker/commands/autolabel.py:795
+msgid "PyTorch cannot see the GPU, so autolabeling would take days instead of minutes."
+msgstr "PyTorch erkennt die GPU nicht, daher würde das automatische Beschriften Tage statt Minuten dauern."
+
+#: worker/commands/autolabel.py:819
+msgid "Running on {name}: {free:.1f} GB of {total:.1f} GB free, weights in {precision}."
+msgstr "Läuft auf {name}: {free:.1f} GB von {total:.1f} GB frei, Gewichte in {precision}."
+
+#: worker/commands/autolabel.py:827
+msgid "Running on the CPU in {precision}. This will be slow."
+msgstr "Läuft auf der CPU mit {precision}. Das wird langsam."
+
+#: worker/commands/autolabel.py:851
+msgid "Running on the CPU, so one photo at a time."
+msgstr "Läuft auf der CPU, daher ein Foto nach dem anderen."
+
+#: worker/commands/autolabel.py:863
+msgid "{per_photo:.1f} GB of GPU memory per photo, {free:.1f} GB free: labelling {batch} at a time."
+msgstr "{per_photo:.1f} GB GPU-Speicher pro Foto, {free:.1f} GB frei: Es werden {batch} auf einmal beschriftet."
+
+#: worker/commands/autolabel.py:971
+msgid "\"{name}\": nothing was found in {empty:,} of {n:,} photos. Those are now labelled as containing no objects. If that is wrong, try describing the object differently or lowering the confidence threshold."
+msgid_plural "\"{name}\": nothing was found in {empty:,} of {n:,} photos. Those are now labelled as containing no objects. If that is wrong, try describing the object differently or lowering the confidence threshold."
+msgstr[0] "„{name}“: Auf {empty:,} von {n:,} Foto wurde nichts gefunden. Dieses Foto ist jetzt so beschriftet, dass es keine Objekte enthält. Falls das nicht stimmt, beschreiben Sie das Objekt anders oder senken Sie die Konfidenzschwelle."
+msgstr[1] "„{name}“: Auf {empty:,} von {n:,} Fotos wurde nichts gefunden. Diese Fotos sind jetzt so beschriftet, dass sie keine Objekte enthalten. Falls das nicht stimmt, beschreiben Sie das Objekt anders oder senken Sie die Konfidenzschwelle."
+
+#: worker/commands/autolabel.py:987
+msgid "Not a single box was found. The descriptions probably do not match what is in the photos, or the threshold is too high."
+msgstr "Es wurde keine einzige Box gefunden. Die Beschreibungen passen wahrscheinlich nicht zu dem, was auf den Fotos zu sehen ist, oder die Schwelle ist zu hoch."
+
+#: worker/commands/cameras.py:73
+msgid "Camera {index}: {name} ({width}x{height}, {fps} frames a second)."
+msgstr "Kamera {index}: {name} ({width}x{height}, {fps} Frames pro Sekunde)."
+
+#: worker/commands/cameras.py:79
+msgid "Camera {index}: {name} ({width}x{height})."
+msgstr "Kamera {index}: {name} ({width}x{height})."
+
+#: worker/commands/cameras.py:84
+msgid "No camera answered. One that another application already has open cannot be opened again here."
+msgstr "Keine Kamera hat geantwortet. Eine Kamera, die bereits von einer anderen Anwendung geöffnet ist, kann hier nicht noch einmal geöffnet werden."
+
+#: worker/commands/export.py:82
+msgid "Height has to be a multiple of 32; {value} is not. YOLO lays its detections out on a grid of that spacing."
+msgstr "Die Höhe muss ein Vielfaches von 32 sein; {value} ist es nicht. YOLO ordnet seine Erkennungen in einem Raster mit diesem Abstand an."
+
+#: worker/commands/export.py:86
+msgid "Width has to be a multiple of 32; {value} is not. YOLO lays its detections out on a grid of that spacing."
+msgstr "Die Breite muss ein Vielfaches von 32 sein; {value} ist es nicht. YOLO ordnet seine Erkennungen in einem Raster mit diesem Abstand an."
+
+#: worker/commands/export.py:110
+msgid "{weights} is not there."
+msgstr "{weights} ist nicht vorhanden."
+
+#: worker/commands/export.py:111
+msgid "The run it belongs to has been deleted or renamed. Go back to Step 6 and pick a checkpoint that is still on disk."
+msgstr "Der Durchlauf, zu dem er gehört, wurde gelöscht oder umbenannt. Gehen Sie zurück zu Schritt 6 und wählen Sie einen Checkpoint, der noch auf der Festplatte liegt."
+
+#: worker/commands/export.py:120
+msgid "The nearest size that works is {nearest}."
+msgstr "Die nächstgelegene funktionierende Größe ist {nearest}."
+
+#: worker/commands/export.py:141
+msgid "Exporting {weights} to {format} at {precision}, {width}x{height}, on device {device}."
+msgstr "{weights} wird nach {format} exportiert: Präzision {precision}, {width}x{height}, auf Gerät {device}."
+
+#: worker/commands/export.py:153
+msgid "Graph simplification is on and the ONNX opset is 19."
+msgstr "Die Graph-Vereinfachung ist aktiviert, und das ONNX-Opset ist 19."
+
+#: worker/commands/export.py:159
+msgid "Converting. There is no progress to report from inside an export -- a TensorRT engine build in particular is several quiet minutes."
+msgstr "Konvertierung läuft. Während eines Exports lässt sich kein Fortschritt melden – besonders das Erstellen einer TensorRT-Engine dauert einige stille Minuten."
+
+#: worker/commands/export.py:196
+msgid "{name} is only {kilobytes:.0f} KB, which is small for a detector. Test it in Step 7 before deploying it."
+msgstr "{name} ist nur {kilobytes:.0f} KB groß, was für einen Detektor wenig ist. Testen Sie die Datei in Schritt 7, bevor Sie sie einsetzen."
+
+#: worker/commands/export.py:207
+msgid "Wrote {path} ({size}) in {duration}."
+msgstr "{path} ({size}) in {duration} geschrieben."
+
+#: worker/commands/export.py:288
+msgid "Ultralytics has no export setting called {names}. Check the spelling in the additional settings box."
+msgstr "Ultralytics hat keine Exporteinstellung namens {names}. Prüfen Sie die Schreibweise im Feld „Weitere Einstellungen“."
+
+#: worker/commands/export.py:293 worker/commands/train.py:420
+msgid "The full list of settings is at https://docs.ultralytics.com/usage/cfg/"
+msgstr "Die vollständige Liste der Einstellungen finden Sie unter https://docs.ultralytics.com/usage/cfg/"
+
+#: worker/commands/export.py:298
+msgid "This Ultralytics has no {names}, so the DeepStream toggle could not set it. The export itself is unaffected."
+msgid_plural "This Ultralytics has no {names}, so the DeepStream toggle could not set them. The export itself is unaffected."
+msgstr[0] "Diese Ultralytics-Version kennt die Einstellung {names} nicht, daher konnte die DeepStream-Option sie nicht setzen. Der Export selbst ist davon nicht betroffen."
+msgstr[1] "Diese Ultralytics-Version kennt die Einstellungen {names} nicht, daher konnte die DeepStream-Option sie nicht setzen. Der Export selbst ist davon nicht betroffen."
+
+#: worker/commands/export.py:306
+msgid "The exported file may still work in DeepStream. If it does not, report this: the app's DeepStream settings need updating for this Ultralytics release."
+msgstr "Die exportierte Datei funktioniert in DeepStream möglicherweise trotzdem. Falls nicht, melden Sie dies bitte: Die DeepStream-Einstellungen der Anwendung müssen für diese Ultralytics-Version aktualisiert werden."
+
+#: worker/commands/export.py:343
+msgid "A TensorRT engine is compiled for the GPU in this machine, and PyTorch cannot see one. Export to ONNX instead, which runs anywhere, or build the engine on the machine it will run on."
+msgstr "Eine TensorRT-Engine wird für die GPU in diesem Computer kompiliert, aber PyTorch erkennt keine. Exportieren Sie stattdessen nach ONNX, das überall läuft, oder erstellen Sie die Engine auf dem Computer, auf dem sie laufen soll."
+
+#: worker/commands/export.py:370
+msgid "The export finished but did not leave a file behind -- it reported {produced}. Look in {folder} for a partial one."
+msgstr "Der Export wurde beendet, hat aber keine Datei hinterlassen – gemeldet wurde {produced}. Sehen Sie in {folder} nach einer unvollständigen Datei nach."
+
+#: worker/commands/export.py:378
+msgid "The export finished but did not leave a file behind. Look in {folder} for a partial one."
+msgstr "Der Export wurde beendet, hat aber keine Datei hinterlassen. Sehen Sie in {folder} nach einer unvollständigen Datei nach."
+
+#: worker/commands/export.py:405
+msgid "{name} could not be moved into {folder}: {error}. Close anything that has the previous export of this name open."
+msgstr "{name} konnte nicht nach {folder} verschoben werden: {error}. Schließen Sie alle Programme, die den vorherigen Export mit diesem Namen geöffnet haben."
+
+#: worker/commands/export.py:426
+msgid "This model was trained for INT8, and exporting it at {precision} failed: {error}"
+msgstr "Dieses Modell wurde für INT8 trainiert, und der Export mit {precision} ist fehlgeschlagen: {error}"
+
+#: worker/commands/export.py:435
+msgid "This model was trained for INT8, and {format} cannot carry its quantisers: {error}"
+msgstr "Dieses Modell wurde für INT8 trainiert, und {format} kann seine Quantisierer nicht übernehmen: {error}"
+
+#: worker/commands/export.py:441
+msgid "Export it as ONNX or TensorRT instead."
+msgstr "Exportieren Sie es stattdessen als ONNX oder TensorRT."
+
+#: worker/commands/export.py:462 worker/commands/train.py:862
+msgid "{model} could not be loaded: {error}"
+msgstr "{model} konnte nicht geladen werden: {error}"
+
+#: worker/commands/export.py:463
+msgid "The file may be truncated or from an incompatible Ultralytics release. Train the model again in Step 5."
+msgstr "Die Datei ist möglicherweise unvollständig oder stammt aus einer inkompatiblen Ultralytics-Version. Trainieren Sie das Modell in Schritt 5 erneut."
+
+#: worker/commands/fake_train.py:64
+msgid "Simulating {n} epochs x {batches} batches."
+msgid_plural "Simulating {n} epochs x {batches} batches."
+msgstr[0] "Simuliert wird {n} Epoche x {batches} Batches."
+msgstr[1] "Simuliert werden {n} Epochen x {batches} Batches."
+
+#: worker/commands/fake_train.py:145
+msgid "Finished {n} epochs in {seconds:.1f}s."
+msgid_plural "Finished {n} epochs in {seconds:.1f}s."
+msgstr[0] "{n} Epoche in {seconds:.1f} s abgeschlossen."
+msgstr[1] "{n} Epochen in {seconds:.1f} s abgeschlossen."
+
+#: worker/commands/infer.py:177
+msgid "{mode!r} is not something this app can test against."
+msgstr "{mode!r} ist nichts, womit diese Anwendung testen kann."
+
+#: worker/commands/infer.py:190
+msgid "{path} is not there any more."
+msgstr "{path} ist nicht mehr vorhanden."
+
+#: worker/commands/infer.py:191
+msgid "It has been deleted or renamed since this page listed it. Go back to Step 7 and pick another file, or export it again in Step 6."
+msgstr "Die Datei wurde gelöscht oder umbenannt, seit diese Seite sie aufgelistet hat. Gehen Sie zurück zu Schritt 7 und wählen Sie eine andere Datei, oder exportieren Sie sie in Schritt 6 erneut."
+
+#: worker/commands/infer.py:217
+msgid "Testing {model} on the GPU at confidence {conf:g}."
+msgstr "{model} wird auf der GPU mit Konfidenz {conf:g} getestet."
+
+#: worker/commands/infer.py:225
+msgid "Testing {model} on the processor at confidence {conf:g}."
+msgstr "{model} wird auf dem Prozessor mit Konfidenz {conf:g} getestet."
+
+#: worker/commands/infer.py:275
+msgid "Saved the photo, boxes drawn, to {path}."
+msgstr "Das Foto mit eingezeichneten Boxen wurde unter {path} gespeichert."
+
+#: worker/commands/infer.py:279
+msgid "{name}: {n} object found in {ms:.1f} ms. Getting the model ready took {seconds:.1f} s, which is paid once rather than per frame."
+msgid_plural "{name}: {n} objects found in {ms:.1f} ms. Getting the model ready took {seconds:.1f} s, which is paid once rather than per frame."
+msgstr[0] "{name}: {n} Objekt in {ms:.1f} ms gefunden. Das Vorbereiten des Modells dauerte {seconds:.1f} s; das fällt nur einmal an, nicht für jeden Frame."
+msgstr[1] "{name}: {n} Objekte in {ms:.1f} ms gefunden. Das Vorbereiten des Modells dauerte {seconds:.1f} s; das fällt nur einmal an, nicht für jeden Frame."
+
+#: worker/commands/infer.py:295
+msgid "Nothing was found in this photo. That is a real answer if there is nothing there -- otherwise try a lower confidence threshold, or a photo more like the ones it was trained on."
+msgstr "Auf diesem Foto wurde nichts gefunden. Das ist eine gültige Antwort, wenn dort nichts zu sehen ist – andernfalls versuchen Sie eine niedrigere Konfidenzschwelle oder ein Foto, das den Trainingsfotos ähnlicher ist."
+
+#: worker/commands/infer.py:323
+msgid "The photo with its boxes could not be saved: {error}"
+msgstr "Das Foto mit seinen Boxen konnte nicht gespeichert werden: {error}"
+
+#: worker/commands/infer.py:336
+msgid "{name}: {n:,} frames."
+msgid_plural "{name}: {n:,} frames."
+msgstr[0] "{name}: {n:,} Frame."
+msgstr[1] "{name}: {n:,} Frames."
+
+#: worker/commands/infer.py:340
+msgid "{name}: this file does not say how many frames it has, so there is no estimate of how long it will take."
+msgstr "{name}: Diese Datei gibt nicht an, wie viele Frames sie hat, daher lässt sich nicht abschätzen, wie lange es dauern wird."
+
+#: worker/commands/infer.py:347
+msgid "Each frame is written, boxes drawn, to {output}. It plays at {fps:g} frames a second once every frame has been run."
+msgstr "Jeder Frame wird mit eingezeichneten Boxen in {output} geschrieben. Das Video läuft mit {fps:g} Frames pro Sekunde, sobald alle Frames verarbeitet sind."
+
+#: worker/commands/infer.py:365
+msgid "Saved {n:,} annotated frames to {path}."
+msgid_plural "Saved {n:,} annotated frames to {path}."
+msgstr[0] "{n:,} Frame mit Markierungen unter {path} gespeichert."
+msgstr[1] "{n:,} Frames mit Markierungen unter {path} gespeichert."
+
+#: worker/commands/infer.py:394
+msgid "Camera {index} is open at {mode}."
+msgstr "Kamera {index} ist im Modus {mode} geöffnet."
+
+#: worker/commands/infer.py:401
+msgid "That is the most this camera offers; {width}x{height} was asked for."
+msgstr "Mehr bietet diese Kamera nicht; angefordert wurden {width}x{height}."
+
+#: worker/commands/infer.py:410
+msgid "This camera has no {width}x{height} mode, so it chose the nearest one it has."
+msgstr "Diese Kamera hat keinen Modus {width}x{height} und hat daher den nächstliegenden gewählt."
+
+#: worker/commands/infer.py:427
+msgid "The model is given at most {fps} frames a second; the camera's others are read and skipped, so the picture stays current."
+msgstr "Das Modell erhält höchstens {fps} Frames pro Sekunde; die übrigen Frames der Kamera werden gelesen und übersprungen, damit das Bild aktuell bleibt."
+
+#: worker/commands/infer.py:433
+msgid "It runs until you press Stop. Nothing is saved."
+msgstr "Der Test läuft, bis Sie auf „Stoppen“ klicken. Es wird nichts gespeichert."
+
+#: worker/commands/infer.py:440
+msgid "The camera delivered {delivered:.1f} frames a second; {fps} were asked for."
+msgstr "Die Kamera lieferte {delivered:.1f} Frames pro Sekunde; angefordert wurden {fps}."
+
+#: worker/commands/infer.py:458
+msgid "{fps} frames a second"
+msgstr "{fps} Frames pro Sekunde"
+
+#: worker/commands/infer.py:550
+msgid "{fps:.1f} frames a second"
+msgstr "{fps:.1f} Frames pro Sekunde"
+
+#: worker/commands/infer.py:578
+msgid "Stopped after {n:,} frames, {mean:.1f} ms a frame on average ({p95:.1f} ms at the slow end), {fps:.1f} frames a second end to end."
+msgid_plural "Stopped after {n:,} frames, {mean:.1f} ms a frame on average ({p95:.1f} ms at the slow end), {fps:.1f} frames a second end to end."
+msgstr[0] "Gestoppt nach {n:,} Frame: im Schnitt {mean:.1f} ms pro Frame ({p95:.1f} ms bei den langsamsten), insgesamt {fps:.1f} Frames pro Sekunde."
+msgstr[1] "Gestoppt nach {n:,} Frames: im Schnitt {mean:.1f} ms pro Frame ({p95:.1f} ms bei den langsamsten), insgesamt {fps:.1f} Frames pro Sekunde."
+
+#: worker/commands/infer.py:589
+msgid "Finished: {n:,} frames, {mean:.1f} ms a frame on average ({p95:.1f} ms at the slow end), {fps:.1f} frames a second end to end."
+msgid_plural "Finished: {n:,} frames, {mean:.1f} ms a frame on average ({p95:.1f} ms at the slow end), {fps:.1f} frames a second end to end."
+msgstr[0] "Fertig: {n:,} Frame, im Schnitt {mean:.1f} ms pro Frame ({p95:.1f} ms bei den langsamsten), insgesamt {fps:.1f} Frames pro Sekunde."
+msgstr[1] "Fertig: {n:,} Frames, im Schnitt {mean:.1f} ms pro Frame ({p95:.1f} ms bei den langsamsten), insgesamt {fps:.1f} Frames pro Sekunde."
+
+#: worker/commands/infer.py:599
+msgid "No frames were read."
+msgstr "Es wurden keine Frames gelesen."
+
+#: worker/commands/infer.py:634
+msgid "The annotated video could not be saved: {error}"
+msgstr "Das Video mit Markierungen konnte nicht gespeichert werden: {error}"
+
+#: worker/commands/infer.py:702
+msgid "Getting the model ready. The first frame through is much slower than the rest and is not counted."
+msgstr "Das Modell wird vorbereitet. Der erste Frame ist viel langsamer als die übrigen und wird nicht mitgezählt."
+
+#: worker/commands/infer.py:730
+msgid "The model was exported at {model_w}x{model_h}, but this input is {width}x{height} -- a different aspect ratio. Every frame is padded out to the model's shape and the padding is processed too, so inference is slower than it needs to be. Export again in Step 6 at a size with the input's shape for the best speed."
+msgstr "Das Modell wurde mit {model_w}x{model_h} exportiert, diese Eingabe hat aber {width}x{height} – ein anderes Seitenverhältnis. Jedes Bild wird mit Rändern auf die Form des Modells aufgefüllt, und auch die Ränder werden berechnet, daher ist die Inferenz langsamer als nötig. Exportieren Sie in Schritt 6 erneut in einer Größe mit dem Seitenverhältnis der Eingabe, um die beste Geschwindigkeit zu erreichen."
+
+#: worker/commands/infer.py:784
+msgid "The model returned nothing for this frame."
+msgstr "Das Modell hat für diesen Frame nichts geliefert."
+
+#: worker/commands/infer.py:874
+msgid "{name} could not be read: {error}"
+msgstr "{name} konnte nicht gelesen werden: {error}"
+
+#: worker/commands/infer.py:878
+msgid "{name} opened but contains no image data."
+msgstr "{name} ließ sich öffnen, enthält aber keine Bilddaten."
+
+#: worker/commands/infer.py:890
+msgid "The codec inside it may not be one this OpenCV build reads. An MP4 with H.264 video is the safest thing to test with."
+msgstr "Der darin verwendete Codec wird von dieser OpenCV-Version möglicherweise nicht gelesen. Ein MP4 mit H.264-Video ist zum Testen am sichersten."
+
+#: worker/commands/infer.py:895
+msgid "The path also contains characters outside this system's default encoding, which some video backends cannot open; a folder with a plain ASCII name rules that out."
+msgstr "Der Pfad enthält außerdem Zeichen außerhalb der Standardkodierung dieses Systems, die manche Video-Backends nicht öffnen können; ein Ordner mit einem einfachen ASCII-Namen schließt das aus."
+
+#: worker/commands/infer.py:901
+msgid "{name} could not be opened."
+msgstr "{name} konnte nicht geöffnet werden."
+
+#: worker/commands/infer.py:933
+msgid "Camera {index} could not be opened."
+msgstr "Kamera {index} konnte nicht geöffnet werden."
+
+#: worker/commands/infer.py:1076
+msgid "{folder} could not be created: {error}"
+msgstr "{folder} konnte nicht erstellt werden: {error}"
+
+#: worker/commands/infer.py:1081 worker/commands/infer.py:324
+msgid "The project folder may be read-only or out of space."
+msgstr "Der Projektordner ist möglicherweise schreibgeschützt oder voll."
+
+#: worker/commands/infer.py:1083
+msgid "The project folder may be read-only or out of space, or its path contains characters this system's video backend cannot handle."
+msgstr "Der Projektordner ist möglicherweise schreibgeschützt oder voll, oder sein Pfad enthält Zeichen, die das Video-Backend dieses Systems nicht verarbeiten kann."
+
+#: worker/commands/infer.py:1088
+msgid "{name} could not be opened for writing."
+msgstr "{name} konnte nicht zum Schreiben geöffnet werden."
+
+#: worker/commands/infer.py:1108
+msgid "OpenCV could not encode a {suffix} image"
+msgstr "OpenCV konnte kein {suffix}-Bild kodieren"
+
+#: worker/commands/infer.py:1146
+msgid "A frame could not be prepared for display."
+msgstr "Ein Frame konnte nicht für die Anzeige vorbereitet werden."
+
+#: worker/commands/infer.py:1182
+msgid "The result could not be drawn: {error}"
+msgstr "Das Ergebnis konnte nicht gezeichnet werden: {error}"
+
+#: worker/commands/infer.py:1220
+msgid "class {index}"
+msgstr "Klasse {index}"
+
+#: worker/commands/infer.py:1275
+msgid "{camera!r} is not a camera."
+msgstr "{camera!r} ist keine Kamera."
+
+#: worker/commands/infer.py:1281
+msgid "No video was chosen to run the model on."
+msgstr "Es wurde kein Video ausgewählt, auf dem das Modell laufen soll."
+
+#: worker/commands/infer.py:1283
+msgid "No photo was chosen to run the model on."
+msgstr "Es wurde kein Foto ausgewählt, auf dem das Modell laufen soll."
+
+#: worker/commands/infer.py:1284
+msgid "Pick a file in Step 7 and press Start again."
+msgstr "Wählen Sie in Schritt 7 eine Datei und klicken Sie erneut auf „Starten“."
+
+#: worker/commands/infer.py:1289
+msgid "{path} is not there."
+msgstr "{path} ist nicht vorhanden."
+
+#: worker/commands/infer.py:1290
+msgid "It has been moved or deleted. Choose another file."
+msgstr "Die Datei wurde verschoben oder gelöscht. Wählen Sie eine andere Datei."
+
+#: worker/commands/infer.py:1316
+msgid "Running a {format} file needs {packages}, which is not installed in this environment."
+msgstr "Zum Ausführen einer {format}-Datei wird {packages} benötigt, das in dieser Umgebung nicht installiert ist."
+
+#: worker/commands/infer.py:1323
+msgid "Running a model in this file needs {packages}, which is not installed in this environment."
+msgstr "Zum Ausführen eines Modells in dieser Datei wird {packages} benötigt, das in dieser Umgebung nicht installiert ist."
+
+#: worker/commands/infer.py:1330
+msgid "If this is ONNX or TensorRT, open Step 1 and press Repair. The other formats need runtimes this app does not install, so export the model to ONNX in Step 6 and test that instead."
+msgstr "Bei ONNX oder TensorRT öffnen Sie Schritt 1 und klicken Sie auf „Reparieren“. Die anderen Formate benötigen Laufzeitumgebungen, die diese Anwendung nicht installiert. Exportieren Sie das Modell daher in Schritt 6 nach ONNX und testen Sie stattdessen diesen Export."
+
+#: worker/commands/infer.py:1349
+msgid "A TensorRT engine is compiled machine code for a graphics card and has no processor version."
+msgstr "Eine TensorRT-Engine ist kompilierter Maschinencode für eine Grafikkarte und hat keine Version für den Prozessor."
+
+#: worker/commands/infer.py:1353
+msgid "Choose the GPU, or test an ONNX export to see CPU speeds."
+msgstr "Wählen Sie die GPU, oder testen Sie einen ONNX-Export, um die Geschwindigkeit auf der CPU zu sehen."
+
+#: worker/commands/infer.py:1360
+msgid "PyTorch could not be imported: {error}"
+msgstr "PyTorch konnte nicht importiert werden: {error}"
+
+#: worker/commands/infer.py:1364
+msgid "The GPU was chosen and PyTorch cannot see one."
+msgstr "Die GPU wurde gewählt, aber PyTorch erkennt keine."
+
+#: worker/commands/infer.py:1365
+msgid "Choose CPU to test the model anyway, or go back to Step 1 and let the app set up its environment again."
+msgstr "Wählen Sie CPU, um das Modell trotzdem zu testen, oder gehen Sie zurück zu Schritt 1 und lassen Sie die Anwendung ihre Umgebung neu einrichten."
+
+#: worker/commands/infer.py:1391
+msgid "onnxruntime has no CUDA provider in this environment, so this ONNX model runs on the processor even though the GPU was chosen. The timings below are processor timings."
+msgstr "onnxruntime hat in dieser Umgebung keinen CUDA-Provider, daher läuft dieses ONNX-Modell auf dem Prozessor, obwohl die GPU gewählt wurde. Die folgenden Zeiten sind Prozessorzeiten."
+
+#: worker/commands/infer.py:1396
+msgid "Open Step 1 and press Repair, which reinstalls onnxruntime-gpu. A TensorRT export in Step 6 is the faster answer on this machine."
+msgstr "Öffnen Sie Schritt 1 und klicken Sie auf „Reparieren“; dabei wird onnxruntime-gpu neu installiert. Ein TensorRT-Export in Schritt 6 ist auf diesem Computer die schnellere Lösung."
+
+#: worker/commands/infer.py:1413
+msgid "{name} could not be loaded: {error}"
+msgstr "{name} konnte nicht geladen werden: {error}"
+
+#: worker/commands/infer.py:1414
+msgid "It may be from an incompatible Ultralytics release, or -- if it is a TensorRT engine -- built on another machine. Export it again in Step 6."
+msgstr "Die Datei stammt möglicherweise aus einer inkompatiblen Ultralytics-Version oder wurde – falls es eine TensorRT-Engine ist – auf einem anderen Computer erstellt. Exportieren Sie sie in Schritt 6 erneut."
+
+#: worker/commands/infer.py:1427
+msgid "The GPU ran out of memory: {error}"
+msgstr "Der GPU ist der Speicher ausgegangen: {error}"
+
+#: worker/commands/infer.py:1428
+msgid "Close anything else using the card, or test on the CPU. A model exported at a smaller image size also needs less."
+msgstr "Schließen Sie alle anderen Programme, die die Grafikkarte nutzen, oder testen Sie auf der CPU. Ein Modell, das mit einer kleineren Bildgröße exportiert wurde, braucht ebenfalls weniger."
+
+#: worker/commands/infer.py:1435
+msgid "This engine could not be loaded by the TensorRT on this machine: {error}"
+msgstr "Diese Engine konnte vom TensorRT auf diesem Computer nicht geladen werden: {error}"
+
+#: worker/commands/infer.py:1439
+msgid "A TensorRT engine only works on the GPU and driver that built it. Export it again in Step 6, on this machine."
+msgstr "Eine TensorRT-Engine funktioniert nur auf der GPU und mit dem Treiber, mit denen sie erstellt wurde. Exportieren Sie sie in Schritt 6 auf diesem Computer erneut."
+
+#: worker/commands/prepare_dataset.py:88
+msgid "No classes to prepare."
+msgstr "Keine Klassen vorzubereiten."
+
+#: worker/commands/prepare_dataset.py:90
+msgid "The photo folder {folder} is not there any more."
+msgstr "Der Fotoordner {folder} ist nicht mehr vorhanden."
+
+#: worker/commands/prepare_dataset.py:93
+msgid "The validation share must be between 0 and 1, not {value}."
+msgstr "Der Anteil für die Validierung muss zwischen 0 und 1 liegen, nicht {value}."
+
+#: worker/commands/prepare_dataset.py:107
+msgid "No photos were found in {folder}. Supported types are {types}."
+msgstr "In {folder} wurden keine Fotos gefunden. Unterstützte Typen sind {types}."
+
+#: worker/commands/prepare_dataset.py:122
+msgid "Preparing {n:,} photos from {source} into {project}."
+msgid_plural "Preparing {n:,} photos from {source} into {project}."
+msgstr[0] "{n:,} Foto aus {source} wird in {project} vorbereitet."
+msgstr[1] "{n:,} Fotos aus {source} werden in {project} vorbereitet."
+
+#: worker/commands/prepare_dataset.py:184
+msgid "{name}: {n:,} photos."
+msgid_plural "{name}: {n:,} photos."
+msgstr[0] "{name}: {n:,} Foto."
+msgstr[1] "{name}: {n:,} Fotos."
+
+#: worker/commands/prepare_dataset.py:190
+msgid "Not one photo could be read. The files may be damaged, or they may be something other than photos with a photo's extension."
+msgstr "Kein einziges Foto konnte gelesen werden. Die Dateien sind möglicherweise beschädigt oder sind gar keine Fotos, obwohl sie eine Foto-Dateiendung haben."
+
+#: worker/commands/prepare_dataset.py:229
+msgid "Prepared {photos:,} photos in {classes} classes ({train:,} for training, {val:,} held back) in {seconds:.1f}s."
+msgstr "In {seconds:.1f} s wurden {photos:,} Fotos in {classes} Klassen vorbereitet ({train:,} für das Training, {val:,} zur Überprüfung zurückbehalten)."
+
+#: worker/commands/prepare_dataset.py:452
+msgid "{path} cannot be used: {error}"
+msgstr "{path} kann nicht verwendet werden: {error}"
+
+#: worker/commands/prepare_dataset.py:455
+msgid "The project folder cannot be inside the photo folder. Choose a folder next to it instead, so the originals stay untouched."
+msgstr "Der Projektordner darf nicht im Fotoordner liegen. Wählen Sie stattdessen einen Ordner daneben, damit die Originale unverändert bleiben."
+
+#: worker/commands/prepare_dataset.py:488
+msgid "Skipped {name}: it could not be read ({error})."
+msgstr "{name} übersprungen: Die Datei konnte nicht gelesen werden ({error})."
+
+#: worker/commands/prepare_dataset.py:496
+msgid "Skipped {name}: identical to {first}. The same photo in two classes teaches the model two different answers to the same question."
+msgstr "{name} übersprungen: identisch mit {first}. Dasselbe Foto in zwei Klassen bringt dem Modell zwei verschiedene Antworten auf dieselbe Frage bei."
+
+#: worker/commands/prepare_dataset.py:508
+msgid "Repaired {name}: it was incomplete and has been re-saved."
+msgstr "{name} repariert: Die Datei war unvollständig und wurde neu gespeichert."
+
+#: worker/commands/prepare_dataset.py:515
+msgid "{name} is only {width}x{height} pixels."
+msgstr "{name} hat nur {width}x{height} Pixel."
+
+#: worker/commands/prepare_dataset.py:528
+msgid "Further problems will be counted but not listed."
+msgstr "Weitere Probleme werden gezählt, aber nicht aufgelistet."
+
+#: worker/commands/probe.py:62
+msgid "{name} cannot be imported in this environment."
+msgstr "{name} kann in dieser Umgebung nicht importiert werden."
+
+#: worker/commands/train.py:86
+msgid "The image size has to be a multiple of 32; {imgsz} is not. YOLO lays its detections out on a grid of that spacing."
+msgstr "Die Bildgröße muss ein Vielfaches von 32 sein; {imgsz} ist es nicht. YOLO ordnet seine Erkennungen auf einem Raster mit diesem Abstand an."
+
+#: worker/commands/train.py:132
+msgid "Training may use up to {gb:.1f} GB of GPU memory. If a batch needs more, the batch size is halved rather than letting Windows move the overflow into much slower system memory."
+msgstr "Das Training darf bis zu {gb:.1f} GB GPU-Speicher belegen. Braucht ein Batch mehr, wird die Batchgröße halbiert, statt Windows den Überschuss in den viel langsameren Arbeitsspeicher auslagern zu lassen."
+
+#: worker/commands/train.py:141
+msgid "Loading {model}. The first run downloads it, which takes a moment."
+msgstr "{model} wird geladen. Beim ersten Durchlauf wird es heruntergeladen, das dauert einen Moment."
+
+#: worker/commands/train.py:168
+msgid "INT8 QAT: Ultralytics calibrates the quantisers on a few training batches before the first epoch. Export the result as INT8 in Step 6."
+msgstr "INT8 QAT: Ultralytics kalibriert die Quantisierer vor der ersten Epoche anhand einiger Trainings-Batches. Exportieren Sie das Ergebnis in Schritt 6 als INT8."
+
+#: worker/commands/train.py:180
+msgid "Training {model} for {n} epochs at {imgsz}px on device {device}."
+msgid_plural "Training {model} for {n} epochs at {imgsz}px on device {device}."
+msgstr[0] "{model} wird {n} Epoche lang mit {imgsz}px auf Gerät {device} trainiert."
+msgstr[1] "{model} wird {n} Epochen lang mit {imgsz}px auf Gerät {device} trainiert."
+
+#: worker/commands/train.py:232
+msgid "Training finished but no weights file was written, so there is nothing to export in Step 6."
+msgstr "Das Training ist beendet, aber es wurde keine Gewichtsdatei geschrieben, daher gibt es in Schritt 6 nichts zu exportieren."
+
+#: worker/commands/train.py:236
+msgid "Remove \"save=false\" from the additional settings and train again."
+msgstr "Entfernen Sie „save=false“ aus dem Feld „Weitere Einstellungen“ und trainieren Sie erneut."
+
+#: worker/commands/train.py:240
+msgid "Finished {n} epoch in {duration}."
+msgid_plural "Finished {n} epochs in {duration}."
+msgstr[0] "{n} Epoche in {duration} abgeschlossen."
+msgstr[1] "{n} Epochen in {duration} abgeschlossen."
+
+#: worker/commands/train.py:277
+msgid "{folder} does not hold a prepared dataset. Run Step 2 again."
+msgstr "{folder} enthält keinen vorbereiteten Datensatz. Führen Sie Schritt 2 erneut aus."
+
+#: worker/commands/train.py:281
+msgid "{file} is missing, so there is nothing to point the trainer at. Run Step 2 again."
+msgstr "{file} fehlt, daher kann dem Training kein Datensatz übergeben werden. Führen Sie Schritt 2 erneut aus."
+
+#: worker/commands/train.py:298
+msgid "Not one photo has a label file, so there is nothing for the model to learn from. Run autolabeling in Step 3 first."
+msgstr "Kein einziges Foto hat eine Label-Datei, daher hat das Modell nichts, woraus es lernen kann. Führen Sie zuerst in Schritt 3 das automatische Beschriften aus."
+
+#: worker/commands/train.py:306
+msgid "Only {n} labelled photo(s) {in_classes}. A model trained on this few will report an accuracy that is mostly luck."
+msgid_plural "Only {n} labelled photo(s) {in_classes}. A model trained on this few will report an accuracy that is mostly luck."
+msgstr[0] "Nur {n} beschriftetes Foto {in_classes}. Ein Modell, das mit so wenigen trainiert wurde, meldet eine Genauigkeit, die größtenteils Glückssache ist."
+msgstr[1] "Nur {n} beschriftete Fotos {in_classes}. Ein Modell, das mit so wenigen trainiert wurde, meldet eine Genauigkeit, die größtenteils Glückssache ist."
+
+#: worker/commands/train.py:312
+msgid "in {n} class(es)"
+msgid_plural "in {n} class(es)"
+msgstr[0] "in {n} Klasse"
+msgstr[1] "in {n} Klassen"
+
+#: worker/commands/train.py:314
+msgid "More photos is the single biggest improvement available here."
+msgstr "Mehr Fotos sind hier mit Abstand die größte mögliche Verbesserung."
+
+#: worker/commands/train.py:317
+msgid "Training on {n:,} labelled photos {in_classes}."
+msgid_plural "Training on {n:,} labelled photos {in_classes}."
+msgstr[0] "Training mit {n:,} beschriftetem Foto {in_classes}."
+msgstr[1] "Training mit {n:,} beschrifteten Fotos {in_classes}."
+
+#: worker/commands/train.py:321
+msgid "in {n} classes"
+msgid_plural "in {n} classes"
+msgstr[0] "in {n} Klasse"
+msgstr[1] "in {n} Klassen"
+
+#: worker/commands/train.py:345
+msgid "{file} cannot be read: {error}"
+msgstr "{file} kann nicht gelesen werden: {error}"
+
+#: worker/commands/train.py:350
+msgid "{file} is empty. Run Step 2 again."
+msgstr "{file} ist leer. Führen Sie Schritt 2 erneut aus."
+
+#: worker/commands/train.py:359
+msgid "\"{name}\" cannot be used as a folder name for this run."
+msgstr "„{name}“ kann nicht als Ordnername für diesen Durchlauf verwendet werden."
+
+#: worker/commands/train.py:366
+msgid "\"{name}\" already exists. Choose another name, or agree to replace it."
+msgstr "„{name}“ existiert bereits. Wählen Sie einen anderen Namen oder stimmen Sie dem Ersetzen zu."
+
+#: worker/commands/train.py:375
+msgid "{folder} is not empty and does not look like a training run this app made, so it will not be deleted. Choose another name for this run."
+msgstr "{folder} ist nicht leer und scheint kein von dieser Anwendung angelegter Trainingsdurchlauf zu sein, daher wird er nicht gelöscht. Wählen Sie einen anderen Namen für diesen Durchlauf."
+
+#: worker/commands/train.py:387
+msgid "{folder} could not be emptied: {error}. Close anything that has a file in that folder open, or choose another name for this run."
+msgstr "{folder} konnte nicht geleert werden: {error}. Schließen Sie alle Programme, die eine Datei in diesem Ordner geöffnet haben, oder wählen Sie einen anderen Namen für diesen Durchlauf."
+
+#: worker/commands/train.py:415
+msgid "Ultralytics has no setting called {names}. Check the spelling in the additional settings box."
+msgstr "Ultralytics hat keine Einstellung namens {names}. Prüfen Sie die Schreibweise im Feld „Weitere Einstellungen“."
+
+#: worker/commands/train.py:441
+msgid "PyTorch cannot see a GPU, and training on the processor would take days rather than minutes."
+msgstr "PyTorch erkennt keine GPU, und das Training auf dem Prozessor würde Tage statt Minuten dauern."
+
+#: worker/commands/train.py:497
+msgid "{n} batches per epoch, {total:,} in total."
+msgid_plural "{n} batches per epoch, {total:,} in total."
+msgstr[0] "{n} Batch pro Epoche, insgesamt {total:,}."
+msgstr[1] "{n} Batches pro Epoche, insgesamt {total:,}."
+
+#: worker/commands/train.py:522
+msgid "Out of GPU memory; restarting epoch {epoch} with batch size {batch}."
+msgstr "GPU-Speicher erschöpft; Epoche {epoch} wird mit Batchgröße {batch} neu gestartet."
+
+#: worker/commands/train.py:530
+msgid "Out of GPU memory; restarting epoch {epoch} with a smaller batch."
+msgstr "GPU-Speicher erschöpft; Epoche {epoch} wird mit einem kleineren Batch neu gestartet."
+
+#: worker/commands/train.py:592
+msgid "epoch {epoch} of {total}"
+msgstr "Epoche {epoch} von {total}"
+
+#: worker/commands/train.py:688
+msgid "Epoch {epoch}/{total}"
+msgstr "Epoche {epoch}/{total}"
+
+#: worker/commands/train.py:693
+msgid "(best so far)"
+msgstr "(bisher beste)"
+
+#: worker/commands/train.py:731
+msgid "INT8 quantisation-aware training needs the NVIDIA TensorRT Model Optimizer, and this environment cannot import it ({error})."
+msgstr "Quantisierungsbewusstes INT8-Training benötigt den NVIDIA TensorRT Model Optimizer, und diese Umgebung kann ihn nicht importieren ({error})."
+
+#: worker/commands/train.py:741
+msgid "This version of Ultralytics cannot do INT8 quantisation-aware training. Update it in Step 1."
+msgstr "Diese Ultralytics-Version beherrscht kein quantisierungsbewusstes INT8-Training. Aktualisieren Sie sie in Schritt 1."
+
+#: worker/commands/train.py:795
+msgid "The INT8 quantisation kernels cannot be compiled: on Windows they need the Microsoft C++ compiler, and it was not found. Training will still be correct, but the quantised layers fall back to a slower implementation."
+msgstr "Die INT8-Quantisierungskernel können nicht kompiliert werden: Unter Windows brauchen sie den Microsoft-C++-Compiler, und er wurde nicht gefunden. Das Training bleibt trotzdem korrekt, aber die quantisierten Schichten greifen auf eine langsamere Implementierung zurück."
+
+#: worker/commands/train.py:800
+msgid "Install the Visual Studio Build Tools with the \"Desktop development with C++\" workload, then start the run again. The app finds the compiler by itself; nothing needs to be added to PATH."
+msgstr "Installieren Sie die Visual Studio Build Tools mit der Workload „Desktopentwicklung mit C++“ und starten Sie den Lauf dann erneut. Die App findet den Compiler selbst; am PATH muss nichts geändert werden."
+
+#: worker/commands/train.py:810
+msgid "The INT8 quantisation kernels cannot be compiled: on Windows they need the NVIDIA CUDA Toolkit {version}, and it was not found. Training will still be correct, but the quantised layers fall back to a slower implementation."
+msgstr "Die INT8-Quantisierungskernel können nicht kompiliert werden: Unter Windows brauchen sie das NVIDIA CUDA Toolkit {version}, und es wurde nicht gefunden. Das Training bleibt trotzdem korrekt, aber die quantisierten Schichten greifen auf eine langsamere Implementierung zurück."
+
+#: worker/commands/train.py:817
+msgid "Install CUDA Toolkit {version} from NVIDIA, then start the run again. It can sit beside any other version: the app picks the one that matches."
+msgstr "Installieren Sie das CUDA Toolkit {version} von NVIDIA und starten Sie den Lauf dann erneut. Es kann neben jeder anderen Version installiert sein: Die App wählt die passende aus."
+
+#: worker/commands/train.py:828
+msgid "ninja is not on this environment's PATH, so the INT8 quantisation kernels cannot be compiled. Training will still be correct, but the quantised layers fall back to a slower implementation."
+msgstr "ninja ist nicht im PATH dieser Umgebung, daher können die INT8-Quantisierungskernel nicht kompiliert werden. Das Training bleibt trotzdem korrekt, aber die quantisierten Schichten greifen auf eine langsamere Implementierung zurück."
+
+#: worker/commands/train.py:833
+msgid "This is the app's mistake, not a missing package. Report it with the log file if this run is slower than you expect."
+msgstr "Das ist ein Fehler der Anwendung, kein fehlendes Paket. Melden Sie ihn zusammen mit der Logdatei, falls dieser Durchlauf langsamer ist als erwartet."
+
+#: worker/util/errors.py:29
+msgid "Check the photo folder in Step 2: it needs one sub-folder per class, with that class's photos directly inside it."
+msgstr "Prüfen Sie den Fotoordner in Schritt 2: Er braucht pro Klasse einen Unterordner, in dem die Fotos dieser Klasse direkt liegen."
+
+#: worker/util/errors.py:39
+msgid "Go back to Step 1 and let the app set up its Python environment again. If the driver is missing, install it first and restart the computer."
+msgstr "Gehen Sie zurück zu Schritt 1 und lassen Sie die Anwendung ihre Python-Umgebung neu einrichten. Falls der Treiber fehlt, installieren Sie ihn zuerst und starten Sie den Computer neu."
+
+#: worker/util/errors.py:54
+msgid "Open Step 1 and press Repair, which installs what the environment is missing without downloading everything again. Failing that, train with INT8 QAT switched off and choose INT8 when you export in Step 6: that quantises the finished model instead of training it to expect quantisation, which needs nothing extra and usually costs a little accuracy."
+msgstr "Öffnen Sie Schritt 1 und klicken Sie auf „Reparieren“; dabei wird nachinstalliert, was der Umgebung fehlt, ohne alles erneut herunterzuladen. Falls das nicht hilft, trainieren Sie mit ausgeschaltetem INT8 QAT und wählen Sie beim Export in Schritt 6 INT8: Dabei wird das fertige Modell quantisiert, statt es schon beim Training auf die Quantisierung vorzubereiten. Das braucht nichts zusätzlich und kostet meist etwas Genauigkeit."
+
+#: worker/util/errors.py:67
+msgid "The model is downloaded once, the first time it is used, and needs an internet connection. Check the connection, or any proxy that blocks huggingface.co, and try again."
+msgstr "Das Modell wird einmalig bei der ersten Verwendung heruntergeladen und benötigt dafür eine Internetverbindung. Prüfen Sie die Verbindung oder einen Proxy, der huggingface.co blockiert, und versuchen Sie es erneut."
+
+#: worker/util/errors.py:78
+msgid "ONNX is the format most likely to succeed; try it first to find out whether the problem is the model or the format. Exporting at FP32 also rules out the precision as the cause."
+msgstr "ONNX ist das Format mit den besten Erfolgsaussichten; probieren Sie es zuerst, um herauszufinden, ob das Problem am Modell oder am Format liegt. Ein Export mit FP32 schließt außerdem die Präzision als Ursache aus."
+
+#: worker/util/errors.py:94
+msgid "Choose INT8 in the precision list. A model trained with INT8 QAT already carries its quantisers, and exporting it at any other precision throws that training away."
+msgstr "Wählen Sie INT8 in der Liste „Präzision“. Ein mit INT8 QAT trainiertes Modell enthält bereits seine Quantisierer, und ein Export mit einer anderen Präzision macht dieses Training zunichte."
+
+#: worker/util/errors.py:112
+msgid "Try a different file to find out whether the problem is this one or the format. MP4 with H.264, and JPEG or PNG, are the safest to test with."
+msgstr "Versuchen Sie es mit einer anderen Datei, um herauszufinden, ob das Problem an dieser Datei oder am Format liegt. MP4 mit H.264 sowie JPEG oder PNG sind zum Testen am sichersten."
+
+#: worker/util/errors.py:127
+msgid "Close anything else using the camera -- a video call or the system camera app -- and press Refresh. On Linux, check that your user is in the 'video' group."
+msgstr "Schließen Sie alle anderen Programme, die die Kamera nutzen – etwa einen Videoanruf oder die Kamera-Anwendung des Systems – und klicken Sie auf „Aktualisieren“. Prüfen Sie unter Linux, ob Ihr Benutzer in der Gruppe „video“ ist."
+
+#: worker/util/errors.py:143
+msgid "Export the model again in Step 6, or export it to ONNX, which is the format most likely to run anywhere. A TensorRT engine only works on the machine and driver that built it."
+msgstr "Exportieren Sie das Modell in Schritt 6 erneut oder exportieren Sie es nach ONNX, dem Format, das am wahrscheinlichsten überall läuft. Eine TensorRT-Engine funktioniert nur auf dem Computer und mit dem Treiber, mit denen sie erstellt wurde."

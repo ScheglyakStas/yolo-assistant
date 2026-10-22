@@ -1,0 +1,323 @@
+# Erklärungen, die beim Darüberfahren mit der Maus über jedem Parameter der
+# Anwendung angezeigt werden.
+# Deutsche Übersetzung von tooltips.toml – muss genau dieselben Schlüssel
+# enthalten.
+#
+# Geschrieben für jemanden, der sein erstes Modell trainiert: Sagen Sie, was die
+# Einstellung bewirkt und was passiert, wenn sie falsch gesetzt ist, nicht, wie
+# das Argument heißt.
+#
+# Ein Steuerelement, dessen Schlüssel hier fehlt, löst beim Erstellen einen Fehler
+# aus. Das ist Absicht.
+
+[system]
+backend = """
+Welche CUDA-Version (Build) von PyTorch installiert wird. „Automatisch“ wählt die
+neueste Version, die Ihr Treiber unterstützt, und das ist fast immer richtig.
+Wählen Sie nur dann manuell, wenn die automatische Auswahl eine Version
+getroffen hat, die Ihre Grafikkarte nicht ausführen kann.
+"""
+check_updates = """
+Prüft, ob eine neuere Ultralytics-Version verfügbar ist, und zeigt genau an, was
+sich ändern würde, bevor irgendetwas installiert wird. Eine Aktualisierung kann
+eine andere PyTorch-Version nach sich ziehen, deshalb wird zuerst der Plan
+angezeigt. Die Anwendung prüft das außerdem bei jedem Start einmal im
+Hintergrund.
+"""
+
+setup = """
+Erstellt die eigene Python-Umgebung, die diese Anwendung für das Training nutzt,
+mit einer PyTorch-Version, die zu Ihrem Grafikkartentreiber passt. Nichts wird
+systemweit installiert, und Ihr eigenes Python bleibt unberührt. Beim ersten
+Mal werden mehrere Gigabyte heruntergeladen.
+"""
+rebuild = """
+Löscht diese Umgebung und baut sie von Grund auf neu auf. Verwenden Sie das,
+wenn die Einrichtung unterbrochen wurde oder die Umgebung nicht mehr
+funktioniert. Es ist ungefährlich: Ihre Datensätze und trainierten Modelle
+bleiben unberührt.
+"""
+
+[dataset]
+source_folder = """
+Der Ordner mit Ihren Fotos, mit einem Unterordner pro Klasse. Die Namen der
+Unterordner werden zu den Klassennamen. Ihre Originaldateien werden nie
+verändert: Die Anwendung arbeitet mit einer Kopie.
+"""
+
+project_folder = """
+Wohin der vorbereitete Datensatz geschrieben wird. Die Originale werden hierher
+kopiert, nie verschoben, daher wird Platz für eine zweite Kopie Ihrer Fotos
+benötigt. Wählen Sie ein Laufwerk mit genügend Speicherplatz – alles, was die
+späteren Schritte erzeugen, wird ebenfalls hier abgelegt.
+"""
+val_split = """
+Der Anteil jeder Klasse, der zurückbehalten wird, um die Genauigkeit an Fotos zu
+messen, mit denen das Modell nie trainiert hat. Ohne zurückbehaltene Fotos ist
+die angezeigte Genauigkeit bedeutungslos. Die Aufteilung wird jetzt festgelegt
+und von jedem Trainingsdurchlauf wiederverwendet, sodass Durchläufe vergleichbar
+bleiben. Üblich sind 20%.
+"""
+prepare = """
+Kopiert die Fotos in den Projektordner, benennt sie um, prüft, ob sich jedes
+öffnen lässt, und schreibt die Dateien, die YOLO benötigt. In Ihrem
+Originalordner wird nichts verändert. Beschädigte oder doppelte Fotos werden
+gemeldet und weggelassen.
+"""
+open_folder = """
+Öffnet den Projektordner in Ihrem Dateimanager, damit Sie den vorbereiteten
+Datensatz, die Labels und später die trainierten Modelle sehen können.
+"""
+
+[autolabel]
+prompt = """
+Eine kurze Beschreibung des Objekts, das auf den Fotos dieser Klasse gesucht
+werden soll, in einfachem Englisch – „a red apple“, „a delivery van“. OWLv2
+sucht nach dem, was Sie beschreiben, seien Sie also so genau, dass ähnliche
+Objekte im Hintergrund ausgeschlossen werden. Trennen Sie alternative
+Formulierungen mit einem Semikolon: „a lorry; a truck“.
+"""
+threshold = """
+Wie sicher sich OWLv2 sein muss, bevor es eine Box zeichnet. Ein niedrigerer
+Wert findet mehr Objekte, erfindet aber auch mehr; ein höherer liefert sauberere
+Ergebnisse, übersieht aber einige. Die Werte von OWLv2 fallen eher niedrig aus,
+daher ist 0,15–0,25 ein sinnvoller Bereich für den Anfang.
+"""
+max_detections = """
+Die Höchstzahl an Boxen, die pro Foto behalten werden. Wenn jedes Foto genau ein
+Objekt enthält, beseitigt der Wert 1 eine ganze Fehlerart: doppelte Boxen.
+"""
+model = """
+Mit welchem OWLv2-Modell beschriftet wird. Das Base-Modell ist das schnelle und
+der richtige Einstieg; das Large-Modell findet schwierigere Objekte und braucht
+etwa dreimal so lange. Beide passen auf Ihre Grafikkarte – wie viele Fotos
+gleichzeitig verarbeitet werden, richtet sich nach dem tatsächlich freien
+Speicher. Jedes Modell wird einmal heruntergeladen, beim ersten Gebrauch.
+"""
+relabel = """
+Beschriftet jedes Foto neu und ersetzt die bereits vorhandenen Labels – auch
+solche, die Sie in Schritt 4 von Hand korrigiert haben. Lassen Sie diese Option
+aus, um nur Fotos zu beschriften, die noch keine Labels haben; auf diese Weise
+wird auch ein abgebrochener Durchlauf fortgesetzt.
+"""
+start = """
+Lässt OWLv2 über jedes Foto laufen, das noch kein Label hat, und schreibt pro
+Foto eine Label-Datei. Sie können jederzeit anhalten und später weitermachen;
+bereits bearbeitete Fotos werden nicht wiederholt. Nichts wird irgendwohin
+gesendet – das Modell läuft auf Ihrer eigenen GPU.
+"""
+
+[verify]
+classes = """
+Die Klassen in Ihrem Datensatz. Wählen Sie eine aus, um ihre Fotos
+durchzublättern. Eine Klasse, bei der auf den meisten Fotos nichts gefunden
+wurde, deutet auf eine Beschreibung hin, die nicht gepasst hat – korrigieren Sie
+die Formulierung in Schritt 3 und beschriften Sie diese Klasse erneut.
+"""
+navigation = """
+Wechselt zum nächsten oder vorherigen Foto dieser Klasse. Die Pfeiltasten nach
+links und rechts sowie das Mausrad tun dasselbe, was schneller ist, wenn Sie
+mehr als eine Handvoll Fotos durchsehen.
+"""
+only_empty = """
+Zeigt nur die Fotos, auf denen das Modell überhaupt nichts gefunden hat. Diese
+sollten Sie zuerst prüfen: Ein Foto ohne Boxen bringt dem Modell bei, dass sein
+eigenes Objekt dort nicht vorhanden ist, und eine Klasse voller solcher Fotos
+bedeutet eine Beschreibung, die danebenlag.
+"""
+delete_box = """
+Entfernt die ausgewählte Box. Klicken Sie auf eine Box im Foto, um sie
+auszuwählen, oder drücken Sie die Entf-Taste. Ein Foto ganz ohne Boxen bedeutet
+„hier ist nichts“, und das ist ein völlig korrektes Label für ein Foto, das
+wirklich leer ist.
+"""
+revert = """
+Setzt die Labels dieses Fotos auf den Stand beim Öffnen zurück und macht
+hinzugefügte oder gelöschte Boxen rückgängig. Das betrifft nur dieses Foto und
+funktioniert nur, bis Sie zu einem anderen wechseln.
+"""
+
+[train]
+model = """
+Der Checkpoint, von dem aus trainiert wird. Kleinere Modelle (n, s) trainieren
+und laufen auf bescheidener Hardware schneller; größere (l, x) sind genauer,
+brauchen aber mehr VRAM und Zeit. Beginnen Sie mit n oder s, um den gesamten
+Ablauf einmal zu durchlaufen, und steigen Sie dann auf ein größeres um. Jedes
+Modell wird einmal heruntergeladen, beim ersten Gebrauch.
+"""
+output_name = """
+Name dieses Trainingsdurchlaufs. Die Ergebnisse werden in einen Ordner dieses
+Namens im Projekt geschrieben, wählen Sie also etwas, das Sie später
+wiedererkennen. Ein Name, unter dem bereits ein trainiertes Modell liegt, wird
+erst ersetzt, nachdem Sie zugestimmt haben.
+"""
+epochs = """
+Wie oft das Modell den gesamten Datensatz sieht. Zu wenige, und es hat nichts
+gelernt; zu viele, und es beginnt, Ihre Fotos auswendig zu lernen, statt zu
+verallgemeinern. 100 ist ein vernünftiger Standardwert für einige hundert Fotos.
+Sie können vorzeitig anhalten und die beste Epoche behalten, ein zu hoher Wert
+kostet also nur Zeit.
+"""
+quantize = """
+Quantisierungsbewusstes Training (QAT): Das Modell wird so trainiert, dass es
+auch nach der Komprimierung auf 8-Bit-Ganzzahlen noch genau arbeitet, was auf
+Edge-Hardware deutlich schneller ist. Lassen Sie diese Option aus, es sei denn,
+Sie setzen das Modell auf einem Gerät ein, das INT8 erfordert – stattdessen beim
+Export zu quantisieren ist einfacher und kostet meist nur wenig Genauigkeit. Ein
+so trainiertes Modell muss als INT8 exportiert werden.
+"""
+imgsz = """
+Die Seitenlänge der quadratischen Bilder in Pixeln, auf die Fotos für das
+Training skaliert werden. Muss ein Vielfaches von 32 sein. Größere Werte
+erkennen kleine Objekte besser, brauchen aber weit mehr VRAM und Zeit.
+Ultralytics trainiert immer mit quadratischen Bildern; das Format, in dem das
+Modell später läuft, etwa 16:9, wird beim Export in Schritt 6 gewählt.
+"""
+val_split = """
+Der Anteil der Fotos, der zurückbehalten wird, um die Genauigkeit an Fotos zu
+messen, mit denen das Modell nie trainiert hat. Ohne zurückbehaltene Fotos ist
+die angezeigte Genauigkeit bedeutungslos. Er wird bei der Vorbereitung des
+Datensatzes in Schritt 2 festgelegt, damit zwei Durchläufe vergleichbar bleiben.
+"""
+additional_args = """
+Zusätzliche Ultralytics-Einstellungen als kommagetrennte Paare, zum Beispiel
+„batch=8, patience=20“. Namen, die Ultralytics nicht kennt, werden abgelehnt,
+bevor der Durchlauf beginnt. Modell, Datensatz, Gerät, Bildgröße, Epochen und
+Ausgabeordner verwaltet die Anwendung; sie können hier nicht gesetzt werden.
+"""
+start = """
+Startet das Training und schreibt die Ergebnisse in den Ordner für Durchläufe
+im Projekt. Das kann Stunden dauern; Sie können jederzeit anhalten, und die
+bis dahin beste Epoche bleibt als nutzbares Modell erhalten. Nichts verlässt
+diesen Computer.
+"""
+runs = """
+Die Trainingsdurchläufe, die es in diesem Projekt bereits gibt. Hat einer davon
+ein gespeichertes Modell, kann Schritt 6 fortgesetzt werden, ohne jetzt etwas zu
+trainieren – Ergebnisse werden aufbewahrt und nie überschrieben, es sei denn,
+Sie verwenden den Namen erneut.
+"""
+
+[export]
+model = """
+Welcher trainierte Checkpoint umgewandelt wird. „beste Epoche“ ist die Epoche
+mit dem besten Ergebnis auf den vom Training zurückbehaltenen Fotos; „letzte
+Epoche“ ist der Stand, an dem der Durchlauf endete. Bei einem Durchlauf, der
+früh seinen Höhepunkt erreicht und sich danach überangepasst hat, sind das
+unterschiedliche Modelle, und die beste Epoche ist fast immer die richtige Wahl.
+"""
+format = """
+Das Format für den Einsatz. ONNX läuft fast überall; TensorRT ist auf
+NVIDIA-Hardware am schnellsten, die Datei funktioniert aber nur mit der GPU und
+dem Treiber, mit denen sie erstellt wurde. Ein mit INT8 QAT trainiertes Modell
+kann nur nach ONNX oder TensorRT exportiert werden.
+"""
+quantize = """
+Die Zahlengenauigkeit des exportierten Modells. INT8 ist am kleinsten und
+schnellsten, FP16 ist ein guter Kompromiss, FP32 ist am genauesten und am
+größten. Ein mit INT8 QAT trainiertes Modell muss als INT8 exportiert werden.
+"""
+imgsz = """
+Die Eingabegröße in Pixeln, die das exportierte Modell erwartet: Höhe und
+Breite. Beide müssen Vielfache von 32 sein und dürfen nicht größer sein als die
+Trainingsgröße. Standardmäßig 16:9 bei der Trainingsgröße, z. B. 1024x576 für
+ein mit 1024 trainiertes Modell. Wählen Sie das Seitenverhältnis der Fotos,
+Videos oder Kamera, mit denen es laufen wird: Ein abweichendes Format wird
+aufgefüllt, was bei jedem Bild Zeit kostet.
+"""
+deepstream = """
+Fügt die Einstellungen hinzu, die NVIDIA DeepStream erwartet, damit die
+exportierte Datei direkt in eine DeepStream-Pipeline eingesetzt werden kann.
+Schalten Sie dies für jedes andere Einsatzziel aus.
+"""
+additional_args = """
+Zusätzliche Export-Einstellungen als kommagetrennte Paare, zum Beispiel
+„dynamic=true“. Unbekannte Namen werden abgelehnt, bevor der Export beginnt.
+Modell, Gerät, Graph-Vereinfachung und ONNX-Opset verwaltet die Anwendung.
+"""
+start = """
+Wandelt den ausgewählten Checkpoint um und schreibt das Ergebnis in den
+Export-Ordner des Projekts, unter einem Namen, aus dem hervorgeht, aus welchem
+Durchlauf, welcher Epoche und mit welcher Präzision es stammt. Bei ONNX dauert
+das Sekunden; eine TensorRT-Engine braucht Minuten und zeigt während des
+Erstellens nichts an.
+"""
+exports = """
+Die Dateien, die aus diesem Projekt bereits exportiert wurden. Eine davon
+genügt, damit Schritt 7 fortgesetzt werden kann, ohne jetzt etwas zu
+exportieren. Öffnet den Export-Ordner in Ihrem Dateimanager.
+"""
+
+[test]
+model = """
+Welche exportierte Datei ausgeführt wird. Angeboten wird jede Datei aus dem
+Export-Ordner des Projekts, zusammen mit dem Format und der Präzision, mit der
+sie erstellt wurde. Eine TensorRT-Engine funktioniert nur auf dem Rechner und
+mit dem Treiber, mit denen sie erstellt wurde.
+"""
+device = """
+Wo das Modell ausgeführt wird. Die GPU ist weit schneller; die CPU zeigt, was
+Sie auf Hardware ohne NVIDIA-Grafikkarte erwarten können. Der Vergleich der
+beiden zeigt Ihnen, ob Sie beim Einsatz eine GPU brauchen.
+"""
+mode = """
+„Foto“ führt das Modell einmal auf einem Standbild aus. „Video“ lässt es Frame
+für Frame über eine Datei laufen. „Kamera“ lässt es live auf einer
+angeschlossenen Kamera laufen.
+"""
+camera = """
+Von welcher angeschlossenen Kamera gelesen wird. Kameras, die bereits von einer
+anderen Anwendung verwendet werden, erscheinen nicht, weil die meisten Treiber
+eine Kamera immer nur einem Programm gleichzeitig überlassen. Klicken Sie nach
+dem Anschließen einer Kamera auf „Aktualisieren“.
+"""
+camera_mode = """
+Welche Bildgröße und Bildrate von der Kamera angefordert werden. Eine Kamera
+ohne genau diese Größe wählt die nächstliegende, und das Protokoll sagt, was sie
+geliefert hat. Die Bildrate begrenzt, wie viele Frames pro Sekunde das Modell
+erhält, auch wenn der Treiber sie ignoriert.
+"""
+source = """
+Das Foto oder Video, auf dem das Modell laufen soll. Es wird nichts
+hineingeschrieben. Eine Kopie mit eingezeichneten Boxen landet im temporären
+Ordner des Projekts – bei einem Video wird sie in ihrer eigenen
+Geschwindigkeit abgespielt, sobald alle Frames verarbeitet sind. Diese Kopie
+wird gelöscht, wenn Sie eine andere Datei wählen oder die Anwendung schließen;
+verwenden Sie „Speichern unter...“, um sie zu behalten.
+"""
+confidence = """
+Wie sicher sich das Modell sein muss, bevor eine Box gezeichnet wird, von 0,01
+bis 0,95. Ein niedrigerer Wert zeigt mehr Boxen, auch zweifelhafte – damit
+finden Sie heraus, ob das Modell das Objekt überhaupt erkennt. Testen Sie mit
+dem Wert, den Sie auch im Einsatz verwenden wollen.
+"""
+start = """
+Führt die ausgewählte Datei aus. Ein Foto dauert einen Moment, ein Video läuft
+bis zu seinem Ende, und eine Kamera läuft, bis Sie auf „Stoppen“ klicken. Das
+Vorbereiten des Modells dauert beim ersten Mal einige Sekunden und wird getrennt
+von den Zeiten pro Frame angezeigt.
+"""
+save = """
+Speichert das Foto oder Video mit den eingezeichneten Boxen dauerhaft. Die Kopie,
+die die Anwendung anzeigt, ist nur vorübergehend und wird gelöscht, wenn Sie
+eine andere Datei wählen oder die Anwendung schließen; eine hier gespeicherte
+Datei an einem beliebigen Ort außerhalb des temporären Projektordners wird nie
+gelöscht.
+"""
+refresh = """
+Sucht erneut nach Kameras, indem jede nacheinander geöffnet wird. Verwenden Sie
+das, nachdem Sie eine Kamera angeschlossen oder eine andere Anwendung
+geschlossen haben, die sie belegt hat.
+"""
+
+[demo]
+epochs = "Wie viele Epochen der simulierte Durchlauf ausführen soll. Es wird kein Modell trainiert; getestet wird die Mechanik der Anwendung selbst."
+batches_per_epoch = "Simulierte Batches pro Epoche. Höhere Werte erzeugen einen schnelleren Strom von Aktualisierungen, was die Anzeige belastet."
+epoch_seconds = "Wie lange jede simulierte Epoche dauern soll, in Sekunden."
+ignore_cancel = """
+Lässt den simulierten Worker-Prozess die höfliche Aufforderung zum Anhalten
+ignorieren, sodass „Abbrechen“ bis zum Beenden des Prozesses eskalieren muss.
+Dient zur Überprüfung, dass die Anwendung immer die Kontrolle zurückgewinnen
+kann.
+"""
+children = "Startet so viele zusätzliche untätige Prozesse, stellvertretend für die Hilfsprozesse, die ein echtes Training erzeugt, um zu prüfen, dass nach dem Abbrechen keiner übrig bleibt."

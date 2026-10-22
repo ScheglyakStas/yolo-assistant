@@ -1,0 +1,12 @@
+# Dependencies for the thin GUI process.
+#
+# Deliberately excludes torch, ultralytics, transformers and opencv: those live
+# only in the managed venv that the app bootstraps at Step 1. Keeping them out
+# means the GUI still launches when that venv is missing or broken, which is
+# exactly the situation Step 1 exists to repair.
+PySide6>=6.6
+psutil>=5.9
+nvidia-ml-py>=12.535
+packaging>=23.0
+Pillow>=10.0
+PyYAML>=6.0

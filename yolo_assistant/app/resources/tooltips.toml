@@ -1,0 +1,278 @@
+# Hover explanations for every parameter in the app.
+#
+# Written for someone training their first model: say what the setting does and
+# what happens if you get it wrong, not what the argument is called.
+#
+# A control whose key is missing here fails at construction. That is deliberate.
+
+[system]
+backend = """
+Which CUDA build of PyTorch to install. "Auto" picks the newest one your driver
+supports, which is almost always right. Choose manually only if automatic
+selection picked a build your GPU cannot run.
+"""
+check_updates = """
+Checks whether a newer Ultralytics release is available and shows exactly what
+would change before anything is installed. Upgrading can pull in a different
+PyTorch build, so the plan is shown first. The app also checks once, quietly,
+each time it opens.
+"""
+
+setup = """
+Creates the private Python environment this app uses for training, with a build
+of PyTorch matched to your graphics driver. Nothing is installed system-wide and
+your own Python is not touched. The first run downloads several gigabytes.
+"""
+rebuild = """
+Deletes this environment and builds it again from scratch. Use it if setup was
+interrupted or the environment stopped working; it is safe, and your datasets
+and trained models are not touched.
+"""
+
+[dataset]
+source_folder = """
+The folder holding your photos, with one sub-folder per class. The sub-folder
+names become the class names. Your original files are never modified: the app
+works on a copy.
+"""
+
+project_folder = """
+Where the prepared dataset is written. The originals are copied here, never
+moved, so this needs room for a second copy of your photos. Put it on a drive
+with space; everything the later steps produce is kept here too.
+"""
+val_split = """
+The share of each class held back to measure accuracy on photos the model never
+trained on. Without a held-back set the reported accuracy is meaningless. The
+split is fixed now and reused by every training run, so two runs stay
+comparable. 20% is standard.
+"""
+prepare = """
+Copies the photos into the project folder, renames them, checks each one opens,
+and writes the files YOLO needs. Nothing in your original folder is changed.
+Photos that are damaged or duplicated are reported and left out.
+"""
+open_folder = """
+Opens the project folder in your file manager, so you can see the prepared
+dataset, the labels and later the trained models.
+"""
+
+[autolabel]
+prompt = """
+A short description of the object to find in this class's photos, in plain
+English -- "a red apple", "a delivery van". OWLv2 searches for what you
+describe, so be specific enough to exclude similar objects in the background.
+Separate alternative wordings with a semicolon: "a lorry; a truck".
+"""
+threshold = """
+How confident OWLv2 must be before it draws a box. Lower finds more objects but
+invents more; higher is cleaner but misses some. OWLv2's scores run low, so
+0.15-0.25 is a sensible starting range.
+"""
+max_detections = """
+The most boxes to keep per photo. If each photo contains exactly one object,
+setting this to 1 removes a whole class of duplicate-box errors.
+"""
+model = """
+Which OWLv2 model to label with. The base model is the quick one and is where to
+start; the large one finds harder objects and takes about three times as long.
+Either fits your card -- how many photos go through at once is measured against
+the memory that is actually free. Each is downloaded once, on first use.
+"""
+relabel = """
+Labels every photo again, replacing the labels that are already there --
+including any you corrected by hand in Step 4. Leave it off to label only the
+photos that have no labels yet, which is also how a cancelled run is resumed.
+"""
+start = """
+Runs OWLv2 over every photo that has no label yet and writes one label file per
+photo. You can stop at any time and carry on later; photos already done are not
+repeated. Nothing is sent anywhere -- the model runs on your own GPU.
+"""
+
+[verify]
+classes = """
+The classes in your dataset. Pick one to page through its photos. A class where
+nothing was found in most photos is the sign of a description that did not
+match -- fix the wording in Step 3 and label that class again.
+"""
+navigation = """
+Moves to the next or previous photo in this class. The left and right arrow
+keys and the mouse wheel do the same thing, which is quicker for looking
+through more than a handful.
+"""
+only_empty = """
+Shows only the photos where the model found nothing at all. These are the ones
+worth checking first: a photo with no boxes teaches the model that its own
+subject is not there, so a class full of them is a description that missed.
+"""
+delete_box = """
+Removes the selected box. Click a box on the photo to select it, or press the
+Delete key. A photo left with no boxes means "there is nothing here", which is
+a perfectly good label for a photo that really is empty.
+"""
+revert = """
+Puts this photo's labels back the way they were when you opened it, undoing the
+boxes you added or deleted. It affects this photo only, and only until you move
+to another one.
+"""
+
+[train]
+model = """
+The starting checkpoint. Smaller models (n, s) train faster and run faster on
+modest hardware; larger ones (l, x) are more accurate but need more VRAM and
+time. Start with n or s to get through the whole workflow, then scale up. Each
+one is downloaded once, the first time it is used.
+"""
+output_name = """
+Name for this training run. Results are written to a folder of this name inside
+the project, so use something you will recognise later. A name that already
+holds a trained model is replaced only after you agree to it.
+"""
+epochs = """
+How many times the model sees the whole dataset. Too few and it will not have
+learned; too many and it starts memorising your photos instead of generalising.
+100 is a reasonable default for a few hundred photos. You can stop early and
+keep the best epoch, so erring high costs only time.
+"""
+quantize = """
+Quantisation-aware training: trains the model so that it still works accurately
+once compressed to 8-bit integers, which is much faster on edge hardware. Leave
+it off unless you are deploying to a device that needs INT8 -- quantising at
+export time instead is simpler and usually costs only a little accuracy. A model
+trained this way must be exported as INT8.
+"""
+imgsz = """
+The side of the square photos are resized to for training, in pixels. Must be a
+multiple of 32. Larger sees small objects better but uses far more VRAM and
+time. Ultralytics always trains on squares; the shape the model runs at, such as
+16:9, is chosen when exporting in Step 6.
+"""
+val_split = """
+The share of photos held back to measure accuracy on photos the model never
+trained on. Without a held-back set the reported accuracy is meaningless. It is
+fixed when the dataset is prepared in Step 2, so that two runs stay comparable.
+"""
+additional_args = """
+Extra Ultralytics settings as comma-separated pairs, for example
+"batch=8, patience=20". Names Ultralytics does not know are rejected before the
+run starts. Model, dataset, device, image size, epochs and the output folder are
+managed by the app and cannot be set here.
+"""
+start = """
+Starts training and writes the results into the project's runs folder. It can
+take hours; you can stop at any time and the best epoch so far is kept as a
+usable model. Nothing leaves this computer.
+"""
+runs = """
+The training runs already in this project. Any of them with a saved model means
+Step 6 can go ahead without training anything now -- results are kept, never
+overwritten, unless you reuse the name.
+"""
+
+[export]
+model = """
+Which trained checkpoint to convert. "best" is the epoch that scored highest on
+the photos held back from training; "last" is wherever the run stopped. On a run
+that peaked early and then overfitted they are different models, and best is
+almost always the one you want.
+"""
+format = """
+The deployment format. ONNX runs almost anywhere; TensorRT is fastest on NVIDIA
+hardware but the file only works on the GPU and driver that built it. A model
+trained with INT8 QAT can only be exported to ONNX or TensorRT.
+"""
+quantize = """
+Numeric precision of the exported model. INT8 is smallest and fastest, FP16 is a
+good balance, FP32 is the most accurate and largest. A model trained with INT8
+QAT must be exported as INT8.
+"""
+imgsz = """
+Input size the exported model expects, in pixels, height and width. Both must be
+multiples of 32, and neither can be larger than the size the model was trained
+at. Defaults to 16:9 at the training size, e.g. 1024x576 for a model trained at
+1024. Match the shape of the photos, video or camera it will run on: a different
+shape is padded, which wastes time on every frame.
+"""
+deepstream = """
+Adds the settings NVIDIA DeepStream expects, so the exported file can be dropped
+into a DeepStream pipeline. Turn this off for any other deployment target.
+"""
+additional_args = """
+Extra export settings as comma-separated pairs, for example "dynamic=true".
+Unknown names are rejected before the export starts. Model, device, graph
+simplification and ONNX opset are managed by the app.
+"""
+start = """
+Converts the selected checkpoint and writes the result into the project's
+exports folder, under a name that records which run, which epoch and what
+precision it came from. Seconds for ONNX; a TensorRT engine takes minutes and
+is quiet while it builds.
+"""
+exports = """
+The files already exported from this project. One of them is enough for Step 7
+to go ahead without exporting anything now. Opens the exports folder in your
+file manager.
+"""
+
+[test]
+model = """
+Which exported file to run. Every file in the project's exports folder is
+offered, with the format and precision it was made at. A TensorRT engine only
+works on the machine and driver that built it.
+"""
+device = """
+Where to run the model. GPU is far faster; CPU shows what to expect on hardware
+without an NVIDIA card. Comparing the two tells you whether a GPU is needed in
+deployment.
+"""
+mode = """
+Photo runs the model once on a still image. Video runs it over a file frame by
+frame. Camera runs it live on a connected camera.
+"""
+camera = """
+Which connected camera to read from. Cameras already in use by another
+application will not appear, because most drivers hand a camera to one program
+at a time. Press Refresh after plugging one in.
+"""
+camera_mode = """
+The picture size and frame rate to ask the camera for. A camera without that
+exact size picks its nearest, and the log says what it gave. A frame rate caps
+how many frames the model is given a second, even when the driver ignores it.
+"""
+source = """
+The photo or video to run the model on. Nothing is written to it. A copy with
+the boxes drawn on goes into the project's temp folder -- a video's plays at its
+own speed once every frame has been run. That copy is deleted when you choose
+another file or close the app; use Save As to keep it.
+"""
+confidence = """
+How sure the model must be before a box is drawn, from 0.01 to 0.95. Lower shows
+more boxes including doubtful ones, which is the setting for finding out whether
+the model sees the object at all. Test at the value you intend to deploy with.
+"""
+start = """
+Runs the selected file. A photo takes a moment, a video runs to its end, and a
+camera runs until you press Stop. Getting the model ready takes a few seconds
+the first time and is reported separately from the per-frame timings.
+"""
+save = """
+Keeps the photo or video with its boxes drawn on. The copy the app shows is
+temporary and is deleted when you choose another file or close the app; a file
+saved here, anywhere outside the project's temp folder, is never deleted.
+"""
+refresh = """
+Looks for cameras again, by opening each one in turn. Use it after plugging a
+camera in, or after closing another application that was holding it.
+"""
+
+[demo]
+epochs = "How many epochs the simulated run should perform. No model is trained; this exercises the app's own machinery."
+batches_per_epoch = "Simulated batches per epoch. Higher values produce a faster stream of updates, which is what stresses the display."
+epoch_seconds = "How long each simulated epoch should take, in seconds."
+ignore_cancel = """
+Makes the simulated worker ignore the polite request to stop, so that Cancel has
+to escalate to terminating the process. Used to verify the app can always
+recover control.
+"""
+children = "Spawns this many extra idle processes, standing in for the helper processes real training creates, to verify none are left behind after cancelling."

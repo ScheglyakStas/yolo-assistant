@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yolo-assistant"
+dynamic = ["version"]
+description = "Guided GUI for the YOLO workflow: environment setup, autolabeling, training, export and testing."
+requires-python = ">=3.11"  # tomllib
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+readme = "README.md"
+dependencies = [
+    "PySide6>=6.6",
+    "psutil>=5.9",
+    "nvidia-ml-py>=12.535",
+    "packaging>=23.0",
+    "Pillow>=10.0",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-qt>=4.2"]
+# packaging/build.py: the installers for Windows and Ubuntu.
+build = ["pyinstaller>=6.10"]
+
+[project.scripts]
+yolo-assistant = "yolo_assistant.app.main:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "yolo_assistant.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["yolo_assistant*", "worker*"]
+
+[tool.setuptools.package-data]
+"yolo_assistant.app.resources" = ["*.toml", "*.svg", "i18n/*.po", "fonts/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error::DeprecationWarning:yolo_assistant.*"]
