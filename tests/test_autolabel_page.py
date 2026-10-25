@@ -75,6 +75,13 @@ def prompt_cell(page, row: int):
     return page._table.item(row, PROMPT_COLUMN)
 
 
+def describe_every_class(page) -> None:
+    """Types a prompt for every class, as the user has to before Start works."""
+    for row in range(page._table.rowCount()):
+        name = page._table.item(row, 0).text()
+        prompt_cell(page, row).setText(f"a photo of a {name}")
+
+
 def label_everything(project: Project) -> None:
     for images in sorted(project.images_dir.iterdir()):
         labels = project.class_labels_dir(images.name)
@@ -99,21 +106,27 @@ def pump(app, predicate, timeout=60.0):
 # --------------------------------------------------------------------------- #
 
 
-def test_every_class_arrives_with_a_prompt_to_edit(page):
+def test_every_class_arrives_with_an_empty_prompt(page):
     assert page._table.rowCount() == 2
     assert page._table.item(0, 0).text() == "cat"
-    # Filled in so that Start works immediately; the user edits rather than
-    # faces an empty box and no idea what belongs in it.
-    assert prompt_cell(page, 0).text() == "a photo of a cat"
-    assert prompt_cell(page, 1).text() == "a photo of a dog"
+    # Nothing is filled in for the user: a suggested prompt was too easy to
+    # run without reading, so Start waits until every one has been written.
+    assert prompt_cell(page, 0).text() == ""
+    assert prompt_cell(page, 1).text() == ""
+    assert not page._start_button.isEnabled()
+    assert '"cat"' in page._problems.text()
+    assert '"dog"' in page._problems.text()
 
 
 def test_the_button_says_how_many_photos_it_will_run(page):
+    describe_every_class(page)
+
     assert page._start_button.isEnabled()
     assert page._start_button.text() == "Label 5 photos"
 
 
 def test_a_class_with_no_description_blocks_the_run(page):
+    describe_every_class(page)
     prompt_cell(page, 0).setText("   ")
 
     assert not page._start_button.isEnabled()
@@ -126,7 +139,7 @@ def test_an_already_labelled_class_needs_no_description(page, project):
         (project.class_labels_dir("dog") / (photo.stem + ".txt")).write_text("")
     page.on_enter()
 
-    prompt_cell(page, 1).setText("")
+    prompt_cell(page, 0).setText("a photo of a cat")
 
     assert page._start_button.isEnabled(), "dog is finished; its prompt is irrelevant"
     assert page._start_button.text() == "Label 3 photos"
@@ -159,7 +172,7 @@ def test_prompts_from_a_previous_run_come_back(make_page, project):
     page = make_page()
 
     assert prompt_cell(page, 0).text() == "a tabby cat on a sofa"
-    assert prompt_cell(page, 1).text() == "a photo of a dog", "unrecorded classes still get one"
+    assert prompt_cell(page, 1).text() == "", "unrecorded classes are left for the user"
     assert page._threshold.value() == pytest.approx(0.4)
     assert page._max_detections.value() == 2
 
@@ -172,6 +185,7 @@ def test_prompts_from_a_previous_run_come_back(make_page, project):
 def test_the_job_says_what_the_page_says(page, monkeypatch):
     captured = {}
     monkeypatch.setattr(type(page._runner), "start", lambda self, spec: captured.update(spec=spec))
+    describe_every_class(page)
     prompt_cell(page, 0).setText("a ginger cat")
     page._threshold.setValue(0.3)
 
@@ -200,6 +214,7 @@ def test_relabelling_asks_before_replacing_labels(page, project, monkeypatch):
     monkeypatch.setattr(QMessageBox, "question", lambda *a, **k: QMessageBox.StandardButton.No)
 
     page._relabel.setChecked(True)
+    describe_every_class(page)
     assert page._start_button.isEnabled()
     page._start()
 
@@ -270,6 +285,7 @@ def test_a_missing_environment_surfaces_as_something_actionable(qapp, page, proj
     """
     failures = []
     page._runner.failed.connect(lambda code, msg, hint, tb: failures.append((code, hint)))
+    describe_every_class(page)
 
     page._start()
     assert pump(qapp, lambda: not page._runner.is_active()), "the worker never finished"

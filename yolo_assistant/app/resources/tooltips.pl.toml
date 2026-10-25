@@ -202,8 +202,8 @@ FP16 to dobry kompromis, FP32 jest najdokładniejszy i największy. Model
 wytrenowany z INT8 QAT trzeba wyeksportować jako INT8.
 """
 imgsz = """
-Rozmiar wejścia oczekiwany przez eksportowany model, w pikselach: wysokość i
-szerokość. Obie wartości muszą być wielokrotnościami 32 i żadna nie może
+Rozmiar wejścia oczekiwany przez eksportowany model, w pikselach: szerokość i
+wysokość. Obie wartości muszą być wielokrotnościami 32 i żadna nie może
 przekraczać rozmiaru użytego w treningu. Domyślnie 16:9 przy rozmiarze
 treningowym, np. 1024x576 dla modelu trenowanego w 1024. Dopasuj proporcje do
 zdjęć, wideo lub kamery, na których będzie działał: inny kształt jest

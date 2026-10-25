@@ -776,8 +776,8 @@ class ExportPlan:
 
         trained = checkpoint.run.imgsz if checkpoint is not None else 0
         for value, out_of_range, off_grid, too_large in (
-            (self.imgsz_h, *_HEIGHT_PROBLEMS),
             (self.imgsz_w, *_WIDTH_PROBLEMS),
+            (self.imgsz_h, *_HEIGHT_PROBLEMS),
         ):
             value = int(value)
             if not MIN_IMGSZ <= value <= MAX_IMGSZ:

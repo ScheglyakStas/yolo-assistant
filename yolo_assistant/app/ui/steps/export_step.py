@@ -184,7 +184,7 @@ class ExportStep(StepPage):
         layout.addWidget(splitter, 1)
 
     def _build_imgsz(self) -> QWidget:
-        """Height and width side by side. Unlike Step 5, there are two.
+        """Width and height side by side. Unlike Step 5, there are two.
 
         Ultralytics trains on squares and exports at whatever shape it is
         given, so this is where the model's shape is chosen -- a model that
@@ -195,16 +195,18 @@ class ExportStep(StepPage):
         row = QHBoxLayout(container)
         row.setContentsMargins(0, 0, 0, 0)
 
-        self._imgsz_h = QSpinBox()
+        # Width first, the way resolutions are written (1920x1080). Created in
+        # that order too, so Tab moves between them the way they read.
         self._imgsz_w = QSpinBox()
-        for spin in (self._imgsz_h, self._imgsz_w):
+        self._imgsz_h = QSpinBox()
+        for spin in (self._imgsz_w, self._imgsz_h):
             spin.setRange(training_model.MIN_IMGSZ, training_model.MAX_IMGSZ)
             spin.setSingleStep(training_model.STRIDE)
             spin.setValue(training_model.DEFAULT_IMGSZ)
             spin.setSuffix(" px")
             apply_help(spin, "export.imgsz")
 
-        for label_text, spin in ((tr("Height"), self._imgsz_h), (tr("Width"), self._imgsz_w)):
+        for label_text, spin in ((tr("Width"), self._imgsz_w), (tr("Height"), self._imgsz_h)):
             label = QLabel(label_text)
             label.setBuddy(spin)
             row.addWidget(label)

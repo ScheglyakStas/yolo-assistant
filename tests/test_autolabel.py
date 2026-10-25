@@ -28,28 +28,6 @@ def status_for(*classes) -> DatasetStatus:
 
 
 # --------------------------------------------------------------------------- #
-# Prompts
-# --------------------------------------------------------------------------- #
-
-
-@pytest.mark.parametrize(
-    "name, expected",
-    [
-        ("cat", "a photo of a cat"),
-        ("apple", "a photo of an apple"),
-        ("fire_hydrant", "a photo of a fire hydrant"),
-        ("delivery-van", "a photo of a delivery van"),
-        ("  spaced   out ", "a photo of a spaced out"),
-        ("", ""),
-    ],
-)
-def test_a_prompt_is_suggested_from_the_class_name(name, expected):
-    # OWLv2 answers a noun phrase far better than a bare label, and nobody
-    # should have to know that to get their first run working.
-    assert autolabel.suggest_prompt(name) == expected
-
-
-# --------------------------------------------------------------------------- #
 # The plan
 # --------------------------------------------------------------------------- #
 

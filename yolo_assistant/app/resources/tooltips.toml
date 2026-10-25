@@ -188,7 +188,7 @@ good balance, FP32 is the most accurate and largest. A model trained with INT8
 QAT must be exported as INT8.
 """
 imgsz = """
-Input size the exported model expects, in pixels, height and width. Both must be
+Input size the exported model expects, in pixels, width and height. Both must be
 multiples of 32, and neither can be larger than the size the model was trained
 at. Defaults to 16:9 at the training size, e.g. 1024x576 for a model trained at
 1024. Match the shape of the photos, video or camera it will run on: a different

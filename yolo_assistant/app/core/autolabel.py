@@ -78,24 +78,6 @@ MODELS: tuple[Model, ...] = (
 
 DEFAULT_MODEL = MODELS[0].key
 
-_VOWELS = "aeiou"
-
-
-def suggest_prompt(class_name: str) -> str:
-    """A starting prompt for a class, from its folder name.
-
-    OWLv2 was trained on image-caption pairs, so it responds to a noun phrase
-    rather than a bare label: "a photo of a cat" reliably beats "cat". Nobody
-    should have to know that to get their first run working, so the box is
-    filled in and the user edits it.
-    """
-    words = str(class_name).replace("_", " ").replace("-", " ").strip()
-    words = " ".join(words.split())
-    if not words:
-        return ""
-    article = "an" if words[:1].lower() in _VOWELS else "a"
-    return f"a photo of {article} {words}"
-
 
 @dataclass(frozen=True)
 class ClassPlan:

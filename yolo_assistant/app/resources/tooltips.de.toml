@@ -218,8 +218,8 @@ schnellsten, FP16 ist ein guter Kompromiss, FP32 ist am genauesten und am
 größten. Ein mit INT8 QAT trainiertes Modell muss als INT8 exportiert werden.
 """
 imgsz = """
-Die Eingabegröße in Pixeln, die das exportierte Modell erwartet: Höhe und
-Breite. Beide müssen Vielfache von 32 sein und dürfen nicht größer sein als die
+Die Eingabegröße in Pixeln, die das exportierte Modell erwartet: Breite und
+Höhe. Beide müssen Vielfache von 32 sein und dürfen nicht größer sein als die
 Trainingsgröße. Standardmäßig 16:9 bei der Trainingsgröße, z. B. 1024x576 für
 ein mit 1024 trainiertes Modell. Wählen Sie das Seitenverhältnis der Fotos,
 Videos oder Kamera, mit denen es laufen wird: Ein abweichendes Format wird

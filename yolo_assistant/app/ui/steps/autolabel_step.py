@@ -6,9 +6,10 @@ sentence they have never written before, and whose result they cannot see until
 it is over. Three things follow from that.
 
 **The prompt column is the page.** Everything else has a sensible default. The
-sentences are filled in from the class names so that Start works immediately,
-and they are kept in the dataset so that coming back tomorrow does not mean
-typing them again.
+sentences are not: each class starts with an empty prompt, and Start stays off
+until every class about to be labelled has one. A suggestion made from the
+folder name was too easy to run without reading. Once written, they are kept in
+the dataset so that coming back tomorrow does not mean typing them again.
 
 **It says exactly how much work it is about to do.** Photos already labelled are
 skipped, so the number on the button is the number of photos that will actually
@@ -250,13 +251,11 @@ class AutolabelStep(StepPage):
                 self._model.blockSignals(False)
 
         # What the user typed this session wins over what was written last
-        # time, which in turn beats the suggestion made from the class name.
+        # time. A class with neither stays empty until the user writes one.
         for stat in self._status.classes:
             if stat.slug in self._prompts:
                 continue
-            self._prompts[stat.slug] = (
-                stored.get(stat.slug) or autolabel_model.suggest_prompt(stat.name)
-            )
+            self._prompts[stat.slug] = stored.get(stat.slug, "")
 
     def refresh(self) -> None:
         self._status = project_model.status(self._project)
