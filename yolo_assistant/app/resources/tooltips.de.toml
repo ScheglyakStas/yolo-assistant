@@ -143,7 +143,9 @@ Der Checkpoint, von dem aus trainiert wird. Kleinere Modelle (n, s) trainieren
 und laufen auf bescheidener Hardware schneller; größere (l, x) sind genauer,
 brauchen aber mehr VRAM und Zeit. Beginnen Sie mit n oder s, um den gesamten
 Ablauf einmal zu durchlaufen, und steigen Sie dann auf ein größeres um. Jedes
-Modell wird einmal heruntergeladen, beim ersten Gebrauch.
+Modell wird einmal heruntergeladen, beim ersten Gebrauch. „Eigene Gewichte...“
+startet stattdessen von einer eigenen .pt-Datei, etwa best.pt aus einem
+früheren Durchlauf, um ein vorhandenes Modell weiter zu verbessern.
 """
 output_name = """
 Name dieses Trainingsdurchlaufs. Die Ergebnisse werden in einen Ordner dieses

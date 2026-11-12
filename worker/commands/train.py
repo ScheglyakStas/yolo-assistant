@@ -90,6 +90,27 @@ def run(channel: Channel, job: dict) -> dict:
             )
         )
 
+    # A weights file of the user's, rather than a checkpoint name to download.
+    # Checked before the run folder is emptied, which is the one step here that
+    # cannot be undone -- and which would take the file with it if it lives in
+    # the run being replaced.
+    custom = _custom_weights(model_id)
+    if custom is not None:
+        if not custom.is_file():
+            raise ModelUnavailable(
+                tr('The weights file "{path}" is not there any more.', path=custom),
+                hint=tr("Choose the weights file again in the Model list."),
+            )
+        if _inside(custom, runs_root / name):
+            raise DatasetError(
+                tr(
+                    'The starting weights are inside "{name}", which this run would '
+                    "replace. Give this run a different name.",
+                    name=name,
+                ),
+                hint=tr("Or copy the weights file somewhere outside the runs folder first."),
+            )
+
     run_dir = _prepare_run_dir(runs_root, name, overwrite=overwrite)
 
     # Checked before anything is downloaded or loaded. A run that is going to
@@ -137,9 +158,12 @@ def run(channel: Channel, job: dict) -> dict:
             )
         )
     channel.progress(Phase.DOWNLOAD, 0, None, unit="files")
-    channel.log(
-        tr("Loading {model}. The first run downloads it, which takes a moment.", model=model_id)
-    )
+    if custom is not None:
+        channel.log(tr("Loading the weights in {path}.", path=custom))
+    else:
+        channel.log(
+            tr("Loading {model}. The first run downloads it, which takes a moment.", model=model_id)
+        )
     model = load_yolo(model_id, channel=channel)
 
     kwargs = {
@@ -861,6 +885,29 @@ def load_yolo(model_id: str, *, channel: Channel | None = None):
         raise ModelUnavailable(
             tr("{model} could not be loaded: {error}", model=model_id, error=exc)
         ) from exc
+
+
+def _custom_weights(model_id: str) -> Path | None:
+    """The file ``model_id`` names, or None when it is a checkpoint to fetch.
+
+    Ultralytics makes the same distinction itself -- a bare ``yolo26n.pt`` is
+    downloaded, anything with a folder in it is read from disk -- and the app's
+    custom weights always arrive as an absolute path.
+    """
+    path = Path(model_id).expanduser()
+    if path.is_absolute() or len(path.parts) > 1:
+        return path
+    return None
+
+
+def _inside(path: Path, folder: Path) -> bool:
+    """Whether ``path`` is ``folder`` or somewhere underneath it."""
+    try:
+        child = os.path.normcase(str(path.resolve()))
+        parent = os.path.normcase(str(folder.resolve()))
+        return os.path.commonpath([child, parent]) == parent
+    except (OSError, ValueError):
+        return False
 
 
 def _write_json(path: Path, payload: dict) -> None:

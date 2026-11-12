@@ -623,3 +623,52 @@ def test_a_found_toolchain_says_nothing(project, yolo, monkeypatch):
 
 def _raise_qat_unavailable():
     raise QatUnavailable("no toolkit here")
+
+
+# --------------------------------------------------------------------------- #
+# Starting from weights of the user's own
+# --------------------------------------------------------------------------- #
+
+
+def test_custom_weights_are_loaded_from_disk(project, monkeypatch):
+    weights = project / "mine" / "best.pt"
+    weights.parent.mkdir()
+    weights.write_bytes(b"weights")
+    stub = StubYOLO()
+    asked = []
+    monkeypatch.setattr(train, "load_yolo", lambda model_id, **_k: asked.append(model_id) or stub)
+
+    train.run(FakeChannel(), job_for(project, model=str(weights)))
+
+    assert asked == [str(weights)]
+    record = json.loads((project / "runs" / "train" / "umla.json").read_text(encoding="utf-8"))
+    assert record["model"] == str(weights)
+
+
+def test_missing_custom_weights_fail_before_the_run_folder_is_touched(project, yolo):
+    from worker.util.errors import ModelUnavailable
+
+    previous = project / "runs" / "train" / "weights"
+    previous.mkdir(parents=True)
+    (previous / "best.pt").write_bytes(b"old")
+
+    with pytest.raises(ModelUnavailable, match="not there any more"):
+        train.run(FakeChannel(), job_for(project, model=str(project / "gone.pt")))
+
+    assert (previous / "best.pt").read_bytes() == b"old"
+
+
+def test_the_run_holding_the_starting_weights_is_never_emptied(project, yolo):
+    weights = project / "runs" / "train" / "weights" / "best.pt"
+    weights.parent.mkdir(parents=True)
+    weights.write_bytes(b"precious")
+
+    with pytest.raises(DatasetError, match="which this run would replace"):
+        train.run(FakeChannel(), job_for(project, model=str(weights), name="train"))
+
+    assert weights.read_bytes() == b"precious"
+
+
+def test_a_checkpoint_name_is_not_mistaken_for_a_file():
+    assert train._custom_weights("yolo26n.pt") is None
+    assert train._custom_weights("/abs/best.pt") is not None

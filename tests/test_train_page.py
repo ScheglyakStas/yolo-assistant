@@ -479,3 +479,94 @@ def test_the_accuracy_metrics_keep_their_english_names(qapp, code):
 
     assert names[:4] == ["mAP50-95", "mAP50", "Precision", "Recall"]
     assert names[4] != "Box loss"
+
+
+# --------------------------------------------------------------------------- #
+# Custom weights
+# --------------------------------------------------------------------------- #
+
+
+def _weights_in(project, name):
+    add_run(project, name)
+    return project.runs_dir / name / "weights" / "best.pt"
+
+
+def _offer_file(monkeypatch, path):
+    from PySide6.QtWidgets import QFileDialog
+
+    asked = []
+
+    def fake(*args, **kwargs):
+        asked.append(args)
+        return (str(path) if path else "", "")
+
+    monkeypatch.setattr(QFileDialog, "getOpenFileName", fake)
+    return asked
+
+
+def _pick_custom(page):
+    """What choosing the last entry in the list does: select it, then activate it."""
+    index = page._model.count() - 1
+    page._model.setCurrentIndex(index)
+    page._model.activated.emit(index)
+
+
+def test_the_model_list_ends_with_a_custom_entry(page):
+    last = page._model.count() - 1
+
+    assert page._model.itemText(last) == "Custom..."
+    assert page._model.itemData(last) == ""
+
+
+def test_custom_opens_a_file_dialog_and_trains_from_the_file(page, captured, project, monkeypatch):
+    weights = _weights_in(project, "earlier")
+    asked = _offer_file(monkeypatch, weights)
+    page._name.setText("again")
+
+    _pick_custom(page)
+
+    assert len(asked) == 1
+    assert page._model.currentData() == str(weights)
+    assert page._model.currentText() == "earlier/best.pt"
+    assert page._plan.is_runnable, page._plan.problems()
+
+    page._start()
+    assert captured[0].job["model"] == str(weights)
+    assert training_model.read_settings(project)["model"] == str(weights)
+
+
+def test_cancelling_the_file_dialog_goes_back_to_the_model_before(page, monkeypatch):
+    _offer_file(monkeypatch, None)
+    page._model.setCurrentIndex(2)
+    page._model.activated.emit(2)
+
+    _pick_custom(page)
+
+    assert page._model.currentIndex() == 2
+    assert page._model.currentData() == training_model.MODELS[2].key
+
+
+def test_choosing_another_file_replaces_the_first(page, project, monkeypatch):
+    first = _weights_in(project, "one")
+    second = _weights_in(project, "two")
+    count = page._model.count()
+
+    _offer_file(monkeypatch, first)
+    _pick_custom(page)
+    _offer_file(monkeypatch, second)
+    _pick_custom(page)
+
+    assert page._model.count() == count + 1  # one entry for a file, never two
+    assert page._model.currentData() == str(second)
+
+
+def test_custom_weights_are_restored_when_the_project_is_opened_again(make_page, project, monkeypatch):
+    weights = _weights_in(project, "earlier")
+    first = make_page()
+    _offer_file(monkeypatch, weights)
+    _pick_custom(first)
+    training_model.write_settings(project, first._plan)
+
+    second = make_page()
+
+    assert second._model.currentData() == str(weights)

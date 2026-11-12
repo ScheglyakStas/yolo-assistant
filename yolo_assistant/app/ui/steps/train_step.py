@@ -22,11 +22,14 @@ already on disk are listed here rather than only in Step 6.
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QDesktopServices
 from PySide6.QtWidgets import (
     QCheckBox,
     QComboBox,
+    QFileDialog,
     QGroupBox,
     QHBoxLayout,
     QLabel,
@@ -97,6 +100,19 @@ class TrainStep(StepPage):
             self._model.setItemData(
                 self._model.count() - 1, model.detail, Qt.ItemDataRole.ToolTipRole
             )
+        # Last, below a separator: an entry that opens a file dialog rather than
+        # being a model itself. The file it picks gets an entry of its own just
+        # above it, so what the list shows is always what will be trained from.
+        self._model.insertSeparator(self._model.count())
+        self._model.addItem(tr("Custom..."), "")
+        self._model.setItemData(
+            self._model.count() - 1,
+            tr("Start from a .pt weights file of your own, such as best.pt from an earlier run."),
+            Qt.ItemDataRole.ToolTipRole,
+        )
+        self._custom_file_index: int | None = None
+        # The entry to go back to when the file dialog is cancelled.
+        self._settled_model_index = 0
         form.add_row("train.model", tr("Model"), self._model)
 
         self._name = QLineEdit()
@@ -193,6 +209,7 @@ class TrainStep(StepPage):
         # additional-settings box in particular fires per keystroke, and the
         # scan behind it walks every class folder in the dataset.
         self._model.currentIndexChanged.connect(lambda _index: self.refresh())
+        self._model.activated.connect(self._on_model_activated)
         self._name.textChanged.connect(lambda _text: self.refresh())
         self._epochs.valueChanged.connect(lambda _value: self.refresh())
         self._imgsz.valueChanged.connect(lambda _value: self.refresh())
@@ -240,11 +257,19 @@ class TrainStep(StepPage):
             widget.blockSignals(True)
             widget.setValue(value)
             widget.blockSignals(False)
-        index = self._model.findData(settings["model"])
-        if index >= 0:
-            self._model.blockSignals(True)
-            self._model.setCurrentIndex(index)
-            self._model.blockSignals(False)
+        self._model.blockSignals(True)
+        if training_model.is_custom_model(settings["model"]):
+            self._set_custom_weights(settings["model"])
+        else:
+            # A file chosen in another project is not offered in this one.
+            if self._custom_file_index is not None:
+                self._model.removeItem(self._custom_file_index)
+                self._custom_file_index = None
+            index = self._model.findData(settings["model"])
+            if index >= 0:
+                self._model.setCurrentIndex(index)
+                self._settled_model_index = index
+        self._model.blockSignals(False)
         for widget, value in ((self._qat, settings["qat"]),):
             widget.blockSignals(True)
             widget.setChecked(value)
@@ -279,12 +304,70 @@ class TrainStep(StepPage):
         self.refresh()
         self.gates_changed.emit()
 
+    # -- custom weights ---------------------------------------------------- #
+
+    @property
+    def _custom_entry_index(self) -> int:
+        """The "Custom..." entry, which is always the last one."""
+        return self._model.count() - 1
+
+    def _on_model_activated(self, index: int) -> None:
+        """The user picked an entry -- by mouse, keyboard or wheel."""
+        if index == self._custom_entry_index:
+            self._choose_custom_weights()
+        else:
+            self._settled_model_index = index
+
+    def _choose_custom_weights(self) -> None:
+        current = (
+            str(self._model.itemData(self._custom_file_index) or "")
+            if self._custom_file_index is not None
+            else ""
+        )
+        if current:
+            start = str(Path(current).parent)
+        elif self._project is not None and self._project.runs_dir.is_dir():
+            start = str(self._project.runs_dir)
+        elif self._project is not None:
+            start = str(self._project.root)
+        else:
+            start = ""
+        path, _filter = QFileDialog.getOpenFileName(
+            self,
+            tr("Choose the weights to start training from"),
+            start,
+            tr("PyTorch weights (*.pt)"),
+        )
+        if path:
+            self._set_custom_weights(path)
+        else:
+            # Cancelled: "Custom..." is not a model, so it is never left selected.
+            self._model.setCurrentIndex(self._settled_model_index)
+
+    def _set_custom_weights(self, path: str) -> None:
+        """Show ``path`` as the entry above "Custom...", and select it."""
+        path = str(Path(path))
+        caption = training_model.model_label(path)
+        if self._custom_file_index is None:
+            self._model.insertItem(self._custom_entry_index, caption, path)
+            self._custom_file_index = self._custom_entry_index - 1
+        else:
+            self._model.setItemText(self._custom_file_index, caption)
+            self._model.setItemData(self._custom_file_index, path)
+        self._model.setItemData(self._custom_file_index, path, Qt.ItemDataRole.ToolTipRole)
+        self._settled_model_index = self._custom_file_index
+        if self._model.currentIndex() == self._custom_file_index:
+            # Same entry, different file: no index change, so no repaint either.
+            self.refresh()
+        else:
+            self._model.setCurrentIndex(self._custom_file_index)
+
     def refresh(self) -> None:
         self._plan = training_model.build_plan(
             self._status,
             project=self._project,
             runs=self._runs,
-            model=str(self._model.currentData() or training_model.DEFAULT_MODEL),
+            model=str(self._model.currentData() or ""),
             name=self._name.text(),
             epochs=self._epochs.value(),
             imgsz=self._imgsz.value(),

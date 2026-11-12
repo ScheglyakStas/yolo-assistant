@@ -3664,3 +3664,47 @@ msgstr "Закрыйце ўсё, што яшчэ выкарыстоўвае ка
 #: worker/util/errors.py:143
 msgid "Export the model again in Step 6, or export it to ONNX, which is the format most likely to run anywhere. A TensorRT engine only works on the machine and driver that built it."
 msgstr "Экспартуйце мадэль зноў на кроку 6 або экспартуйце яе ў ONNX — гэты фармат з найбольшай верагоднасцю запрацуе ўсюды. Рухавік TensorRT працуе толькі на тым камп’ютары і з тым драйверам, дзе ён быў сабраны."
+
+#: yolo_assistant/app/core/training.py:196
+msgid "\"{name}\" is not a PyTorch weights file. Choose a .pt file, such as best.pt from an earlier run."
+msgstr "«{name}» — не файл вагаў PyTorch. Выберыце файл .pt, напрыклад best.pt з папярэдняга запуску."
+
+#: yolo_assistant/app/core/training.py:202
+msgid "The weights file \"{path}\" is not there any more. Choose it again."
+msgstr "Файла вагаў «{path}» больш няма на месцы. Выберыце яго нанова."
+
+#: yolo_assistant/app/core/training.py:611
+msgid "The starting weights are inside \"{name}\", which this run would replace. Give this run a different name."
+msgstr "Пачатковыя вагі ляжаць унутры «{name}», а гэты запуск яго заменіць. Дайце гэтаму запуску іншую назву."
+
+#: yolo_assistant/app/ui/steps/train_step.py:107
+msgid "Custom..."
+msgstr "Свае вагі..."
+
+#: yolo_assistant/app/ui/steps/train_step.py:110
+msgid "Start from a .pt weights file of your own, such as best.pt from an earlier run."
+msgstr "Пачаць з уласнага файла вагаў .pt, напрыклад best.pt з папярэдняга запуску."
+
+#: yolo_assistant/app/ui/steps/train_step.py:337
+msgid "Choose the weights to start training from"
+msgstr "Выберыце вагі, з якіх пачнецца навучанне"
+
+#: yolo_assistant/app/ui/steps/train_step.py:339
+msgid "PyTorch weights (*.pt)"
+msgstr "Вагі PyTorch (*.pt)"
+
+#: worker/commands/train.py:101
+msgid "The weights file \"{path}\" is not there any more."
+msgstr "Файла вагаў «{path}» больш няма на месцы."
+
+#: worker/commands/train.py:102
+msgid "Choose the weights file again in the Model list."
+msgstr "Выберыце файл вагаў нанова ў спісе «Мадэль»."
+
+#: worker/commands/train.py:111
+msgid "Or copy the weights file somewhere outside the runs folder first."
+msgstr "Або спачатку скапіруйце файл вагаў кудысьці за межы папкі запускаў."
+
+#: worker/commands/train.py:162
+msgid "Loading the weights in {path}."
+msgstr "Загрузка вагаў з {path}."

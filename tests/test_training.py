@@ -400,3 +400,107 @@ def test_a_model_that_no_longer_exists_falls_back(project):
     path.write_text(json.dumps({"model": "yolo99z.pt"}), encoding="utf-8")
 
     assert training.read_settings(project)["model"] == training.DEFAULT_MODEL
+
+
+# --------------------------------------------------------------------------- #
+# Starting from weights of the user's own
+# --------------------------------------------------------------------------- #
+
+
+def _status(project):
+    return project_model.status(project)
+
+
+def test_a_weights_file_of_ones_own_can_be_trained_from(project, tmp_path):
+    weights = tmp_path / "mine" / "best.pt"
+    weights.parent.mkdir()
+    weights.write_bytes(b"weights")
+
+    plan = training.build_plan(_status(project), project=project, model=str(weights))
+
+    assert training.is_custom_model(plan.model)
+    assert plan.is_runnable, plan.problems()
+    assert plan.job(project)["model"] == str(weights)
+    assert "best.pt" in plan.summary()
+
+
+def test_a_checkpoint_name_is_not_a_custom_model():
+    assert not training.is_custom_model(training.DEFAULT_MODEL)
+    assert not training.is_custom_model("")
+
+
+def test_weights_inside_a_run_are_named_after_the_run():
+    path = str(Path("project") / "runs" / "bottles" / "weights" / "best.pt")
+
+    assert training.model_label(path) == "bottles/best.pt"
+    assert training.model_label(str(Path("elsewhere") / "mine.pt")) == "mine.pt"
+    assert training.model_label("yolo26n.pt") == "YOLO26n"
+
+
+def test_a_missing_weights_file_is_refused(project, tmp_path):
+    plan = training.build_plan(
+        _status(project), project=project, model=str(tmp_path / "gone.pt")
+    )
+
+    assert any("not there any more" in problem for problem in plan.problems())
+
+
+def test_only_a_pytorch_file_can_be_trained_from(project, tmp_path):
+    exported = tmp_path / "best.onnx"
+    exported.write_bytes(b"graph")
+
+    plan = training.build_plan(_status(project), project=project, model=str(exported))
+
+    assert any("not a PyTorch weights file" in problem for problem in plan.problems())
+
+
+def test_no_model_at_all_is_refused(project):
+    plan = training.build_plan(_status(project), project=project, model="")
+
+    assert "Choose a model to start training from." in plan.problems()
+
+
+def test_the_run_holding_the_starting_weights_cannot_be_replaced(project):
+    """Starting a run empties its folder first, which would delete the very file
+    it was about to load."""
+    run = add_run(project, "bottles")
+    weights = run / "weights" / "best.pt"
+
+    replacing = training.build_plan(
+        _status(project), project=project, model=str(weights), name="bottles"
+    )
+    elsewhere = training.build_plan(
+        _status(project), project=project, model=str(weights), name="bottles2"
+    )
+
+    assert any("which this run would replace" in p for p in replacing.problems())
+    assert elsewhere.is_runnable, elsewhere.problems()
+
+
+def test_custom_weights_come_back_next_time_while_they_exist(project):
+    weights = add_run(project, "bottles") / "weights" / "best.pt"
+    plan = training.build_plan(
+        _status(project), project=project, model=str(weights), name="bottles2"
+    )
+    training.write_settings(project, plan)
+
+    assert training.read_settings(project)["model"] == str(weights)
+
+    weights.unlink()
+    assert training.read_settings(project)["model"] == training.DEFAULT_MODEL
+
+
+def test_quantize_belongs_to_the_qat_checkbox():
+    parsed = training.parse_extra_args("quantize=8")
+
+    assert not parsed.is_valid
+
+
+@pytest.mark.parametrize("name", ["cls_remap", "channels_last", "tile", "cls_pw", "distill_model"])
+def test_settings_added_by_recent_ultralytics_are_known(name):
+    assert name in training.KNOWN_ARGS
+
+
+@pytest.mark.parametrize("name", ["half", "label_smoothing"])
+def test_settings_ultralytics_has_dropped_are_not(name):
+    assert name not in training.KNOWN_ARGS

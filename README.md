@@ -25,7 +25,7 @@ you start.
 | 2. Dataset | Point it at a folder with one sub-folder of photos per class. It copies them into a project, fixes phone-photo rotation, drops duplicates and unreadable files, and writes a fixed train/validation split. |
 | 3. Autolabel | Write one short description per class, such as *"a photo of a delivery van"*. [OWLv2](https://huggingface.co/google/owlv2-base-patch16-ensemble) draws the boxes. You can stop and resume at any time. |
 | 4. Review | Browse the boxes class by class. Add a missed box, delete a wrong one, and jump straight to photos where nothing was found. Optional. |
-| 5. Train | Pick a model (YOLO26, YOLO11 or YOLOv8, nano to extra-large), the number of epochs and the image size, with optional INT8 quantisation-aware training. Shows live accuracy and GPU load while it runs. |
+| 5. Train | Pick a model (YOLO26, YOLO11 or YOLOv8, nano to extra-large, or a `.pt` file of your own such as an earlier run's `best.pt`), the number of epochs and the image size, with optional INT8 quantisation-aware training. Shows live accuracy and GPU load while it runs. |
 | 6. Export | Convert a trained checkpoint to ONNX, TensorRT or another Ultralytics format at FP32, FP16 or INT8, with a one-click DeepStream preset. |
 | 7. Test | Run the exported model on a photo, a video or a live camera, and see the detections and the time per frame. |
 

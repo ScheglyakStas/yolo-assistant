@@ -122,7 +122,9 @@ model = """
 The starting checkpoint. Smaller models (n, s) train faster and run faster on
 modest hardware; larger ones (l, x) are more accurate but need more VRAM and
 time. Start with n or s to get through the whole workflow, then scale up. Each
-one is downloaded once, the first time it is used.
+one is downloaded once, the first time it is used. "Custom..." starts from a
+.pt file of your own instead, such as best.pt from an earlier run, to carry on
+improving a model you already have.
 """
 output_name = """
 Name for this training run. Results are written to a folder of this name inside

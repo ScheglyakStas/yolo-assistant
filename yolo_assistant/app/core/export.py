@@ -320,14 +320,14 @@ RESERVED_ARGS: frozenset[str] = frozenset(
     }
 )
 
-#: Ultralytics' own export argument names, as of the pinned release. Advisory,
+#: Ultralytics' own export argument names, as of 8.4.211. Advisory,
 #: for the same reason the training list is: Step 1's update button can move the
 #: environment to a release that added one, and a stale list must not block a
 #: setting that now exists. The authoritative check is in the worker, against
 #: the defaults of whichever Ultralytics is installed.
 KNOWN_ARGS: frozenset[str] = frozenset(
     """
-    keras optimize dynamic batch workspace nms agnostic_nms data fraction
+    optimize dynamic batch workspace nms agnostic_nms data fraction
     iou conf max_det verbose
     """.split()
 )

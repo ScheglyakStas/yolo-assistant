@@ -3576,3 +3576,47 @@ msgstr "Schließen Sie alle anderen Programme, die die Kamera nutzen – etwa ei
 #: worker/util/errors.py:143
 msgid "Export the model again in Step 6, or export it to ONNX, which is the format most likely to run anywhere. A TensorRT engine only works on the machine and driver that built it."
 msgstr "Exportieren Sie das Modell in Schritt 6 erneut oder exportieren Sie es nach ONNX, dem Format, das am wahrscheinlichsten überall läuft. Eine TensorRT-Engine funktioniert nur auf dem Computer und mit dem Treiber, mit denen sie erstellt wurde."
+
+#: yolo_assistant/app/core/training.py:196
+msgid "\"{name}\" is not a PyTorch weights file. Choose a .pt file, such as best.pt from an earlier run."
+msgstr "„{name}“ ist keine PyTorch-Gewichtsdatei. Wählen Sie eine .pt-Datei, etwa best.pt aus einem früheren Durchlauf."
+
+#: yolo_assistant/app/core/training.py:202
+msgid "The weights file \"{path}\" is not there any more. Choose it again."
+msgstr "Die Gewichtsdatei „{path}“ ist nicht mehr vorhanden. Wählen Sie sie erneut."
+
+#: yolo_assistant/app/core/training.py:611
+msgid "The starting weights are inside \"{name}\", which this run would replace. Give this run a different name."
+msgstr "Die Startgewichte liegen in „{name}“, das dieser Durchlauf ersetzen würde. Geben Sie diesem Durchlauf einen anderen Namen."
+
+#: yolo_assistant/app/ui/steps/train_step.py:107
+msgid "Custom..."
+msgstr "Eigene Gewichte..."
+
+#: yolo_assistant/app/ui/steps/train_step.py:110
+msgid "Start from a .pt weights file of your own, such as best.pt from an earlier run."
+msgstr "Von einer eigenen .pt-Gewichtsdatei aus starten, etwa best.pt aus einem früheren Durchlauf."
+
+#: yolo_assistant/app/ui/steps/train_step.py:337
+msgid "Choose the weights to start training from"
+msgstr "Gewichte wählen, von denen aus trainiert wird"
+
+#: yolo_assistant/app/ui/steps/train_step.py:339
+msgid "PyTorch weights (*.pt)"
+msgstr "PyTorch-Gewichte (*.pt)"
+
+#: worker/commands/train.py:101
+msgid "The weights file \"{path}\" is not there any more."
+msgstr "Die Gewichtsdatei „{path}“ ist nicht mehr vorhanden."
+
+#: worker/commands/train.py:102
+msgid "Choose the weights file again in the Model list."
+msgstr "Wählen Sie die Gewichtsdatei in der Liste „Modell“ erneut."
+
+#: worker/commands/train.py:111
+msgid "Or copy the weights file somewhere outside the runs folder first."
+msgstr "Oder kopieren Sie die Gewichtsdatei zuerst an einen Ort außerhalb des Ordners mit den Durchläufen."
+
+#: worker/commands/train.py:162
+msgid "Loading the weights in {path}."
+msgstr "Gewichte aus {path} werden geladen."

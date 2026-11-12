@@ -157,6 +157,51 @@ DEFAULT_MODEL = MODELS[0].key
 
 MODELS_BY_KEY = {model.key: model for model in MODELS}
 
+#: What a weights file of the user's own has to be called. A ``.pt`` is the
+#: only thing Ultralytics will fine-tune from: an ``.onnx`` or ``.engine`` from
+#: Step 6 has no gradients left in it, and a ``.yaml`` is an untrained network
+#: rather than a starting point.
+CUSTOM_SUFFIX = ".pt"
+
+
+def is_custom_model(model: str) -> bool:
+    """Whether ``model`` is a weights file of the user's rather than one of :data:`MODELS`.
+
+    Anything that is not one of the checkpoint names is a path. That is also
+    what Ultralytics does with it -- ``YOLO(path)`` loads a local file -- so the
+    job the worker is handed needs no second field to say which kind it is.
+    """
+    return bool(model) and model not in MODELS_BY_KEY
+
+
+def model_label(model: str) -> str:
+    """How a model is named in sentences: ``YOLO26n``, or a custom file's name."""
+    known = MODELS_BY_KEY.get(model)
+    if known is not None:
+        return known.label
+    if not model:
+        return ""
+    # Every run's weights are called best.pt or last.pt, so the run folder is
+    # the part of the path that tells two of them apart.
+    path = Path(model)
+    if path.parent.name == WEIGHTS_DIRNAME and path.parent.parent.name:
+        return f"{path.parent.parent.name}/{path.name}"
+    return path.name
+
+
+def custom_weights_problem(path: str) -> str:
+    """Why this file cannot be trained from, or an empty string."""
+    weights = Path(path)
+    if weights.suffix.lower() != CUSTOM_SUFFIX:
+        return tr(
+            '"{name}" is not a PyTorch weights file. Choose a .pt file, such as best.pt '
+            "from an earlier run.",
+            name=weights.name,
+        )
+    if not weights.is_file():
+        return tr('The weights file "{path}" is not there any more. Choose it again.', path=path)
+    return ""
+
 
 # --------------------------------------------------------------------------- #
 # Extra arguments
@@ -166,7 +211,9 @@ MODELS_BY_KEY = {model.key: model for model in MODELS}
 #: because letting it through would break something the app promises: ``data``
 #: and ``model`` are the whole point of the wizard, ``project``/``name`` decide
 #: where Step 6 looks for weights, and ``resume`` silently ignores every other
-#: argument on the line.
+#: argument on the line. ``quantize`` is the INT8 QAT checkbox: typed here it
+#: would train a QAT model whose run record says it is not one, and Step 6
+#: would then offer it the precisions it cannot be exported at.
 RESERVED_ARGS: frozenset[str] = frozenset(
     {
         "model",
@@ -178,13 +225,16 @@ RESERVED_ARGS: frozenset[str] = frozenset(
         "epochs",
         "imgsz",
         "resume",
+        "quantize",
         "task",
         "mode",
         "save_dir",
     }
 )
 
-#: Ultralytics' own argument names, as of the pinned release. This list is
+#: Ultralytics' own argument names that mean something to a training run, as of
+#: 8.4.211 -- the ones in its ``default.yaml`` that are not predict-, track- or
+#: export-only and not reserved above. This list is
 #: advisory: a name that is not on it produces a warning rather than a refusal,
 #: because Step 1's update button can move the environment to a release that
 #: added one, and a stale list must not block a setting that now exists. The
@@ -192,16 +242,16 @@ RESERVED_ARGS: frozenset[str] = frozenset(
 #: Ultralytics is actually installed, and it happens before training starts.
 KNOWN_ARGS: frozenset[str] = frozenset(
     """
-    time patience batch cache workers pretrained optimizer verbose seed
-    deterministic single_cls rect cos_lr close_mosaic amp fraction profile
-    freeze multi_scale overlap_mask mask_ratio dropout val split save
-    save_period save_json save_txt save_conf save_crop plots conf iou max_det
-    half dnn augment agnostic_nms classes retina_masks embed nbs
+    time patience batch cache workers pretrained cls_remap optimizer verbose
+    seed deterministic single_cls rect cos_lr close_mosaic amp fraction profile
+    freeze multi_scale compile channels_last overlap_mask mask_ratio dropout
+    val split save save_period save_json save_txt save_conf save_crop plots
+    conf iou max_det dnn tile augment agnostic_nms classes retina_masks embed
+    line_width nbs
     lr0 lrf momentum weight_decay warmup_epochs warmup_momentum warmup_bias_lr
-    box cls dfl pose kobj label_smoothing
+    distill_model dis box cls cls_pw dfl pose kobj rle angle dlog dgrad dlam
     hsv_h hsv_s hsv_v degrees translate scale shear perspective flipud fliplr
     bgr mosaic mixup cutmix copy_paste copy_paste_mode auto_augment erasing
-    line_width compile
     """.split()
 )
 
@@ -546,8 +596,24 @@ class TrainPlan:
                     missing,
                 )
             ]
-        if self.model not in MODELS_BY_KEY:
+        if not self.model:
             found.append(tr("Choose a model to start training from."))
+        elif is_custom_model(self.model):
+            weights_trouble = custom_weights_problem(self.model)
+            if weights_trouble:
+                found.append(weights_trouble)
+            elif self.existing_run is not None and _inside(
+                Path(self.model), self.existing_run.path
+            ):
+                # Starting a run empties its folder first, so this would delete
+                # the file before Ultralytics had read it.
+                found.append(
+                    tr(
+                        'The starting weights are inside "{name}", which this run would '
+                        "replace. Give this run a different name.",
+                        name=self.existing_run.name,
+                    )
+                )
 
         name_trouble = name_problem(self.name)
         if name_trouble:
@@ -640,8 +706,7 @@ class TrainPlan:
                 images,
                 in_classes=in_classes,
             )
-        model = MODELS_BY_KEY.get(self.model)
-        label = model.label if model else self.model
+        label = model_label(self.model)
         return trn(
             "{model} on {n:,} photos {in_classes}, {epochs} at {imgsz} pixels.",
             "{model} on {n:,} photos {in_classes}, {epochs} at {imgsz} pixels.",
@@ -712,7 +777,9 @@ def read_settings(project: Project | None) -> dict:
     record = record if isinstance(record, dict) else {}
 
     model = str(record.get("model") or DEFAULT_MODEL)
-    if model not in MODELS_BY_KEY:
+    # A file of the user's is offered again only while it is still there; one
+    # that has since been moved or deleted is not worth a refusal on arrival.
+    if is_custom_model(model) and custom_weights_problem(model):
         model = DEFAULT_MODEL
     imgsz = record.get("imgsz")
     if imgsz is None:
@@ -748,6 +815,16 @@ def write_settings(project: Project, plan: TrainPlan) -> None:
     except OSError:
         # A project on a read-only share still trains; it just forgets.
         pass
+
+
+def _inside(path: Path, folder: Path) -> bool:
+    """Whether ``path`` is ``folder`` or somewhere underneath it."""
+    try:
+        child = os.path.normcase(str(Path(path).resolve()))
+        parent = os.path.normcase(str(Path(folder).resolve()))
+        return os.path.commonpath([child, parent]) == parent
+    except (OSError, ValueError):
+        return False
 
 
 def _clamped_int(value, default: int, low: int, high: int) -> int:

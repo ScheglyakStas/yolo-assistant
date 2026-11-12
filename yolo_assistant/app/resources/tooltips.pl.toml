@@ -132,6 +132,9 @@ Początkowy punkt kontrolny (checkpoint). Mniejsze modele (n, s) trenują się i
 działają szybciej na skromnym sprzęcie; większe (l, x) są dokładniejsze, ale
 potrzebują więcej VRAM i czasu. Zacznij od n lub s, aby przejść cały proces, a
 potem przejdź na większy. Każdy jest pobierany raz, przy pierwszym użyciu.
+„Własne wagi...” zaczyna zamiast tego od Twojego własnego pliku .pt, na
+przykład best.pt z wcześniejszego przebiegu, aby dalej ulepszać model, który
+już masz.
 """
 output_name = """
 Nazwa tego przebiegu treningu. Wyniki są zapisywane w folderze o tej nazwie

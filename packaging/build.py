@@ -359,12 +359,23 @@ def deb_depends(app_dir: Path) -> list[str]:
     with a reason instead of installing an app that cannot start.
     """
     bundled = {path.name for path in app_dir.rglob("*") if path.is_file()}
+    # ldd follows the build machine's search path, so with Ubuntu's own Qt
+    # installed it resolves the bundle's libQt6Core to the system copy -- and
+    # then reports that copy's dependencies (its ICU, libinput, ...), which the
+    # app never loads. Searching the bundle's own folders first, as the
+    # bootloader does at run time, keeps the walk inside what actually ships.
+    library_dirs = sorted(
+        {str(path.parent) for path in app_dir.rglob("*.so*") if path.is_file()}
+    )
+    ldd_env = {**os.environ, "LD_LIBRARY_PATH": os.pathsep.join(library_dirs)}
     system: set[str] = set()
     missing: dict[str, set[str]] = {}
     for path in sorted(app_dir.rglob("*")):
         if not path.is_file() or path.is_symlink() or not _is_elf(path):
             continue
-        result = subprocess.run(["ldd", str(path)], capture_output=True, text=True, check=False)
+        result = subprocess.run(
+            ["ldd", str(path)], capture_output=True, text=True, check=False, env=ldd_env
+        )
         for line in result.stdout.splitlines():
             match = re.match(r"\s*(\S+) => (.+?)(?: \(0x[0-9a-f]+\))?$", line)
             if match is None or match.group(1) in bundled:
